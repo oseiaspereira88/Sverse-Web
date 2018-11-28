@@ -1,6 +1,6 @@
 package sverseweb
 
-class Atividade {
+class CycleItem {
 
     String nome
     Integer numeroDaImagem
