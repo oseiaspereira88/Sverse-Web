@@ -1,0 +1,70 @@
+.header li a {
+    display: block;
+    width: 60px;
+}
+
+.header li a.appTitle {
+    display: block;
+    width: 200px;
+    font-weight:bold;
+    font-size: 24px;
+    color: #008B8B;
+    top: 0;
+}
+
+.header {
+    list-style-type: none;
+    margin: 0;
+    padding: 0; /* Full height */
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border: 1px solid #e7e7e7;
+    background-color: #dddddd;
+}
+
+.header li {
+    text-align: center;
+    border-bottom: 1px solid #555;
+    display: inline;
+    float: left;
+    border-right: 1px solid #bbb;
+    position: sticky;
+    background-color: #dddddd;
+}
+
+.header li:last-child {
+    border-right: none;
+}
+
+.header li.appTitle{
+    margin-left: 13%;
+}
+
+.header li a {
+    display: block;
+    color: #666;
+    text-decoration: none;
+    background-color: #dddddd;
+    text-align: center;
+    padding: 14px 16px;
+    transition: 0.4s;
+}
+
+/* Change the link color on hover */
+.header li a:hover {
+    color: white;
+    background-color: #111;
+}
+
+.header li a.appTitle:hover {
+    color: #000;
+    background-color: #dddddd;
+}
+
+.header .active {
+    background-color: #008B8B;
+    color: white;
+}
+
