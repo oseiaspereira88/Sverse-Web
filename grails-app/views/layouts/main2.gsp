@@ -23,7 +23,6 @@
 
     <g:render template="templates/header"/>
 
-
     <g:layoutBody/>
 
     <g:render template="templates/rodape"/>
