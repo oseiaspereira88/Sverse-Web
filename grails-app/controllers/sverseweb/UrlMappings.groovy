@@ -9,7 +9,7 @@ class UrlMappings {
             }
         }
 
-        "/"(view:"/mural_academico")
+        "/"(view:"/bloco_de_notas")
         "500"(view:'/error')
         "404"(view:'/notFound')
     }
