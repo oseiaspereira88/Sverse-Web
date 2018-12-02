@@ -5,6 +5,6 @@
     <title>Sverse Web</title>
 </head>
 <body>
-    <g:render template="templates/profile"/>
+    <g:render template="templates/mural_academico"/>
 </body>
 </html>

@@ -18,6 +18,9 @@
 	<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'>
 	<link rel="stylesheet" href="css/grid-style.css">
 
+    <link href=${resource(dir: 'css', file: 'cycle-cronometer.css')} rel="stylesheet">
+    <asset:javascript src="script-cycle-cronometer.js"/>
+
 
 </head>
 <body>
@@ -37,8 +40,37 @@
                                                 <h3 class="h3-module-head">Bloco de Notas</h3>
                                             </div>
 
-                                            <h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1>
-                                            <h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1><h1>1</h1>
+
+                                            <div class="col-md-12 text-center">
+                                                <h1>Cronômetro com Javascript</h1>
+                                            </div>
+                                            <div class="col-md-12 text-center center-block">
+                                                <div id="tempo" type="button" class="btn btn-warning tamanho text">00:00!</div>
+
+                                            </div>
+                                            <div class="marginTop col-md-12 text-center center-block">
+                                                <button id="btn" onclick="cronometro(1)" type="button" class="col-md-2 col-md-offset-5 btn btn-success">Iniciar</button>
+                                            </div>
+                                            <div class="marginTop col-md-12 text-center center-block">
+                                                <button id="btnPause" onclick="parar()" type="button" class="hide col-md-2 col-md-offset-5 btn btn-danger">Pause</button>
+                                            </div>
+                                            <div class="marginTop col-md-12 text-center center-block">
+                                                <button id="btnStop" onclick="stop()" type="button" class="hide col-md-2 col-md-offset-5 btn btn-primary">Stop</button>
+                                            </div>
+                                            <div class="marginTop col-md-12 text-center center-block">
+                                                <div class="col-md-4 col-md-offset-4">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">Min</span>
+                                                        <input id="minutos" type="number" min="0" max="59" class="form-control" placeholder="Minutos">
+                                                    </div>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">Seg</span>
+                                                        <input id="segundos" type="number"  min="0" max="59" class="form-control" placeholder="Segundos">
+                                                        <input id="pause" type="hidden" value="0"  class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+
 
                                         </div>
                                     </div>

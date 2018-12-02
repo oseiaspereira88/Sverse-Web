@@ -71,7 +71,7 @@ class UsuarioController {
     }
 
     def logout(){
-        respond view:'login'
+        redirect action:"index", method:"GET"
     }
 
     def delete(Long id) {
