@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta name="layout" content="main2"/>
-    <title>Sverse Web</title>
+    <title>Bloco de Notas</title>
 </head>
 <body>
-    <g:render template="templates/mural_academico"/>
+    <g:render template="templates/bloco_de_notas"/>
 </body>
 </html>

@@ -69,7 +69,10 @@ blockquote small::before {
 }
 .footer {
 	color: #999;
-	padding: 30px 0 60px
+	text-align: center;
+	bottom: 0;
+	padding-top: 0px;
+	padding-bottom: 14px;
 }
 .footer .nav li {
 	float: left
@@ -144,6 +147,11 @@ body [class^="icon-"], body [class*=" icon-"] {
 	box-shadow: 0 0 1px rgba(0,0,0,0.2);
 	margin-bottom: 30px
 }
+
+.span9{
+	margin-top: 2%;
+}
+
 .align-center {
 	text-align: center
 }
@@ -873,16 +881,21 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='@topColor', end
 	white-space: nowrap
 }
 .widget .progress {
-	margin-bottom: 0
+	margin-bottom: 0;
 }
+
+.sidebar{
+	margin-top: 2%;
+	width:18%;
+	position: fixed;
+}
+
 .widget-menu {
 	background: #fff;
-	
+	overflow: hidden;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
-	
-	overflow: hidden
 }
 .widget-menu a {
 	color: #555;
@@ -909,7 +922,7 @@ transition: all .2s ease-in-out;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
 	line-height: 20px;
-	padding: 0 5px
+	padding: 0 5px;
 }
 .widget-menu .label.green {
 	background: #78ba00
@@ -1105,7 +1118,7 @@ border-top-left-radius: 3px;
 	padding: 0
 }
 .stream.new-update a, .stream.load-more a {
-	background: #background: #f7f7f7;;
+	background:#f7f7f7;;
 	
 	color: #555;
 	font-weight: 600;

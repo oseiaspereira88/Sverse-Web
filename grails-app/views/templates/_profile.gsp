@@ -1,7 +1,7 @@
 ﻿<div class="wrapper">
         <div class="container">
             <div class="row">
-<g:render template="templates/sidebar"/>
+                <g:render template="templates/sidebar"/>
                 <div class="span9">
                     <div class="content">
                         <div class="module">
@@ -74,15 +74,6 @@
                                                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                                                             Ipsum has been the industry's standard dummy text ever since the 1500s, when an
                                                             unknown printer took a galley of type.
-                                                        </div>
-                                                        <div class="stream-attachment video">
-                                                            <div class="responsive-video">
-                                                                <iframe src="//player.vimeo.com/video/20630217" width="560" height="315" frameborder="0"
-                                                                    webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                                                                <p>
-                                                                    <a href="http://vimeo.com/20630217">Google Car</a> from <a href="http://vimeo.com/user3524956">
-                                                                        Henk Rogers</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                     <!--/.stream-headline-->
@@ -390,17 +381,6 @@
                                                 </div>
                                             </div>
                                             <!--/.row-fluid-->
-                                            <br />
-                                            <div class="pagination pagination-centered">
-                                                <ul>
-                                                    <li><a href="#"><i class="icon-double-angle-left"></i></a></li>
-                                                    <li><a href="#">1</a></li>
-                                                    <li><a href="#">2</a></li>
-                                                    <li><a href="#">3</a></li>
-                                                    <li><a href="#">4</a></li>
-                                                    <li><a href="#"><i class="icon-double-angle-right"></i></a></li>
-                                                </ul>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
