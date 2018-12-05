@@ -1,18 +1,29 @@
-﻿<div class="span3">
+﻿<div class="col3">
         <div class="sidebar">
             <ul class="widget widget-menu unstyled">
-                <li class="active"><a href="index.html"><i class="menu-icon icon-dashboard"></i>Mural Acadêmico
-                </a></li>
-                <li><a href="activity.html"><i class="menu-icon icon-bullhorn"></i>Containers de Estudo</a>
+                <li class="active">
+                    <a href="index.html">
+                        <i class="menu-icon icon-dashboard"></i>Mural Acadêmico
+                    </a>
                 </li>
-                <li><a href="message.html"><i class="menu-icon icon-inbox"></i>Bloco de Notas <b
-                        class="label green pull-right">
-                    11</b></a></li>
-                <li><a href="task.html"><i class="menu-icon icon-tasks"></i>Notificações <b
-                        class="label orange pull-right">
-                    19</b></a></li>
+                <li>
+                    <a href="activity.html">
+                    <i class="menu-icon icon-bullhorn"></i>Containers de Estudo
+                    </a>
+                </li>
+                <li>
+                    <a href="message.html">
+                        <i class="menu-icon icon-inbox"></i>Bloco de Notas <b class="label green pull-right">11</b>
+                    </a>
+                </li>
+                <li>
+                    <a href="task.html">
+                        <i class="menu-icon icon-tasks"></i>Notificações <b class="label orange pull-right">19</b>
+                    </a>
+                </li>
             </ul>
             <!--/.widget-nav-->
+
             <ul class="widget widget-menu unstyled">
                 <li><a href="ui-button-icon.html"><i class="menu-icon icon-bold"></i>Ciclo de Estudo</a></li>
                 <li><a href="ui-typography.html"><i class="menu-icon icon-book"></i>Pomodoro</a></li>
