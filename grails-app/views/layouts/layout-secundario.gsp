@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en" class="no-js">
-<head style="z-index:1;">
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>
@@ -20,11 +20,11 @@
 </head>
 <body>
 
-    <g:render template="templates/header" style="z-index:2;"/>
+    <g:render template="../templates/_header"/>
 
     <g:layoutBody/>
 
-    <g:render template="templates/rodape"/>
+    <g:render template="../templates/_rodape"/>
 
     <asset:javascript src="application.js"/>
     <asset:javascript src="jquery-1.9.1.min.js"/>
