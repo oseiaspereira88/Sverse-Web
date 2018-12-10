@@ -1,6 +1,6 @@
 package sverseweb
 
-class Nota extends PagServiceSpec, CycleItem {
+class Nota{
 
     String titulo
     String texto
