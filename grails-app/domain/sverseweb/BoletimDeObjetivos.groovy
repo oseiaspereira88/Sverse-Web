@@ -1,7 +1,5 @@
 package sverseweb
 
 class BoletimDeObjetivos {
-
-    static constraints = {
-    }
+    Integer desempenho
 }

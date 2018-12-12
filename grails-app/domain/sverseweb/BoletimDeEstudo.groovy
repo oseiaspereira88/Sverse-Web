@@ -1,7 +1,5 @@
 package sverseweb
 
 class BoletimDeEstudo {
-
-    static constraints = {
-    }
+    Integer desempenho
 }
