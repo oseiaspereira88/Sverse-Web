@@ -10,6 +10,8 @@ class Nota{
     Date dataCriacao
     Date dataAtualizacao
 
+    static belongsTo = [usuario : Usuario]
+
     static constraints = {
         nota(nullable: false, blank: false,        maxSize: 100, unique:false)
         titulo(nullable: false, blank: false,        maxSize: 100, unique:false)

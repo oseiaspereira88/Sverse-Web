@@ -12,4 +12,7 @@ class Etapa {
         estado(nullable: false, blank: false,        maxSize: 100, unique:false)
         dataTerminio(nullable: false, blank: false,        maxSize: 100, unique:false)
     }
+    static belongsTo = [trabalhoEmGrupo : TrabalhoEmGrupo,
+                        boletinsDeetapa : BoletimDeEtapas]
+
 }

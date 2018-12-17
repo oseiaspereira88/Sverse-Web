@@ -12,6 +12,13 @@ class Container {
     Date dataCriacao
     Date dataAtualizacao
 
+    static hasMany = [temasDeEstudo : TemaDeEstudo,
+                      objetivos : Objetivo,
+                      participantes : Usuario, admins : Usuario]
+    static belongsTo = [participante : Usuario, admin : Usuario]
+
+
+
     static constraints = {
         nome(nullable: false, blank: false,        maxSize: 100, unique:false)
         descricao(nullable: false, blank: false,        maxSize: 100, unique:false)

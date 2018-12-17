@@ -1,5 +1,7 @@
 package sverseweb
 
+import sun.misc.Perf
+
 class Perfil {
     String imgPerfil
     String email
@@ -10,6 +12,7 @@ class Perfil {
     Integer nFollowing
     Integer nFollowers
     static constraints = {
+
         imgPerfil(nullable: false, blank: false,        maxSize: 100, unique:false)
         email(nullable: false, blank: false,        maxSize: 100, unique:false)
         trello(nullable: false, blank: false,        maxSize: 100, unique:false)
@@ -20,4 +23,5 @@ class Perfil {
         nFollowers(nullable: false, blank: false,        maxSize: 100, unique:false)
 
     }
+    static belongsTo = [perfil : Perfil]
 }

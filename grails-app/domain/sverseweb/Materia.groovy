@@ -1,10 +1,12 @@
 package sverseweb
 
-class Materia {
+class Materia extends Container{
 
     String nome
     String imgMateria
     Integer nNotificacoes
+
+    static belongsTo = [turma : Turma]
 
     static constraints = {
         nome(nullable: false, blank: false,        maxSize: 100, unique:false)
