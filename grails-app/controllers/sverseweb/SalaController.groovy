@@ -3,7 +3,7 @@ package sverseweb
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
 
-class MateriaController {
+class SalaController {
 
     MateriaService materiaService
 
@@ -19,10 +19,10 @@ class MateriaController {
     }
 
     def create() {
-        respond new Materia(params)
+        respond new Sala(params)
     }
 
-    def save(Materia materia) {
+    def save(Sala materia) {
         if (materia == null) {
             notFound()
             return
@@ -37,7 +37,7 @@ class MateriaController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'materia.label', default: 'Materia'), materia.id])
+                flash.message = message(code: 'default.created.message', args: [message(code: 'sala.label', default: 'Sala'), materia.id])
                 redirect materia
             }
             '*' { respond materia, [status: CREATED] }
@@ -48,7 +48,7 @@ class MateriaController {
         respond materiaService.get(id)
     }
 
-    def update(Materia materia) {
+    def update(Sala materia) {
         if (materia == null) {
             notFound()
             return
@@ -63,7 +63,7 @@ class MateriaController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'materia.label', default: 'Materia'), materia.id])
+                flash.message = message(code: 'default.updated.message', args: [message(code: 'sala.label', default: 'Sala'), materia.id])
                 redirect materia
             }
             '*'{ respond materia, [status: OK] }
@@ -80,7 +80,7 @@ class MateriaController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'materia.label', default: 'Materia'), id])
+                flash.message = message(code: 'default.deleted.message', args: [message(code: 'sala.label', default: 'Sala'), id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
@@ -90,7 +90,7 @@ class MateriaController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'materia.label', default: 'Materia'), params.id])
+                flash.message = message(code: 'default.not.found.message', args: [message(code: 'sala.label', default: 'Sala'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }

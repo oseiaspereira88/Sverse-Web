@@ -1,6 +1,6 @@
 package sverseweb
 
-class Materia extends Container{
+class Sala extends Container{
 
     String nome
     String imgMateria

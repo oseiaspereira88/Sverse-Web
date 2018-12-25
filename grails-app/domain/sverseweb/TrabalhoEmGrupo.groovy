@@ -17,6 +17,4 @@ class TrabalhoEmGrupo {
 
     static hasMany = [etapas : Etapa,
                       participantes : Usuario]
-
-    static belongsTo = [usuario: Usuario]
 }

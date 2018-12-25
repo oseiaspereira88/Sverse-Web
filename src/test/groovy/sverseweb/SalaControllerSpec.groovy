@@ -5,7 +5,7 @@ import grails.testing.web.controllers.ControllerUnitTest
 import grails.validation.ValidationException
 import spock.lang.*
 
-class GrupoControllerSpec extends Specification implements ControllerUnitTest<GrupoController>, DomainUnitTest<Grupo> {
+class SalaControllerSpec extends Specification implements ControllerUnitTest<SalaController>, DomainUnitTest<Sala> {
 
     def populateValidParams(params) {
         assert params != null
@@ -17,7 +17,7 @@ class GrupoControllerSpec extends Specification implements ControllerUnitTest<Gr
 
     void "Test the index action returns the correct model"() {
         given:
-        controller.grupoService = Mock(GrupoService) {
+        controller.materiaService = Mock(MateriaService) {
             1 * list(_) >> []
             1 * count() >> 0
         }
@@ -26,8 +26,8 @@ class GrupoControllerSpec extends Specification implements ControllerUnitTest<Gr
         controller.index()
 
         then:"The model is correct"
-        !model.grupoList
-        model.grupoCount == 0
+        !model.materiaList
+        model.materiaCount == 0
     }
 
     void "Test the create action returns the correct model"() {
@@ -35,7 +35,7 @@ class GrupoControllerSpec extends Specification implements ControllerUnitTest<Gr
         controller.create()
 
         then:"The model is correctly created"
-        model.grupo!= null
+        model.materia!= null
     }
 
     void "Test the save action with a null instance"() {
@@ -45,14 +45,14 @@ class GrupoControllerSpec extends Specification implements ControllerUnitTest<Gr
         controller.save(null)
 
         then:"A 404 error is returned"
-        response.redirectedUrl == '/grupo/index'
+        response.redirectedUrl == '/sala/index'
         flash.message != null
     }
 
     void "Test the save action correctly persists"() {
         given:
-        controller.grupoService = Mock(GrupoService) {
-            1 * save(_ as Grupo)
+        controller.materiaService = Mock(MateriaService) {
+            1 * save(_ as Sala)
         }
 
         when:"The save action is executed with a valid instance"
@@ -60,38 +60,38 @@ class GrupoControllerSpec extends Specification implements ControllerUnitTest<Gr
         request.contentType = FORM_CONTENT_TYPE
         request.method = 'POST'
         populateValidParams(params)
-        def grupo = new Grupo(params)
-        grupo.id = 1
+        def materia = new Sala(params)
+        materia.id = 1
 
-        controller.save(grupo)
+        controller.save(materia)
 
         then:"A redirect is issued to the show action"
-        response.redirectedUrl == '/grupo/show/1'
+        response.redirectedUrl == '/sala/show/1'
         controller.flash.message != null
     }
 
     void "Test the save action with an invalid instance"() {
         given:
-        controller.grupoService = Mock(GrupoService) {
-            1 * save(_ as Grupo) >> { Grupo grupo ->
-                throw new ValidationException("Invalid instance", grupo.errors)
+        controller.materiaService = Mock(MateriaService) {
+            1 * save(_ as Sala) >> { Sala materia ->
+                throw new ValidationException("Invalid instance", materia.errors)
             }
         }
 
         when:"The save action is executed with an invalid instance"
         request.contentType = FORM_CONTENT_TYPE
         request.method = 'POST'
-        def grupo = new Grupo()
-        controller.save(grupo)
+        def materia = new Sala()
+        controller.save(materia)
 
         then:"The create view is rendered again with the correct model"
-        model.grupo != null
+        model.materia != null
         view == 'create'
     }
 
     void "Test the show action with a null id"() {
         given:
-        controller.grupoService = Mock(GrupoService) {
+        controller.materiaService = Mock(MateriaService) {
             1 * get(null) >> null
         }
 
@@ -104,20 +104,20 @@ class GrupoControllerSpec extends Specification implements ControllerUnitTest<Gr
 
     void "Test the show action with a valid id"() {
         given:
-        controller.grupoService = Mock(GrupoService) {
-            1 * get(2) >> new Grupo()
+        controller.materiaService = Mock(MateriaService) {
+            1 * get(2) >> new Sala()
         }
 
         when:"A domain instance is passed to the show action"
         controller.show(2)
 
         then:"A model is populated containing the domain instance"
-        model.grupo instanceof Grupo
+        model.materia instanceof Sala
     }
 
     void "Test the edit action with a null id"() {
         given:
-        controller.grupoService = Mock(GrupoService) {
+        controller.materiaService = Mock(MateriaService) {
             1 * get(null) >> null
         }
 
@@ -130,15 +130,15 @@ class GrupoControllerSpec extends Specification implements ControllerUnitTest<Gr
 
     void "Test the edit action with a valid id"() {
         given:
-        controller.grupoService = Mock(GrupoService) {
-            1 * get(2) >> new Grupo()
+        controller.materiaService = Mock(MateriaService) {
+            1 * get(2) >> new Sala()
         }
 
         when:"A domain instance is passed to the show action"
         controller.edit(2)
 
         then:"A model is populated containing the domain instance"
-        model.grupo instanceof Grupo
+        model.materia instanceof Sala
     }
 
 
@@ -149,14 +149,14 @@ class GrupoControllerSpec extends Specification implements ControllerUnitTest<Gr
         controller.update(null)
 
         then:"A 404 error is returned"
-        response.redirectedUrl == '/grupo/index'
+        response.redirectedUrl == '/sala/index'
         flash.message != null
     }
 
     void "Test the update action correctly persists"() {
         given:
-        controller.grupoService = Mock(GrupoService) {
-            1 * save(_ as Grupo)
+        controller.materiaService = Mock(MateriaService) {
+            1 * save(_ as Sala)
         }
 
         when:"The save action is executed with a valid instance"
@@ -164,31 +164,31 @@ class GrupoControllerSpec extends Specification implements ControllerUnitTest<Gr
         request.contentType = FORM_CONTENT_TYPE
         request.method = 'PUT'
         populateValidParams(params)
-        def grupo = new Grupo(params)
-        grupo.id = 1
+        def materia = new Sala(params)
+        materia.id = 1
 
-        controller.update(grupo)
+        controller.update(materia)
 
         then:"A redirect is issued to the show action"
-        response.redirectedUrl == '/grupo/show/1'
+        response.redirectedUrl == '/sala/show/1'
         controller.flash.message != null
     }
 
     void "Test the update action with an invalid instance"() {
         given:
-        controller.grupoService = Mock(GrupoService) {
-            1 * save(_ as Grupo) >> { Grupo grupo ->
-                throw new ValidationException("Invalid instance", grupo.errors)
+        controller.materiaService = Mock(MateriaService) {
+            1 * save(_ as Sala) >> { Sala materia ->
+                throw new ValidationException("Invalid instance", materia.errors)
             }
         }
 
         when:"The save action is executed with an invalid instance"
         request.contentType = FORM_CONTENT_TYPE
         request.method = 'PUT'
-        controller.update(new Grupo())
+        controller.update(new Sala())
 
         then:"The edit view is rendered again with the correct model"
-        model.grupo != null
+        model.materia != null
         view == 'edit'
     }
 
@@ -199,13 +199,13 @@ class GrupoControllerSpec extends Specification implements ControllerUnitTest<Gr
         controller.delete(null)
 
         then:"A 404 is returned"
-        response.redirectedUrl == '/grupo/index'
+        response.redirectedUrl == '/sala/index'
         flash.message != null
     }
 
     void "Test the delete action with an instance"() {
         given:
-        controller.grupoService = Mock(GrupoService) {
+        controller.materiaService = Mock(MateriaService) {
             1 * delete(2)
         }
 
@@ -215,7 +215,7 @@ class GrupoControllerSpec extends Specification implements ControllerUnitTest<Gr
         controller.delete(2)
 
         then:"The user is redirected to index"
-        response.redirectedUrl == '/grupo/index'
+        response.redirectedUrl == '/sala/index'
         flash.message != null
     }
 }

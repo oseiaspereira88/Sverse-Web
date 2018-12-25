@@ -4,6 +4,6 @@ class BoletimDeEtapas {
 
     static constraints = {
     }
-    static belongsTo = [usuari: Usuario]
+    static belongsTo = [usuario: Usuario]
     static hasMany = [estapas : Etapa]
 }

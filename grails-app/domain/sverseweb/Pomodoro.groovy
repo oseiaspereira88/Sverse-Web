@@ -9,5 +9,6 @@ class Pomodoro {
     static constraints = {
         minEstudo(nullable: false, blank: false,        maxSize: 100, unique:false)
         minPausa(nullable: false, blank: false,        maxSize: 100, unique:false)
+        cicloDeEstudo(nullable: true)
     }
 }

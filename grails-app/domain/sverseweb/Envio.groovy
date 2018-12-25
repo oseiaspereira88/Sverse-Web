@@ -1,9 +1,8 @@
 package sverseweb
 
 class Envio {
-
-    static belongsTo = [usuario:Usuario]
-    static hasOne = [destinatario: Usuario]
+    Usuario destinatario
+    static belongsTo = [emissor:Usuario]
     static hasMany = [itens:ItemEnvio]
 
     static constraints = {

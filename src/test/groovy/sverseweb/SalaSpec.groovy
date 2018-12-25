@@ -3,7 +3,7 @@ package sverseweb
 import grails.testing.gorm.DomainUnitTest
 import spock.lang.Specification
 
-class GrupoSpec extends Specification implements DomainUnitTest<Grupo> {
+class SalaSpec extends Specification implements DomainUnitTest<Sala> {
 
     def setup() {
     }

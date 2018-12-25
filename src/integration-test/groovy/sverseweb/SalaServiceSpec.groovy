@@ -7,37 +7,37 @@ import org.hibernate.SessionFactory
 
 @Integration
 @Rollback
-class GrupoServiceSpec extends Specification {
+class SalaServiceSpec extends Specification {
 
-    GrupoService grupoService
+    MateriaService materiaService
     SessionFactory sessionFactory
 
     private Long setupData() {
         // TODO: Populate valid domain instances and return a valid ID
-        //new Grupo(...).save(flush: true, failOnError: true)
-        //new Grupo(...).save(flush: true, failOnError: true)
-        //Grupo grupo = new Grupo(...).save(flush: true, failOnError: true)
-        //new Grupo(...).save(flush: true, failOnError: true)
-        //new Grupo(...).save(flush: true, failOnError: true)
+        //new Sala(...).save(flush: true, failOnError: true)
+        //new Sala(...).save(flush: true, failOnError: true)
+        //Sala sala = new Sala(...).save(flush: true, failOnError: true)
+        //new Sala(...).save(flush: true, failOnError: true)
+        //new Sala(...).save(flush: true, failOnError: true)
         assert false, "TODO: Provide a setupData() implementation for this generated test suite"
-        //grupo.id
+        //sala.id
     }
 
     void "test get"() {
         setupData()
 
         expect:
-        grupoService.get(1) != null
+        materiaService.get(1) != null
     }
 
     void "test list"() {
         setupData()
 
         when:
-        List<Grupo> grupoList = grupoService.list(max: 2, offset: 2)
+        List<Sala> materiaList = materiaService.list(max: 2, offset: 2)
 
         then:
-        grupoList.size() == 2
+        materiaList.size() == 2
         assert false, "TODO: Verify the correct instances are returned"
     }
 
@@ -45,30 +45,30 @@ class GrupoServiceSpec extends Specification {
         setupData()
 
         expect:
-        grupoService.count() == 5
+        materiaService.count() == 5
     }
 
     void "test delete"() {
-        Long grupoId = setupData()
+        Long materiaId = setupData()
 
         expect:
-        grupoService.count() == 5
+        materiaService.count() == 5
 
         when:
-        grupoService.delete(grupoId)
+        materiaService.delete(materiaId)
         sessionFactory.currentSession.flush()
 
         then:
-        grupoService.count() == 4
+        materiaService.count() == 4
     }
 
     void "test save"() {
         when:
         assert false, "TODO: Provide a valid instance to save"
-        Grupo grupo = new Grupo()
-        grupoService.save(grupo)
+        Sala materia = new Sala()
+        materiaService.save(materia)
 
         then:
-        grupo.id != null
+        materia.id != null
     }
 }

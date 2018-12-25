@@ -1,7 +1,7 @@
 ﻿<link rel="stylesheet" href="${resource(dir: 'css', file: 'header.css')}" type="text/css">
 
 <div style="z-index:2; float:left; border:0; margin-left: 4%; margin-top: 2%" class="popover popover-bottom">
-  <div class="btn btn-primary chip" style="height: 48px; font-size: 14px;">
+  <div class="btn btn-primary chip mavatar" style="height: 48px; font-size: 14px;">
     <asset:image class="avatar avatar-lg" alt="Oséias Pereira" src="perfil_sverse.png"/>
     Oséias Pereira
   </div>

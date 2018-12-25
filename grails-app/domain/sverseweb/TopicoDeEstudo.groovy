@@ -5,7 +5,7 @@ class TopicoDeEstudo {
     Date dataCriacao
     Date dataAtualizacao
 
-    static belongsTo = [topicoDeEstudo : TopicoDeEstudo]
+    static belongsTo = [temaDeEstudo : TemaDeEstudo]
     static hasMany = [boletinsDeEstudo : BoletimDeEstudo]
 
     static constraints = {

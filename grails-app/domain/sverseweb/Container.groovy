@@ -14,8 +14,9 @@ class Container {
 
     static hasMany = [temasDeEstudo : TemaDeEstudo,
                       objetivos : Objetivo,
-                      participantes : Usuario, admins : Usuario]
-    static belongsTo = [participante : Usuario, admin : Usuario]
+                      participantes : Usuario,
+                      admins : Usuario]
+
 
 
 
