@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <meta name="layout" content="layout-principal"/>
+    <meta name="layout" content="layout-secundario"/>
     <title>Sverse Web</title>
 </head>
 <body>

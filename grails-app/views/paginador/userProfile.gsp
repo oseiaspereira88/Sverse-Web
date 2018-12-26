@@ -8,7 +8,7 @@
 
     <div>
         <div style="display: flex; flex-direction: row;justify-content: center;>
-        <div class=" docs-demo columns">
+        <div class="docs-demo columns">
         <div class="column col-4 col-xs-12" style="padding: 4% 4% 4% 4%;">
             <div class="panel">
                 <div class="panel-header text-center">
@@ -238,7 +238,5 @@
         </div>
     </div>
 </div>
-
-
 </body>
 </html>

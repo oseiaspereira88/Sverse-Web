@@ -9,9 +9,9 @@ class NotaController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond notaService.list(params), model:[notaCount: notaService.count()]
+    def index(){
+        def lista = notaService.list();
+        render(view: "/nota/index", model: [notas:lista])
     }
 
     def show(Long id) {

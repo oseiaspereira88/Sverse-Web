@@ -20,11 +20,9 @@
 </div>
 
 <ul class="header" style="z-index:1">
-  <li class="appTitle"><a href="${createLink(uri: '/')}" class="appTitle">Sverse Web</a></li>
-  <li><a class="active" href="${createLink(uri: '/')}">Mural Acadêmico</a></li>
-  <li><a href="${createLink(uri: '/Paginador/containersDeEstudo')}">Containers de Estudo</a></li>
-  <li><a href="${createLink(uri: '/Paginador/blocoDeNotas')}">Bloco de Notas</a></li>
-  <li style="float:right"><a href="${createLink(uri: '/Paginador/ajuda')}">Ajuda</a></li>
+  <li class="appTitle"><a id="Titulo" href="${createLink(uri: '/')}" class="appTitle">Sverse Web</a></li>
+  <li><a id="mural-academico" onclick="navegar('mural-academico')" href="#}">Mural Acadêmico</a></li>
+  <li><a id="containers-de-estudo" onclick="navegar('containers-de-estudo')" href="#">Containers de Estudo</a></li>
+  <li><a id="bloco-de-notas" onclick="navegar('bloco-de-notas')">Bloco de Notas</a></li>
+  <li style="float:right"><a id="ajuda" onclick="navegar('ajuda')" href="#}">Ajuda</a></li>
 </ul>
-
-<asset:javascript src="header-functions.js"/>

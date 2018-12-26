@@ -9,9 +9,9 @@ class ContainerController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond containerService.list(params), model:[containerCount: containerService.count()]
+    def index(){
+        def lista = containerService.list();
+        render(view: "/container/index", model: [containers:lista])
     }
 
     def show(Long id) {

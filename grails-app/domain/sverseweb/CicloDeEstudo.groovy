@@ -13,5 +13,6 @@ class CicloDeEstudo {
         nome(nullable: false, blank: false,        maxSize: 100, unique:false)
         estado(nullable: false, blank: false,        maxSize: 100, unique:false)
         cor(nullable: false, blank: false,        maxSize: 100, unique:false)
+        pomodoro(nullable: true)
     }
 }

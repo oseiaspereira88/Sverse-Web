@@ -1,0 +1,82 @@
+.conteudo #bloco1, #bloco2, #bloco3{
+}
+.conteudo #bloco1{
+}
+.conteudo #bloco2{
+}
+.conteudo #bloco3{
+}
+
+.nota{
+    background-color: #6c6ade;
+    margin: 12px;
+    height: 174px;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    transition: margin-left 100ms, margin-right 100ms, background-color 300ms;
+}
+
+.nota:hover{
+    margin-right: 11px;
+    margin-left: 11px;
+    background-color: cadetblue;
+}
+
+.nota h6{
+    padding: 20px;
+    color: whitesmoke;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.mcontainer{
+    background-color: cadetblue;
+    margin: 12px;
+    height: 174px;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    transition: margin-left 100ms, margin-right 100ms, background-color 300ms;
+}
+
+.mcontainer:hover{
+    margin-right: 11px;
+    margin-left: 11px;
+    background-color: #6c6ade;
+}
+
+.mcontainer h6{
+    padding: 20px;
+    color: whitesmoke;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.mcontainer .tipoDoContainer{
+    padding: 20px;
+    color: whitesmoke;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.conteudo .badd{
+    margin-top: 64vh;
+    margin-left: 54vw;
+    position: fixed;
+    float-displace: auto;
+}
+
+
+
+
+
+
