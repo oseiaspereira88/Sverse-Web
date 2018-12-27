@@ -46,6 +46,12 @@
                             <fieldset class="buttons">
                                 <input class="save" type="submit"
                                        value="${message(code: 'default.button.update.label', default: 'Update')}"/>
+                                <input class="delete" type="submit" value="${message(code: 'default.button.delete.label', default: 'Delete')}"
+                                       onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');"/>
+                            </fieldset>
+                        </g:form>
+                        <g:form resource="${this.nota}" method="DELETE">
+                            <fieldset class="buttons">
                                 <input class="delete" type="submit"
                                        value="${message(code: 'default.button.delete.label', default: 'Delete')}"
                                        onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');"/>

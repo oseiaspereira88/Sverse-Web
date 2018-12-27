@@ -14,6 +14,11 @@ class EnvioController {
         respond envioService.list(params), model:[envioCount: envioService.count()]
     }
 
+    def compartilhamento(Integer max) {
+        params.max = Math.min(max ?: 10, 100)
+        respond envioService.list(params), model:[envioCount: envioService.count()]
+    }
+
     def show(Long id) {
         respond envioService.get(id)
     }

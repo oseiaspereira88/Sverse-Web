@@ -94,10 +94,10 @@ function navegar(pag) {
             window.location.href = "/trabalhoEmGrupo";
             break;
         case "linha-do-tempo":
-            window.location.href = "/";
+            window.location.href = "/perfil/timeline";
             break;
         case "amigos":
-            window.location.href = "/";
+            window.location.href = "/usuario/listarAmigos";
             break;
         case "calendario":
             window.location.href = "/";
@@ -106,7 +106,7 @@ function navegar(pag) {
             window.location.href = "/";
             break;
         case "compartilhamentos":
-            window.location.href = "/";
+            window.location.href = "/envio/compartilhamento";
             break;
         case "lixeira":
             window.location.href = "/lixeira";

@@ -9,11 +9,11 @@
         <li id="perfil" class="nav-item btn" onclick="navegar('perfil')">
             <h5 href="#">Perfil</h5>
         </li>
-        <li class="nav-item btn" onclick="navegar('ciclos-de-estudo')">
+        <li class="nav-item btn" onclick="navegar('linha-do-tempo')">
             <h5 href="#">Linha do Tempo</h5>
         </li>
-        <li class="nav-item btn" onclick="navegar('ciclos-de-estudo')">
-            <h5 href="#">Amgigos</h5>
+        <li class="nav-item btn" onclick="navegar('amigos')">
+            <h5 href="#">Amigos</h5>
         </li>
         <li class="nav-item btn" onclick="navegar('ciclos-de-estudo')">
             <h5 href="#">Calendário Academico</h5>
@@ -21,7 +21,7 @@
         <li class="nav-item btn" onclick="navegar('participacoes')">
             <h5 href="#">Participações</h5>
         </li>
-        <li class="nav-item btn" onclick="navegarPara('compartilhamentos')">
+        <li class="nav-item btn" onclick="navegar('compartilhamentos')">
             <h5 href="#">Compartilhamentos</h5>
         </li>
         <li id="lixeira" class="nav-item ultimali btn" onclick="navegar('lixeira')">

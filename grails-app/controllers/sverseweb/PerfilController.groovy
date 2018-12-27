@@ -14,6 +14,11 @@ class PerfilController {
         respond perfilService.list(params), model:[perfilCount: perfilService.count()]
     }
 
+    def timeline(Integer max) {
+        params.max = Math.min(max ?: 10, 100)
+        respond perfilService.list(params), model:[perfilCount: perfilService.count()]
+    }
+
     def show(Long id) {
         respond perfilService.get(id)
     }

@@ -20,7 +20,8 @@ class Usuario {
                       ciclosDeEstudo : CicloDeEstudo,
                       envios : Envio,
                       recibos : Envio,
-                      trabalhosEmGrupo : TrabalhoEmGrupo]
+                      trabalhosEmGrupo : TrabalhoEmGrupo,
+                      amigos : Usuario]
 
     static constraints = {
         nome(nullable: false, blank: false, size: 6..24, maxSize: 100, unique:false)

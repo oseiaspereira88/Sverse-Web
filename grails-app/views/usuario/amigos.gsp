@@ -2,48 +2,35 @@
 <html>
     <head>
         <meta name="layout" content="layout-secundario" />
-        <g:set var="entityName" value="${message(code: 'lixeira.label', default: 'Lixeira')}" />
+        <g:set var="entityName" value="${message(code: 'container.label', default: 'Container')}" />
         <title><g:message code="default.list.label" args="[entityName]" /></title>
 
         <link href=${resource(dir: 'css', file: 'sidebar.css')} rel="stylesheet">
         <link href=${resource(dir: 'css', file: 'pagina-modelo.css')} rel="stylesheet">
-        <link href=${resource(dir: 'css', file: 'create-nota.css')} rel="stylesheet">
-
+        <link href=${resource(dir: 'css', file: 'itens-in-grid.css')} rel="stylesheet">
     </head>
     <body>
-
     <div class="container">
         <div class="columns">
             <div class="col-3" style="border-style: solid; border: 1px">
                 <g:render template="../templates/_sidebar"/>
             </div>
-            <div class="col-9" style="border-style: solid; border: 1px">
 
+            <div class="col-9">
                 <div class="mdiv">
                     <div class="modeloheader">
-                        <h6>Lixeira</h6>
+                        <h6>Containers de Estudo</h6>
                     </div>
 
                     <div class="conteudo">
-
-                        <div id="list-lixeira" class="content scaffold-list" role="main">
-                            <g:if test="${flash.message}">
-                                <div class="message" role="status">${flash.message}</div>
-                            </g:if>
-                            <f:table collection="${lixeiraList}" />
-
-                            <div class="pagination">
-                                <g:paginate total="${lixeiraCount ?: 0}" />
-                            </div>
-                        </div>
-
-
+                        <button class="btn btn-action s-circle badd" onclick="window.location.href = '/usuario/create'">
+                            <i class="icon icon-plus" style="margin-top: 2px"></i>
+                        </button>
+                        <g:render template="amigos" model="usuarios:usuarios"></g:render>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
     </body>
 </html>
