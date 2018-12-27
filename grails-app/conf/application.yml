@@ -110,26 +110,23 @@ environments:
             url: jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
     production:
         dataSource:
-            dbCreate: create
-                        driverClassName: com.mysql.jdbc.Driver
-                        username: zkkbeytxveukykx0
-                        password: k3v1bh946s688zjf
-                        url: jdbc:mysql://nj5rh9gto1v5n05t.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/v5tbxcp87ey4lj07
-                        properties:
-                            jmxEnabled: true
-                            initialSize: 5
-                            maxActive: 50
-                            minIdle: 5
-                            maxIdle: 25
-                            maxWait: 10000
-                            maxAge: 600000
-                            timeBetweenEvictionRunsMillis: 5000
-                            minEvictableIdleTimeMillis: 60000
-                            validationQuery: SELECT 1
-                            validationQueryTimeout: 3
-                            validationInterval: 15000
-                            testOnBorrow: true
-                            testWhileIdle: true
-                            testOnReturn: false
-                            jdbcInterceptors: ConnectionState
-                            defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
+                    dbCreate: none
+                    url: jdbc:h2:./prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+                    properties:
+                        jmxEnabled: true
+                        initialSize: 5
+                        maxActive: 50
+                        minIdle: 5
+                        maxIdle: 25
+                        maxWait: 10000
+                        maxAge: 600000
+                        timeBetweenEvictionRunsMillis: 5000
+                        minEvictableIdleTimeMillis: 60000
+                        validationQuery: SELECT 1
+                        validationQueryTimeout: 3
+                        validationInterval: 15000
+                        testOnBorrow: true
+                        testWhileIdle: true
+                        testOnReturn: false
+                        jdbcInterceptors: ConnectionState
+                        defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
