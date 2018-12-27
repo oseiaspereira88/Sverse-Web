@@ -98,7 +98,6 @@ dataSource:
 environments:
     development:
         dataSource:
-            dataSource:
                 driverClassName: org.h2.Driver
                 username: sa
                 password: ''
