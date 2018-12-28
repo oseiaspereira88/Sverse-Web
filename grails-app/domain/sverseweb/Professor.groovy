@@ -1,6 +1,6 @@
 package sverseweb
 
-class Professor extends Usuario{
+class Professor extends MyUsuario{
 
     static constraints = {
 

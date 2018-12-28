@@ -16,5 +16,5 @@ class TrabalhoEmGrupo {
     }
 
     static hasMany = [etapas : Etapa,
-                      participantes : Usuario]
+                      participantes : MyUsuario]
 }

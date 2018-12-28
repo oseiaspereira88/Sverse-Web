@@ -1,7 +1,5 @@
 package sverseweb
 
-import sun.misc.Perf
-
 class Perfil {
     String imgPerfil
     String email
@@ -11,8 +9,8 @@ class Perfil {
     String biografia
     Integer nFollowing
     Integer nFollowers
-    Usuario usuario
 
+    static belongsTo = [MyUsuario]
     static constraints = {
         imgPerfil(nullable: false, blank: false, maxSize: 100, unique:true)
         email(nullable: false, blank: false, email: true, maxSize: 100, unique:true)

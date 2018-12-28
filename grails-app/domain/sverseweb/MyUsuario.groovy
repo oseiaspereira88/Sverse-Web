@@ -1,6 +1,6 @@
 package sverseweb
 
-class Usuario {
+class MyUsuario {
 
     String nome
     String login
@@ -21,7 +21,7 @@ class Usuario {
                       envios : Envio,
                       recibos : Envio,
                       trabalhosEmGrupo : TrabalhoEmGrupo,
-                      amigos : Usuario]
+                      amigos : MyUsuario]
 
     static constraints = {
         nome(nullable: false, blank: false, size: 6..24, maxSize: 100, unique:false)

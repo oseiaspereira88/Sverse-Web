@@ -5,61 +5,61 @@ window.onload = function () {
 
 function ativarMarcacao() {
     switch (window.location.href) {
-        case "https://sverse-web.herokuapp.com/":
+        case "/**/":
             $('.active').removeClass('active');
             $('#mural-academico').addClass('active');
             break;
-        case "https://sverse-web.herokuapp.com/container":
-        case "https://sverse-web.herokuapp.com/container/":
-        case "https://sverse-web.herokuapp.com/container/index":
+        case "/**/container":
+        case "/**/container/":
+        case "/**/container/index":
             $('.active').removeClass('active');
             $('#containers-de-estudo').addClass('active');
             break;
-        case "https://sverse-web.herokuapp.com/nota":
-        case "https://sverse-web.herokuapp.com/nota/":
-        case "https://sverse-web.herokuapp.com/nota/index":
+        case "/**/nota":
+        case "/**/nota/":
+        case "/**/nota/index":
             $('.active').removeClass('active');
             $('#bloco-de-notas').addClass('active');
             break;
-        case "https://sverse-web.herokuapp.com/paginador/ajuda":
-        case "https://sverse-web.herokuapp.com/paginador/ajuda/":
-        case "https://sverse-web.herokuapp.com/paginador/ajuda/index":
+        case "/**/paginador/ajuda":
+        case "/**/paginador/ajuda/":
+        case "/**/paginador/ajuda/index":
             $('.active').removeClass('active');
             $('#ajuda').addClass('active');
             break;
-        case "https://sverse-web.herokuapp.com/paginador/perfil":
-        case "https://sverse-web.herokuapp.com/paginador/perfil/":
-        case "https://sverse-web.herokuapp.com/paginador/perfil/index":
+        case "/**/paginador/perfil":
+        case "/**/paginador/perfil/":
+        case "/**/paginador/perfil/index":
             $('.active').removeClass('active');
             $('#perfil').addClass('active');
             break;
-        case "https://sverse-web.herokuapp.com/paginador/config":
-        case "https://sverse-web.herokuapp.com/paginador/config/":
-        case "https://sverse-web.herokuapp.com/paginador/config/index":
+        case "/**/paginador/config":
+        case "/**/paginador/config/":
+        case "/**/paginador/config/index":
             $('.active').removeClass('active');
             $('#config').addClass('active');
             break;
-        case "https://sverse-web.herokuapp.com/cicloDeEstudo":
-        case "https://sverse-web.herokuapp.com/cicloDeEstudo/":
-        case "https://sverse-web.herokuapp.com/cicloDeEstudo/index":
+        case "/**/cicloDeEstudo":
+        case "/**/cicloDeEstudo/":
+        case "/**/cicloDeEstudo/index":
             $('.active').removeClass('active');
             $('#cicloDeEstudo').addClass('active');
             break;
-        case "https://sverse-web.herokuapp.com/trabalhoEmGrupo":
-        case "https://sverse-web.herokuapp.com/trabalhoEmGrupo/":
-        case "https://sverse-web.herokuapp.com/trabalhoEmGrupo/index":
+        case "/**/trabalhoEmGrupo":
+        case "/**/trabalhoEmGrupo/":
+        case "/**/trabalhoEmGrupo/index":
             $('.active').removeClass('active');
             $('#trabalhoEmGrupo').addClass('active');
             break;
-        case "https://sverse-web.herokuapp.com/perfil":
-        case "https://sverse-web.herokuapp.com/perfil/":
-        case "https://sverse-web.herokuapp.com/perfil/index":
+        case "/**/perfil":
+        case "/**/perfil/":
+        case "/**/perfil/index":
             $('.active').removeClass('active');
             $('#perfil').addClass('active');
             break;
-        case "https://sverse-web.herokuapp.com/lixeira":
-        case "https://sverse-web.herokuapp.com/lixeira/":
-        case "https://sverse-web.herokuapp.com/lixeira/index":
+        case "/**/lixeira":
+        case "/**/lixeira/":
+        case "/**/lixeira/index":
             $('.active').removeClass('active');
             $('#lixeira').addClass('active');
             break;

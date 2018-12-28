@@ -5,7 +5,7 @@ class CicloDeEstudo {
     String estado
     String cor
 
-    static belongsTo = [usuario: Usuario]
+    static belongsTo = [usuario: MyUsuario]
     static hasOne = [pomodoro : Pomodoro]
     static hasMany = [estudo:Estudo]
 

@@ -33,6 +33,6 @@
     <asset:javascript src="jquery-1.9.1.min.js"/>
     <asset:javascript src="jquery-ui-1.10.1.custom.min.js"/>
     <asset:javascript src="jquery.dataTables.js"/>
-    <asset:javascript src="navegador-header.js"/>
+    <asset:javascript src="navegador.js"/>
 </body>
 </html>

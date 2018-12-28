@@ -1,7 +1,6 @@
 package sverseweb
 
 import grails.validation.ValidationException
-import static org.springframework.http.HttpStatus.*
 
 class UsuarioController {
 
@@ -26,10 +25,10 @@ class UsuarioController {
     }
 
     def create() {
-        respond new Usuario(params)
+        respond new MyUsuario(params)
     }
 
-    def save(Usuario usuario) {
+    def save(MyUsuario usuario) {
         if (usuario == null) {
             notFound()
             return
@@ -44,7 +43,7 @@ class UsuarioController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'usuario.label', default: 'Usuario'), usuario.id])
+                flash.message = message(code: 'default.created.message', args: [message(code: 'usuario.label', default: 'MyUsuario'), usuario.id])
                 redirect usuario
             }
             '*' { respond usuario, [status: CREATED] }
@@ -55,7 +54,7 @@ class UsuarioController {
         respond usuarioService.get(id)
     }
 
-    def update(Usuario usuario) {
+    def update(MyUsuario usuario) {
         if (usuario == null) {
             notFound()
             return
@@ -70,7 +69,7 @@ class UsuarioController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'usuario.label', default: 'Usuario'), usuario.id])
+                flash.message = message(code: 'default.updated.message', args: [message(code: 'usuario.label', default: 'MyUsuario'), usuario.id])
                 redirect usuario
             }
             '*'{ respond usuario, [status: OK] }
@@ -91,7 +90,7 @@ class UsuarioController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'usuario.label', default: 'Usuario'), id])
+                flash.message = message(code: 'default.deleted.message', args: [message(code: 'usuario.label', default: 'MyUsuario'), id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
@@ -101,7 +100,7 @@ class UsuarioController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'usuario.label', default: 'Usuario'), params.id])
+                flash.message = message(code: 'default.not.found.message', args: [message(code: 'usuario.label', default: 'MyUsuario'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }

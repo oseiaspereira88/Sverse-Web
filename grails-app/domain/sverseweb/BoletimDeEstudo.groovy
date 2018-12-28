@@ -3,6 +3,6 @@ package sverseweb
 class BoletimDeEstudo {
     Integer desempenho
 
-    static belongsTo = [usuario : Usuario]
+    static belongsTo = [usuario : MyUsuario]
     static hasOne = [topico : TopicoDeEstudo]
 }

@@ -2,17 +2,17 @@ package sverseweb
 
 import grails.gorm.services.Service
 
-@Service(Usuario)
+@Service(MyUsuario)
 interface UsuarioService {
 
-    Usuario get(Serializable id)
+    MyUsuario get(Serializable id)
 
-    List<Usuario> list(Map args)
+    List<MyUsuario> list(Map args)
 
     Long count()
 
     void delete(Serializable id)
 
-    Usuario save(Usuario usuario)
+    MyUsuario save(MyUsuario usuario)
 
 }

@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta name="layout" content="layout-secundario" />
-        <g:set var="entityName" value="${message(code: 'usuario.label', default: 'Usuario')}" />
+        <g:set var="entityName" value="${message(code: 'usuario.label', default: 'MyUsuario')}" />
         <title><g:message code="default.show.label" args="[entityName]" /></title>
 
         <link href=${resource(dir: 'css', file: 'sidebar.css')} rel="stylesheet">

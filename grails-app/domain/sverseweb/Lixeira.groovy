@@ -1,7 +1,7 @@
 package sverseweb
 
 class Lixeira {
-    Usuario usuario;
+    static belongsTo = [MyUsuario]
     static hasMany = [itensLixeira : ItemLixeira]
 
     static constraints = {
