@@ -22,7 +22,7 @@
 <ul class="header" style="z-index:1">
   <li class="appTitle"><a id="Titulo" href="${createLink(uri: '/')}" class="appTitle">Sverse Web</a></li>
   <li><a id="mural-academico" onclick="navegar('mural-academico')" href="#}">Mural Acadêmico</a></li>
-  <li><a id="containers-de-estudo" onclick="navegar('containers-de-estudo')" href="#">Containers de Estudo</a></li>
+  <li><a href="${createLink(uri: '/container')}">Containers de Estudo</a></li>
   <li><a id="bloco-de-notas" onclick="navegar('bloco-de-notas')" href="#">Bloco de Notas</a></li>
   <li style="float:right"><a id="ajuda" onclick="navegar('ajuda')" href="#}">Ajuda</a></li>
 </ul>

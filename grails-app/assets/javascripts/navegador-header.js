@@ -1,5 +1,4 @@
-
-window.onload = function(){
+window.onload = function () {
     ativarMarcacao();
     $('.conteudo').animate({height: 'toggle'});
 }
@@ -73,10 +72,10 @@ function navegar(pag) {
             window.location.href = "/";
             break;
         case "containers-de-estudo":
-            window.location.href = "/container";
+            window.location.href = "/container/index";
             break;
         case "bloco-de-notas":
-            window.location.href = "/nota";
+            window.location.href = "/nota/index";
             break;
         case "ajuda":
             window.location.href = "/paginador/ajuda";
@@ -88,10 +87,10 @@ function navegar(pag) {
             window.location.href = "/paginador/config";
             break;
         case "ciclos-de-estudo":
-            window.location.href = "/cicloDeEstudo";
+            window.location.href = "/cicloDeEstudo/index";
             break;
         case "grupos-de-trabalho":
-            window.location.href = "/trabalhoEmGrupo";
+            window.location.href = "/trabalhoEmGrupo/index";
             break;
         case "linha-do-tempo":
             window.location.href = "/perfil/timeline";
@@ -109,7 +108,7 @@ function navegar(pag) {
             window.location.href = "/envio/compartilhamento";
             break;
         case "lixeira":
-            window.location.href = "/lixeira";
+            window.location.href = "/lixeira/index";
             break;
     }
 }
