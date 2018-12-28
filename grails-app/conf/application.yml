@@ -109,8 +109,11 @@ environments:
             url: jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
     production:
         dataSource:
+                    driverClassName: org.postgresql.Driver
+                    username: wgocifpwyhkhrb
+                    password: 'ab3b849dfb1506792652ea1ccb9cfc4142d02140343036fd046f33b9294b1fc1'
                     dbCreate: update
-                    url: jdbc:h2:./prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+                    url: postgres://wgocifpwyhkhrb:ab3b849dfb1506792652ea1ccb9cfc4142d02140343036fd046f33b9294b1fc1@ec2-174-129-25-182.compute-1.amazonaws.com:5432/d7i2h06v4dbnak
                     properties:
                         jmxEnabled: true
                         initialSize: 5

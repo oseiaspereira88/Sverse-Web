@@ -5,61 +5,61 @@ window.onload = function () {
 
 function ativarMarcacao() {
     switch (window.location.href) {
-        case "http://localhost:8080/":
+        case "https://sverse-web.herokuapp.com/":
             $('.active').removeClass('active');
             $('#mural-academico').addClass('active');
             break;
-        case "http://localhost:8080/container":
-        case "http://localhost:8080/container/":
-        case "http://localhost:8080/container/index":
+        case "https://sverse-web.herokuapp.com/container":
+        case "https://sverse-web.herokuapp.com/container/":
+        case "https://sverse-web.herokuapp.com/container/index":
             $('.active').removeClass('active');
             $('#containers-de-estudo').addClass('active');
             break;
-        case "http://localhost:8080/nota":
-        case "http://localhost:8080/nota/":
-        case "http://localhost:8080/nota/index":
+        case "https://sverse-web.herokuapp.com/nota":
+        case "https://sverse-web.herokuapp.com/nota/":
+        case "https://sverse-web.herokuapp.com/nota/index":
             $('.active').removeClass('active');
             $('#bloco-de-notas').addClass('active');
             break;
-        case "http://localhost:8080/paginador/ajuda":
-        case "http://localhost:8080/paginador/ajuda/":
-        case "http://localhost:8080/paginador/ajuda/index":
+        case "https://sverse-web.herokuapp.com/paginador/ajuda":
+        case "https://sverse-web.herokuapp.com/paginador/ajuda/":
+        case "https://sverse-web.herokuapp.com/paginador/ajuda/index":
             $('.active').removeClass('active');
             $('#ajuda').addClass('active');
             break;
-        case "http://localhost:8080/paginador/perfil":
-        case "http://localhost:8080/paginador/perfil/":
-        case "http://localhost:8080/paginador/perfil/index":
+        case "https://sverse-web.herokuapp.com/paginador/perfil":
+        case "https://sverse-web.herokuapp.com/paginador/perfil/":
+        case "https://sverse-web.herokuapp.com/paginador/perfil/index":
             $('.active').removeClass('active');
             $('#perfil').addClass('active');
             break;
-        case "http://localhost:8080/paginador/config":
-        case "http://localhost:8080/paginador/config/":
-        case "http://localhost:8080/paginador/config/index":
+        case "https://sverse-web.herokuapp.com/paginador/config":
+        case "https://sverse-web.herokuapp.com/paginador/config/":
+        case "https://sverse-web.herokuapp.com/paginador/config/index":
             $('.active').removeClass('active');
             $('#config').addClass('active');
             break;
-        case "http://localhost:8080/cicloDeEstudo":
-        case "http://localhost:8080/cicloDeEstudo/":
-        case "http://localhost:8080/cicloDeEstudo/index":
+        case "https://sverse-web.herokuapp.com/cicloDeEstudo":
+        case "https://sverse-web.herokuapp.com/cicloDeEstudo/":
+        case "https://sverse-web.herokuapp.com/cicloDeEstudo/index":
             $('.active').removeClass('active');
             $('#cicloDeEstudo').addClass('active');
             break;
-        case "http://localhost:8080/trabalhoEmGrupo":
-        case "http://localhost:8080/trabalhoEmGrupo/":
-        case "http://localhost:8080/trabalhoEmGrupo/index":
+        case "https://sverse-web.herokuapp.com/trabalhoEmGrupo":
+        case "https://sverse-web.herokuapp.com/trabalhoEmGrupo/":
+        case "https://sverse-web.herokuapp.com/trabalhoEmGrupo/index":
             $('.active').removeClass('active');
             $('#trabalhoEmGrupo').addClass('active');
             break;
-        case "http://localhost:8080/perfil":
-        case "http://localhost:8080/perfil/":
-        case "http://localhost:8080/perfil/index":
+        case "https://sverse-web.herokuapp.com/perfil":
+        case "https://sverse-web.herokuapp.com/perfil/":
+        case "https://sverse-web.herokuapp.com/perfil/index":
             $('.active').removeClass('active');
             $('#perfil').addClass('active');
             break;
-        case "http://localhost:8080/lixeira":
-        case "http://localhost:8080/lixeira/":
-        case "http://localhost:8080/lixeira/index":
+        case "https://sverse-web.herokuapp.com/lixeira":
+        case "https://sverse-web.herokuapp.com/lixeira/":
+        case "https://sverse-web.herokuapp.com/lixeira/index":
             $('.active').removeClass('active');
             $('#lixeira').addClass('active');
             break;
