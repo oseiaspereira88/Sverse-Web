@@ -17,12 +17,10 @@ class PaginadorController {
     }
 
     def configs() {
-        params.max = Math.min(max ?: 10, 100)
-        respond paginadorService.list(params), model:[paginadorCount: paginadorService.count()]
+
     }
 
     def ajuda() {
-        params.max = Math.min(max ?: 10, 100)
-        respond paginadorService.list(params), model:[paginadorCount: paginadorService.count()]
+
     }
 }
