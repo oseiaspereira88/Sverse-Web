@@ -26,7 +26,7 @@
                             <button class="btn btn-action s-circle badd" onclick="window.location.href = '/trabalhoEmGrupo/create'">
                                 <i class="icon icon-plus" style="margin-top: 2px"></i>
                             </button>
-                            <g:render template="trabalhoemgrupo" model="trabalhos:trabalhos"></g:render>
+                            <g:render template="trabalhos" model="trabalhos:trabalhos"></g:render>
                         </div>
                     </div>
                 </div>

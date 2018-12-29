@@ -39,14 +39,14 @@
 
                     <div class="mdiv">
                         <div class="modeloheader">
-                            <h6>Aqui estão todos os seus trabalhos.</h6>
+                            <h6>Aqui estão todas as etapas</h6>
                         </div>
 
                         <div class="conteudo">
-                            <button class="btn btn-action s-circle badd" onclick="window.location.href = '/trabalhoEmGrupo/create'">
+                            <button class="btn btn-action s-circle badd" onclick="window.location.href = '/etapa/create'">
                                 <i class="icon icon-plus" style="margin-top: 2px"></i>
                             </button>
-                            <g:render template="area" model="trabalhos:trabalhos"></g:render>
+                            <g:render template="area" model="trabalho:trabalho"></g:render>
                         </div>
                     </div>
                 </div>

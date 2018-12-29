@@ -14,9 +14,13 @@ class TrabalhoEmGrupoController {
         render(view: "/trabalhoEmGrupo/index", model: [trabalhos:lista])
     }
 
-    def area(Integer max) {
-        def lista = trabalhoEmGrupoService.list();
-        render(view: "/trabalhoEmGrupo/area", model: [trabalhos:lista])
+    def area(int trabalhoId) {
+        def lista = trabalhoEmGrupoService.list()
+        if(lista){
+            def trabalho = lista.get(trabalhoId)
+            render(view: "/trabalhoEmGrupo/area", model: [trabalho:trabalho])
+        }
+
     }
 
     def show(Long id) {

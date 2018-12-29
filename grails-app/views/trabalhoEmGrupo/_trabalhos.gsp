@@ -5,7 +5,7 @@
                 <g:if test="${trabalhos.size() > 0}">
                     <g:each status="i" var="trabalho" in="${trabalhos}">
                         <g:if test="${(i % 3) == 0}">
-                            <div class="nota" onclick="window.location.href = '/trabalhoEmGrupo/edit/${trabalho.id}'">
+                            <div class="nota" onclick="window.location.href = '/trabalhoEmGrupo/area/${trabalho.id}'">
                                 <h6>${trabalho.nome}</h6>
                             </div>
                         </g:if>
@@ -17,7 +17,7 @@
                 <g:if test="${trabalhos.size() > 1}">
                     <g:each status="i" var="trabalho" in="${trabalhos}">
                         <g:if test="${((i + 2) % 3) == 0}">
-                            <div class="nota" onclick="window.location.href = '/trabalhoEmGrupo/edit/${trabalho.id}'">
+                            <div class="nota" onclick="window.location.href = '/trabalhoEmGrupo/area/${trabalho.id}'">
                                 <h6>${trabalho.nome}</h6>
                             </div>
                         </g:if>
@@ -29,7 +29,7 @@
                 <g:if test="${trabalhos.size() > 2}">
                     <g:each status="i" var="trabalho" in="${trabalhos}">
                         <g:if test="${((i + 1) % 3) == 0}">
-                            <div class="nota" onclick="window.location.href = '/trabalhoEmGrupo/edit/${trabalho.id}'">
+                            <div class="nota" onclick="window.location.href = '/trabalhoEmGrupo/area/${trabalho.id}'">
                                 <h6>${trabalho.nome}</h6>
                             </div>
                         </g:if>
