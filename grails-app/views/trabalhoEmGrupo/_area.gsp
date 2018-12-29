@@ -2,7 +2,7 @@
     <g:if test="${trabalho.etapas.size() > 0}">
         <div class="columns">
             <div id="bloco1" class="column col-4" style="padding: 0;">
-                <div class="modeloheader" style="margin-left: 16px; margin-right: 16px; margin-bottom: 0;">
+                <div class="modeloheader" style="background-color: #309570; margin-left: 16px; margin-right: 16px; margin-bottom: 0;">
                     <h6>Todas as etapas</h6>
                 </div>
 
@@ -23,7 +23,7 @@
             </div>
 
             <div id="bloco2" class="column col-4" style="padding: 0;">
-                <div class="modeloheader" style="margin-left: 16px; margin-right: 16px; margin-bottom: 0;">
+                <div class="modeloheader" style="background-color: #309570; margin-left: 16px; margin-right: 16px; margin-bottom: 0;">
                     <h6>Etapas em Andamento</h6>
                 </div>
 
@@ -46,7 +46,7 @@
             </div>
 
             <div id="bloco3" class="column col-4" style="padding: 0;">
-                <div class="modeloheader" style="margin-left: 16px; margin-right: 16px; margin-bottom: 0;">
+                <div class="modeloheader" style="background-color: #309570; margin-left: 16px; margin-right: 16px; margin-bottom: 0;">
                     <h6>Etapas Concluidas</h6>
                 </div>
 

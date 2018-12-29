@@ -39,7 +39,7 @@
 
                     <div class="mdiv">
                         <div class="modeloheader">
-                            <h6>Aqui estão todas as etapas</h6>
+                            <h6>Manipule suas etapas</h6>
                         </div>
 
                         <div class="conteudo">
