@@ -11,8 +11,6 @@
                     <ul id="sortable1" style="margin-top: 0;">
                         <g:each in="${trabalho.etapas}" var="etapa" status="i">
                             <li class="ui-state-default label" style="text-align: center; width: 232px;">
-                                <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
-
                                 <div class="btn-link" style="border-style: none; padding: 4px" onclick="window.location.href = '/etapa/edit/${etapa.id}'">
                                     ${etapa.titulo}
                                 </div>
@@ -33,8 +31,6 @@
                         <g:each in="${trabalho.etapas}" var="etapa" status="i">
                             <g:if test="${etapa.estado == 'Em andamento'}">
                                 <li class="ui-state-default label" style="text-align: center; width: 232px;">
-                                    <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
-
                                     <div class="btn-link" style="border-style: none; padding: 4px" onclick="window.location.href = '/etapa/edit/${etapa.id}'">
                                         ${etapa.titulo}
                                     </div>
@@ -56,8 +52,6 @@
                         <g:each in="${trabalho.etapas}" var="etapa" status="i">
                             <g:if test="${etapa.estado == 'Concluida'}">
                                 <li class="ui-state-default label" style="text-align: center; width: 232px;">
-                                    <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
-
                                     <div class="btn-link" style="border-style: none; padding: 4px" onclick="window.location.href = '/etapa/edit/${etapa.id}'">
                                         ${etapa.titulo}
                                     </div>
