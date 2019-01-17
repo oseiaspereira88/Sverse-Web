@@ -1,5 +1,7 @@
 package sverseweb
 
+import seguranca.Usuario
+
 class TrabalhoEmGrupo {
     String nome
     String descricao
@@ -16,5 +18,5 @@ class TrabalhoEmGrupo {
     }
 
     static hasMany = [etapas : Etapa,
-                      participantes : MyUsuario]
+                      participantes : Usuario]
 }

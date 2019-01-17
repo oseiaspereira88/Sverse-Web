@@ -17,7 +17,7 @@
             </div>
 
             <div class="col-9">
-                <div class="mdiv">
+                <div class="mdiv" style="background-color: rgba(0, 0, 0, 0.4);">
                     <div class="modeloheader">
                         <h6>Containers de Estudo</h6>
                     </div>

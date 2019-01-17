@@ -12,13 +12,12 @@ grails.plugin.springsecurity.failureHandler.defaultFailureUrl = '/isolamento/err
 grails.plugin.springsecurity.successHandler.alwaysUseDefault = false
 grails.plugin.springsecurity.dao.hideUserNotFoundExceptions = false
 grails.plugin.springsecurity.adh.errorPage="/j_spring_security_logout"
-grails.plugin.springsecurity.password.algorithm = 'SHA-256'
 
 grails.plugin.springsecurity.securityConfigType = "InterceptUrlMap"
 
 grails.plugin.springsecurity.interceptUrlMap = [
         [pattern: '/isolamento/**/', access: ['IS_AUTHENTICATED_ANONYMOUSLY']],
-        [pattern: '/**', access: ['ROLE_ADMIN']]
+		[pattern: '/**', access: ['ROLE_ADMIN']]
 ]
 
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [

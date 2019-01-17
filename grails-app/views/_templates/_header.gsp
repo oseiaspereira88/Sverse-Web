@@ -8,7 +8,6 @@
                 <asset:image class="avatar avatar-lg" alt="Oséias Pereira" src="perfil_sverse.png"/>
                 Oséias Pereira
             </a>
-
             <!-- menu component -->
             <ul class="menu">
                 <li class="menu-item">

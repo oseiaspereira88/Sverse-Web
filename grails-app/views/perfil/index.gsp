@@ -16,7 +16,7 @@
                 </div>
                 <div class="col-9" style="border-style: solid; border: 1px">
 
-                    <div class="mdiv">
+                    <div class="mdiv" style="background-color: rgba(0, 0, 0, 0.4);">
                         <div class="modeloheader">
                             <h6>Seu Perfil</h6>
                         </div>

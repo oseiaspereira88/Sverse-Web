@@ -1,11 +1,13 @@
 package sverseweb
 
+import seguranca.Usuario
+
 class CicloDeEstudo {
     String nome
     String estado
     String cor
 
-    static belongsTo = [usuario: MyUsuario]
+    static belongsTo = [usuario: Usuario]
     static hasOne = [pomodoro : Pomodoro]
     static hasMany = [estudo:Estudo]
 

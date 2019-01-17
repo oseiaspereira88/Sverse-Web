@@ -1,5 +1,7 @@
 package sverseweb
 
+import seguranca.Usuario
+
 class Perfil {
     String imgPerfil
     String email
@@ -10,7 +12,7 @@ class Perfil {
     Integer nFollowing
     Integer nFollowers
 
-    static belongsTo = [MyUsuario]
+    static belongsTo = Usuario
     static constraints = {
         imgPerfil(nullable: false, blank: false, maxSize: 100, unique:true)
         email(nullable: false, blank: false, email: true, maxSize: 100, unique:true)
@@ -20,6 +22,5 @@ class Perfil {
         biografia(nullable: false, blank: false, maxSize: 100, unique:false)
         nFollowing(nullable: false, blank: false, maxSize: 100, unique:false)
         nFollowers(nullable: false, blank: false, maxSize: 100, unique:false)
-        usuario(nullable: true, blank: true, maxSize: 100, unique:true)
     }
 }

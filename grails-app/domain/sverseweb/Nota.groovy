@@ -1,5 +1,7 @@
 package sverseweb
 
+import seguranca.Usuario
+
 class Nota{
     String titulo
     String texto
@@ -9,7 +11,7 @@ class Nota{
     Date dataCriacao
     Date dataAtualizacao
 
-    static belongsTo = [usuario : MyUsuario]
+    static belongsTo = [usuario : Usuario]
 
     static constraints = {
         titulo(nullable: true, blank: true, maxSize: 100, unique:false)

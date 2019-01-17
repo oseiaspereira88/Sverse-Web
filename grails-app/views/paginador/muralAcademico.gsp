@@ -18,14 +18,14 @@
     </div>
 
     <div class="col-9">
-        <div class="mdiv">
+        <div class="mdiv" style="background-color: rgba(0, 0, 0, 0.4);">
             <div class="modeloheader">
                 <h6>Mural Academico</h6>
             </div>
 
             <div class="conteudo">
                 <div class="col-md-12 text-center">
-                    <h1>Cronômetro com Javascript</h1>
+                    <h1>Ciclo de Estudo</h1>
                 </div>
                 <div class="col-md-12 text-center center-block">
                     <div id="tempo" type="button" class="btn btn-warning tamanho text">00:00!</div>

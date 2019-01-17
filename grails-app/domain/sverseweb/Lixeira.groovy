@@ -1,7 +1,9 @@
 package sverseweb
 
+import seguranca.Usuario
+
 class Lixeira {
-    static belongsTo = [MyUsuario]
+    static belongsTo = [Usuario]
     static hasMany = [itensLixeira : ItemLixeira]
 
     static constraints = {

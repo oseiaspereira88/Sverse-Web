@@ -1,5 +1,7 @@
 package sverseweb
 
+import seguranca.Usuario
+
 class Container {
     String nome
     String descricao
@@ -14,8 +16,8 @@ class Container {
 
     static hasMany = [temasDeEstudo : TemaDeEstudo,
                       objetivos : Objetivo,
-                      participantes : MyUsuario,
-                      admins : MyUsuario]
+                      participantes : Usuario,
+                      admins : Usuario]
 
 
 
