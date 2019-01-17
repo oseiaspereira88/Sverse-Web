@@ -9,8 +9,8 @@
     <link href=${resource(dir: 'css', file: 'sidebar.css')} rel="stylesheet">
     <link href=${resource(dir: 'css', file: 'pagina-modelo.css')} rel="stylesheet">
 
-
 </head>
+
 <body>
 <div class="columns">
     <div class="col-3" style="border-style: solid; border: 1px">
@@ -18,43 +18,44 @@
     </div>
 
     <div class="col-9">
-        <div class="mdiv" style="background-color: rgba(0, 0, 0, 0.4);">
-            <div class="modeloheader">
-                <h6>Mural Academico</h6>
-            </div>
-
+        <div class="modeloheader"
+             style="background-position: center center; background: white; margin-top: 40px; margin-left: 80px; margin-right: 220px;">
+            <h6 style="padding-left: 8px; text-align: left; font-size: 10pt; color: darkslategray;">Dica do Momento</h6>
+        </div>
+        <div class="col-md-9 text-center center-block"
+             style="border: white 2px; border-style: solid; height: 120px; margin-left: 80px; margin-right: 220px;
+             border-bottom-right-radius: 12px; border-bottom-left-radius: 12px;
+             padding-top: 12px; background: url(https://zllsnw.sn.files.1drv.com/y4ptRa5luc10AdCkSERcfgGybOjPS7mDAzajScJpPySj0JvLiiasqozJK-SS6mQARi_p8mAOYqeTBqhOj6N2JLf3ONdYMy8IfmesCocQuedFxRt2Ec_-wH6EmlP23if1lGA4oGvm5TQZNqTMYnOYHjXCbJvctbNfsivz7-PabmH9gIdON8H6B8iq-wOkiDyshO01xf242vh4_XpiRTvCYObUQ/bg5.jpg);
+             background-size: 100%; background-position: center center;">
+            <h6 style="text-shadow: lightgray 1px 1px 3px; padding-left: 490px; padding-right: 40px; font-size: 18pt; color: lavender">Use a ferramenta de estudo em ciclo.</h6>
+        </div>
+        <div class="mdiv" style="background-color: rgba(0, 0, 0, 0); margin-top: 20px; padding-right: 60px">
             <div class="conteudo">
-                <div class="col-md-12 text-center">
-                    <h1>Ciclo de Estudo</h1>
-                </div>
-                <div class="col-md-12 text-center center-block">
-                    <div id="tempo" type="button" class="btn btn-warning tamanho text">00:00!</div>
+                <div class="col-md-9 text-center center-block"
+                     style="border: white 2px; border-style: solid; margin-top: 20px;
+                     border-top-right-radius: 12px; border-top-left-radius: 12px; border-bottom-right-radius: 12px; border-bottom-left-radius: 12px;
+                     margin-right: 200px; margin-left: 200px; background: url(https://irp-cdn.multiscreensite.com/376e8bb8/dms3rep/multi/desktop/aron-visuals-322314-unsplash.jpg); background-size: 100%; background-position: center center;">
 
-                </div>
-                <div class="marginTop col-md-12 text-center center-block">
-                    <button id="btn" onclick="cronometro(1)" type="button" class="col-md-2 col-md-offset-5 btn btn-success">Iniciar</button>
-                </div>
-                <div class="marginTop col-md-12 text-center center-block">
-                    <button id="btnPause" onclick="parar()" type="button" class="hide col-md-2 col-md-offset-5 btn btn-danger">Pause</button>
-                </div>
-                <div class="marginTop col-md-12 text-center center-block">
-                    <button id="btnStop" onclick="stop()" type="button" class="hide col-md-2 col-md-offset-5 btn btn-primary">Stop</button>
-                </div>
-                <div class="marginTop col-md-12 text-center center-block">
-                    <div class="col-md-4 col-md-offset-4">
-                        <div class="input-group">
-                            <span class="input-group-addon">Min</span>
-                            <input id="minutos" type="number" min="0" max="59" class="form-control" placeholder="Minutos">
-                        </div>
-                        <div class="input-group">
-                            <span class="input-group-addon">Seg</span>
-                            <input id="segundos" type="number"  min="0" max="59" class="form-control" placeholder="Segundos">
-                            <input id="pause" type="hidden" value="0"  class="form-control">
-                        </div>
+                    <div class="modeloheader"
+                         style="background-position: center center; background: white;">
+                        <h6 style=" padding-left: 8px; text-align: left; font-size: 10pt; color: darkslategray;">Tarefa Atual</h6>
+                    </div>
+
+                    <asset:image style="border: white 2px; border-style: solid; height: 120px; width: 120px; margin-top: 20px"
+                                 class="avatar avatar-xl" src="perfil_sverse.png"></asset:image>
+                    <h6 style="font-size: 18pt; color: lavender">Organize seu Ciclo de Estudo</h6>
+
+                    <h6 id="tempo" style="font-size: 48pt; color: lavender">00:00</h6>
+
+                    <div class="marginTop col-md-12 text-center center-block" style="padding-bottom: 30px;">
+                        <button id="btn" onclick="cronometro(1)" type="button"
+                                class="col-md-2 col-md-offset-5 btn btn-success">Iniciar</button>
+                        <button id="btnPause" onclick="parar()" type="button"
+                                class="hide col-md-2 col-md-offset-5 btn btn-danger">Pause</button>
+                        <button id="btnStop" onclick="stop()" type="button"
+                                class="hide col-md-2 col-md-offset-5 btn btn-primary">Stop</button>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>
