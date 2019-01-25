@@ -29,6 +29,7 @@
     <g:layoutBody/>
 
     <g:render template="../templates/_rodape"/>
+
     <asset:javascript src="application.js"/>
     <asset:javascript src="jquery-1.9.1.min.js"/>
     <asset:javascript src="jquery-ui-1.10.1.custom.min.js"/>
