@@ -96,10 +96,10 @@ function navegar(pag) {
             window.location.href = "/perfil/timeline";
             break;
         case "amigos":
-            window.location.href = "/usuario/listarAmigos";
+            window.location.href = "/usuario/amigos";
             break;
         case "calendario":
-            window.location.href = "/";
+            window.location.href = "/usuario/calendarioAcademico";
             break;
         case "participacoes":
             window.location.href = "/";

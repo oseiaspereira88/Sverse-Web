@@ -12,7 +12,9 @@
     </head>
     <body>
 
+
     <div class="container">
+
         <div class="columns">
             <div class="col-3" style="border-style: solid; border: 1px">
                 <g:render template="../templates/_sidebar"/>
