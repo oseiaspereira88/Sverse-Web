@@ -10,8 +10,17 @@ class TrabalhoEmGrupoController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond trabalhoEmGrupoService.list(params), model:[trabalhoEmGrupoCount: trabalhoEmGrupoService.count()]
+        def lista = trabalhoEmGrupoService.list();
+        render(view: "/trabalhoEmGrupo/index", model: [trabalhos:lista])
+    }
+
+    def area(int trabalhoId) {
+        def lista = trabalhoEmGrupoService.list()
+        if(lista){
+            def trabalho = lista.get(trabalhoId)
+            render(view: "/trabalhoEmGrupo/area", model: [trabalho:trabalho])
+        }
+
     }
 
     def show(Long id) {

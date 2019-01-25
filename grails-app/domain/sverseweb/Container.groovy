@@ -1,5 +1,7 @@
 package sverseweb
 
+import seguranca.Usuario
+
 class Container {
     String nome
     String descricao
@@ -11,6 +13,14 @@ class Container {
     String imgBackground
     Date dataCriacao
     Date dataAtualizacao
+
+    static hasMany = [temasDeEstudo : TemaDeEstudo,
+                      objetivos : Objetivo,
+                      participantes : Usuario,
+                      admins : Usuario]
+
+
+
 
     static constraints = {
         nome(nullable: false, blank: false,        maxSize: 100, unique:false)

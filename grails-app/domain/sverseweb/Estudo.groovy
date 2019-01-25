@@ -5,7 +5,7 @@ import java.time.DayOfWeek
 class Estudo {
     String nome
     String tipo
-    String imgEstudo
+    String imgItem
     Integer nEtapas
     DayOfWeek dia
     Integer hora
@@ -13,10 +13,13 @@ class Estudo {
     String turno
     Integer idDinamico
 
+    static belongsTo = [cicloDeEstudo:CicloDeEstudo]
+
     static constraints = {
         nome(nullable: false, blank: false,        maxSize: 100, unique:false)
         tipo(nullable: false, blank: false,        maxoSize: 100, unique:false)
-        imgEstudo(nullable: false, blank: false,        maxSize: 100, unique:false)
+        imgItem(nullable: false, blank: false,        maxSize: 100, unique:false)
+        nEtapas(nullable: false, blank: false,        maxSize: 100, unique:false)
         dia(nullable: false, blank: false,        maxSize: 100, unique:false)
         hora(nullable: false, blank: false,        maxSize: 100, unique:false, size: 1..12)
         minuto(nullable: false, blank: false,        maxSize: 100, unique:false, size: 1..59)
