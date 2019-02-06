@@ -1,6 +1,9 @@
 package sverseweb
 
+import grails.converters.JSON
+import seguranca.Permissao
 import seguranca.Usuario
+import seguranca.UsuarioPermissao
 
 import javax.xml.bind.ValidationException
 
@@ -31,32 +34,6 @@ class UsuarioController {
 
     def show(Long id) {
         respond usuarioService.get(id)
-    }
-
-    def create() {
-        respond new Container(params)
-    }
-
-    def save(Container container) {
-        if (container == null) {
-            notFound()
-            return
-        }
-
-        try {
-            usuarioService.save(container)
-        } catch (ValidationException e) {
-            respond container.errors, view:'create'
-            return
-        }
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'container.label', default: 'Container'), container.id])
-                redirect container
-            }
-            '*' { respond container, [status: CREATED] }
-        }
     }
 
     def edit(Long id) {

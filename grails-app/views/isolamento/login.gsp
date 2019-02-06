@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login Page</title>
+	<title>Sverse Login</title>
    <!--Made with love by Mutiullah Samim -->
 
 	<!--Bootsrap 4 CDN-->
@@ -24,14 +24,14 @@
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
 			<div class="card-header">
-				<h3>Tela de Login</h3>
+				<h3 style="margin-top: 10px;">Sverse Web</h3>
 				<div class="d-flex justify-content-end social_icon">
 					<span><i class="fab fa-facebook-square"></i></span>
 					<span><i class="fab fa-google-plus-square"></i></span>
 					<span><i class="fab fa-twitter-square"></i></span>
 				</div>
 			</div>
-			<div class="card-body">
+			<div id="card-login" class="card-body">
 				<form action='${request.contextPath}/login/authenticate' method='POST' id='frmLogar' name='frmLogar'>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
@@ -54,9 +54,9 @@
 					</div>
 				</form>
 			</div>
-			<div class="card-footer">
+			<div id="footer" class="card-footer">
 				<div class="d-flex justify-content-center links">
-					Ainda não tem uma conta?<a href="#" onclick="cadastrar">Cadastre-se</a>
+					Ainda não tem uma conta?<a href="#" onclick="exibirFormulario()">Cadastre-se</a>
 				</div>
 				<div class="d-flex justify-content-center">
 					<a href="#">Esqueceu sua senha?</a>
@@ -77,19 +77,19 @@
 					<span><i class="fab fa-twitter-square"></i></span>
 				</div>
 			</div>
-			<div class="card-body">
-				<g:form controller="usuario" action="create" method='POST' id='frmCadastrar' name='frmCadastrar'>
+			<div id="card-cadastro" class="card-body">
+				<g:form name="FormCadastro" url="[controller:'isolamento', action:'save']">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" id="Nome" class="form-control" placeholder="Digite seu nome">
+						<input type="text" name="nome" id="Nome" class="form-control" placeholder="Digite seu nome">
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" id="userNameCadastro" class="form-control" placeholder="Digite o seu nome de usuário">
+						<input type="text" name="username" id="userNameCadastro" class="form-control" placeholder="Digite o seu nome de usuário">
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
@@ -98,12 +98,22 @@
 						<input type="password" name="password" id="passwordCadastro" class="form-control" placeholder="Senha">
 					</div>
 					<div class="form-group">
-						<input type="submit" value="Cadastrar" class="btn float-right login_btn">
+						<input type="submit" value="Cadastrar" class="btn float-right login_btn"/>
 					</div>
 				</g:form>
 			</div>
 		</div>
 	</div>
 </div>
+
+<script>
+	function exibirFormulario(){
+		var cardLogin = document.getElementById("card-login");
+		var form = document.getElementById("frmLogar");
+		form.style.display = "none";
+		cardLogin.innerHTML = document.getElementById("card-cadastro").innerHTML;
+		document.getElementById("footer").innerHTML = "<div style='text-align: center;'><a class='btn' style='color: whitesmoke; font-size: 11pt;'>Duvidas sobre os termos de uso?</a></div>"
+	}
+</script>
 </body>
 </html>
