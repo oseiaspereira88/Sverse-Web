@@ -15,7 +15,6 @@
     }
 
     html, body {
-        background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
         background-size: cover;
         background-repeat: no-repeat;
     }
@@ -205,24 +204,20 @@
                     <div class="community-livelayer-padding"></div>  <aside class="community-sidebar"
                                                                             data-vce="sidebar-community"
                                                                             data-close-by-overlay="1"><div
-                            class="content community-sidebar-container"><section
-                                class="sidebar-card community-info sidebar-section user-canopy user-loggedin compose-enabled"><div
+                            class="content community-sidebar-container">
+                        <section class="sidebar-card community-info sidebar-section user-canopy user-loggedin compose-enabled"><div
                                     class="sidebar-community-bg community-bg"><img class="img-cover"
                                                                                    src="//cm1.narvii.com/7086/975eb58db53c82b046b4532778dbc2f9d0c4d41f_375.gif"
                                                                                    alt="community background"></div>
 
-                            <h1 class="title font-montserrat-black hollow-title" data-vce="rich-content"><a
-                                    href="/c/kdesign/info/" data-refer-type="community_card">K-Design</a></h1>
 
-                            <div class="chat-icon-wrapper"><img class="chat-icon"
-                                                                src="//wa1.narvii.com/static/img/chat-icon.svg"
-                                                                alt="chat icon"> <span
-                                    class="tip-text">Meus Chats</span></div>
+
 
                             <div class="user-profile"><a class="user-link"
                                                          href="https://aminoapps.com/c/kdesign/page/user/oseias-pereira/molX_r7jhnfxE2Yvae4G76NWdWRJJYVX2Q7"
-                                                         data-refer-type="community_card"><img
-                                        class="user-avatar img-cover" data-vce="image"
+                                                         data-refer-type="community_card"
+                                                         style =" width: 150px;height:150px;">
+                                <img style ="height:150px;" class="user-avatar img-cover" data-vce="image"
                                         src="//pm1.narvii.com/7096/a524bb5f105691a618ccc614ee09a34fc749c2acr1-96-96v2_128.jpg">
                             </a>
 
@@ -230,22 +225,9 @@
                                                          href="https://aminoapps.com/c/kdesign/page/user/oseias-pereira/molX_r7jhnfxE2Yvae4G76NWdWRJJYVX2Q7"
                                                          data-vce="rich-content" data-refer-type="community_card"><span
                                             class="user-name-truncate">Oseias Pereira</span></a></h1>
-
-                                <div class="user-ranking"><i class="level-badge level-badge-1"></i>
-
-                                    <div class="reputation-bar"><span class="rank-progress" style="width:20.0px"></span>
-                                    </div></div></div>
-
-                            <div class="compose-entry-wrapper community-color has-draft"
-                                 data-vce="user/compose-entry"><span class="create-post button">Criar Post</span> <span
-                                    class="open-draft button" data-hover="Rascunhos"><i
-                                        class="amino-icon amino-icon-clipboard"></i> <span
-                                        class="draft-num community-bg">1</span></span> <span class="draft-indicator"
-                                                                                             data-template="Rascunhos ({{num}})"
-                                                                                             data-template-single="Rascunho">Rascunho</span>
-
-                                <div class="separator"></div> <i class="fa fa-spin fa-circle-o-notch"></i></div>
-                        </section>  <section class="sidebar-card chatroom-sidebar" data-vce="sidebar-chat-list"><h3
+                            </div>
+                        </section>
+                        <section class="sidebar-card chatroom-sidebar" data-vce="sidebar-chat-list"><h3
                                 class="label community-color"><i
                                     class="amino-icon amino-icon-reload j-reload"></i> Chats Públicos</h3>
 
@@ -628,12 +610,11 @@
                                                     class="cover community-bg"></div>  <img class="img-cover "
                                                                                             data-vce="image"
                                                                                             decoding="async"
-                                                                                            id="media-e11f4a37"
                                                                                             src="//pm1.narvii.com/7076/8965919cac869931104b8360bbf96eaac9d35b72r1-564-846v2_00.jpg">
                                         </div>
 
                                         <div class="overlay"><img class="img-cover item-curated item-icon"
-                                                                  data-vce="image" decoding="async" id="media-e11f4a37"
+                                                                  data-vce="image" decoding="async"
                                                                   src="//pm1.narvii.com/7076/8965919cac869931104b8360bbf96eaac9d35b72r1-564-846v2_00.jpg">
 
                                             <div class="remain overflow-hidden"><h3 class="title">мαи∂γ νυℓgο°• <img
@@ -655,12 +636,11 @@
                                                     class="cover community-bg"></div>  <img class="img-cover "
                                                                                             data-vce="image"
                                                                                             decoding="async"
-                                                                                            id="media-ee0a777f"
                                                                                             src="//pm1.narvii.com/7083/f0c6aca19036a528d169900529aa9f4d3036d8fer1-400-400v2_00.jpg">
                                         </div>
 
                                         <div class="overlay"><img class="img-cover item-curated item-icon"
-                                                                  data-vce="image" decoding="async" id="media-ee0a777f"
+                                                                  data-vce="image" decoding="async"
                                                                   src="//pm1.narvii.com/7083/f0c6aca19036a528d169900529aa9f4d3036d8fer1-400-400v2_00.jpg">
 
                                             <div class="remain overflow-hidden"><h3 class="title">spring</h3>
@@ -679,7 +659,6 @@
                                                     class="cover community-bg"></div>  <img class="img-cover "
                                                                                             data-vce="image"
                                                                                             decoding="async"
-                                                                                            id="media-e14819e5"
                                                                                             src="//pm1.narvii.com/7075/afc78891a387aca45c9eae48f2f10e96fea14a44r1-500-500v2_00.jpg">
                                         </div>
 
