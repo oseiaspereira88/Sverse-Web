@@ -9,41 +9,38 @@ class BootStrap {
     def init = { servletContext ->
         Permissao admin = Permissao.findByAuthority("ROLE_ADMIN")
         if (admin == null){
-            admin = new Permissao(authority: "ROLE_ADMIN").save(flush:true)
+            admin = new Permissao(authority: "ROLE_ADMIN")
+            admin.save(flush:true)
         }
 
         Usuario jeff = Usuario.findByUsername("jeff")
-        Usuario administrador = Usuario.findByUsername("administrador")
-        if (administrador == null){
+        Usuario administrador = Usuario.findByUsername("admin")
+
+        if (administrador == null || jeff == null){
             jeff = new Usuario(
                     username: "jeff", password: "123", nome: "Jefferson Igor",
                     tipo: "Aluno", nNotificacoes: 0,
                     enabled: true, accountExpired: false, accountLocked: false,
                     passwordExpired: false)
-
             Perfil perfil1 = new Perfil(
-                    imgPerfil: "qualquer",
+                    imgPerfil: "qualquer1",
                     email: "jeff88@gmail.com",
                     trello: "jeffsz88",
                     github: "Jeff88",
-                    contato: "(84)99442299",
+                    contato: "(84)99443299",
                     biografia: "My name is Garfanhoto and i am the flash man on live.",
                     nFollowing: "0",
                     nFollowers: "0",
                     usuario: jeff
-            ).save(flush: true)
-
-            jeff.setPerfil(perfil1)
-            jeff.save(flush: true)
+            )
 
             administrador = new Usuario(
                     username: "admin", password: "123", nome: "Administrador",
                     tipo: "Administrador", nNotificacoes: 0,
                     enabled: true, accountExpired: false, accountLocked: false,
                     passwordExpired: false)
-
             Perfil perfil2 = new Perfil(
-                    imgPerfil: "qualquer",
+                    imgPerfil: "qualquer2",
                     email: "oseiaspereira88@gmail.com",
                     trello: "oseiaspereira88",
                     github: "oseiaspereira88",
@@ -52,25 +49,26 @@ class BootStrap {
                     nFollowing: "0",
                     nFollowers: "0",
                     usuario: administrador
-            ).save(flush: true)
+            )
 
+            jeff.setPerfil(perfil1)
             administrador.setPerfil(perfil2)
-            administrador.addToAmigos(jeff)
-            administrador.save(flush: true)
 
-            jeff.addToAmigos(administrador)
-            jeff.save(flush: true)
+            //administrador.addToAmigos(jeff)
+            //jeff.addToAmigos(administrador)
 
+            jeff.save(flash:true)
+            administrador.save(flash:true)
         }
 
         if (UsuarioPermissao.findByUsuarioAndPermissao(administrador,admin) == null)
         {
-            new UsuarioPermissao(usuario: administrador, permissao: admin).save(flush:true)
+            UsuarioPermissao.create(administrador, admin, true)
         }
 
         if (UsuarioPermissao.findByUsuarioAndPermissao(jeff,admin) == null)
         {
-            new UsuarioPermissao(usuario: jeff, permissao: admin).save(flush:true)
+            UsuarioPermissao.create(jeff, admin, true)
         }
     }
     def destroy = {

@@ -5,13 +5,16 @@ import seguranca.Usuario
 import seguranca.UsuarioPermissao
 
 class IsolamentoController {
+    def springSecurityService;
 
     def login() {
         render(view: "/isolamento/login")
     }
+
     def logout() {
         render(view: "/isolamento/login")
     }
+
     def error() {
         render(view: "/isolamento/error")
     }
@@ -28,32 +31,38 @@ class IsolamentoController {
         user.accountLocked = false
         user.passwordExpired = false
 
-        Perfil perfilDefault = Perfil.findByBiografia("Sua Biografia")
-        if (perfilDefault == null){
-            perfilDefault = new Perfil(
-                    imgPerfil: "def2",
-                    email: "def@gmail.com",
-                    trello: "def",
-                    github: "def",
-                    contato: "def",
-                    biografia: "Sua Biografia",
-                    nFollowing: "0",
-                    nFollowers: "0",
-                    usuario: user
-            ).save(flash:true)
-        }
-        user.setPerfil(perfilDefault)
+        user.setPerfil(new Perfil(
+                imgPerfil: "aleatoria",
+                email: "aeuEmail@gmail.com",
+                trello: "userName",
+                github: "userName",
+                contato: "(DDD)99999-9999",
+                biografia: "Escreva sua biografia.",
+                nFollowing: "0",
+                nFollowers: "0",
+                usuario: user
+        ));
 
         user.validate()
         def mErrors = user.errors.getAllErrors()
-        if(user.errors.getAllErrors().isEmpty()){
-            user.save(flash:true)
+        if (user.errors.getAllErrors().isEmpty()) {
+            user.save(flash: true)
             Permissao admin = Permissao.findByAuthority("ROLE_ADMIN")
             UsuarioPermissao.create(user, admin, true)
-        } else{
+            user.save(flash: true)
+        } else {
             user = null;
         }
 
-        render(view:"confirmacao-singup", model:[user:user, mErrors:mErrors])
+        render(view: "confirmacao-singup", model: [user: user, mErrors: mErrors])
+    }
+
+    def autenticarUsuario(String username){
+        String password = spring
+    }
+
+    def listarUsuarios() {
+        def users = Usuario.getAll();
+        render(view: "lista-users", model: [users: users])
     }
 }

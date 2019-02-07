@@ -1,36 +1,51 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="layout" content="layout-secundario" />
         <g:set var="entityName" value="${message(code: 'trabalhoEmGrupo.label', default: 'TrabalhoEmGrupo')}" />
         <title><g:message code="default.list.label" args="[entityName]" /></title>
+
+        <link rel="stylesheet" href="${resource(dir: 'css', file: 'theme.css')}" type="text/css">
 
         <link href=${resource(dir: 'css', file: 'sidebar.css')} rel="stylesheet">
         <link href=${resource(dir: 'css', file: 'pagina-modelo.css')} rel="stylesheet">
         <link href=${resource(dir: 'css', file: 'itens-in-grid.css')} rel="stylesheet">
+        <link rel="stylesheet" href="//wa1.narvii.com/static/dist/css/desktop-style.css?v=266bb8a6f649">
+        <link rel="stylesheet" href="//wa1.narvii.com/static/dist/css/misc-desktop-style.css?v=84527a92ab6d">
+        <asset:link rel="icon" href="faviconSverse.ico" type="image/x-ico"/>
+
     </head>
     <body>
-        <div class="container">
-            <div class="columns">
-                <div class="col-3" style="border-style: solid; border: 1px">
-                    <g:render template="../templates/_sidebar"/>
-                </div>
-                <div class="col-9" style="border-style: solid; border: 1px">
 
-                    <div class="mdiv" style="background-color: rgba(0, 0, 0, 0.4);">
-                        <div class="modeloheader">
-                            <h6>Aqui estão todos os seus trabalhos.</h6>
-                        </div>
-
-                        <div class="conteudo">
-                            <button class="btn btn-action s-circle badd" onclick="window.location.href = '/trabalhoEmGrupo/create'">
-                                <i class="icon icon-plus" style="margin-top: 2px"></i>
-                            </button>
-                            <g:render template="trabalhos" model="trabalhos:trabalhos"></g:render>
+    <div class="container">
+        <div class="columns">
+            <div class="column col-12">
+                <header class="global-header">
+                    <div class="content community-bg">
+                        <div class="container">
+                            <g:render template="../templates/_navGlobal"/>
                         </div>
                     </div>
+                </header>
+                <g:render template="../templates/_navHome"/>
+                <div style="text-align: center;">
+                    <section class="global-body">
+                        <section class="community-content">
+                            <g:render template="mainPagePerfil"/>
+                        </section>
+                        <div class="community-livelayer-padding">
+                        </div>
+                        <aside class="community-sidebar"
+                               data-vce="sidebar-community"
+                               data-close-by-overlay="1">
+                            <div class="content community-sidebar-container">
+                                <g:render template="../templates/_perfilAtributos"/>
+                                <g:render template="../templates/_biografia"/>
+                            </div>
+                        </aside>
+                    </section>
                 </div>
             </div>
         </div>
+    </div>
     </body>
 </html>

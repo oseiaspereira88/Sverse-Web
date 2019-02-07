@@ -1,7 +1,6 @@
 <!doctype html>
 <html>
 <head>
-    <meta name="layout" content="layout-secundario"/>
     <title>Sverse Web</title>
 
     <link href=${resource(dir: 'css', file: 'cycle-cronometer.css')} rel="stylesheet">
@@ -9,33 +8,41 @@
     <link href=${resource(dir: 'css', file: 'sidebar.css')} rel="stylesheet">
     <link href=${resource(dir: 'css', file: 'pagina-modelo.css')} rel="stylesheet">
 
+    <link rel="stylesheet" href="//wa1.narvii.com/static/dist/css/desktop-style.css?v=266bb8a6f649">
+    <link rel="stylesheet" href="//wa1.narvii.com/static/dist/css/misc-desktop-style.css?v=84527a92ab6d">
+    <asset:link rel="icon" href="faviconSverse.ico" type="image/x-ico"/>
+
 </head>
 
 <body>
-<div class="columns">
-    <div class="col-3" style="border-style: solid; border: 1px">
-        <g:render template="/_templates/sidebar"/>
-    </div>
 
-    <div class="col-9">
-        <div class="mdiv"style="background-color: rgba(0, 0, 0, 0.4);">
-            <div class="modeloheader">
-                <h6>Dicas do Momento!</h6>
-            </div>
-
-            <div class="modeloheader"
-             style="background-position: center center; background: white; margin-top: 40px; margin-left: 80px; margin-right: 80px;">
-            <h6 style="padding-left: 8px; text-align: left; font-size: 10pt; color: darkslategray;"></h6>
-        </div>
-        <div class="col-md-9 text-center center-block"
-             style="border: white 2px; border-style: solid; height: 270px; margin-left: 80px; margin-right: 80px;
-             border-bottom-right-radius: 12px; border-bottom-left-radius: 12px;
-             padding-top: 12px; background: url(http://blog.portalpravaler.com.br/wp-content/uploads/2017/07/trabalho_e_estudo.png);
-             background-size: 100%; background-position: center center;">
-            <h6 style="text-shadow: lightgray 1px 1px 3px; padding-left: 490px; padding-right: 40px; font-size: 18pt; color: lavender">Seja Bem Vindo.</h6>
-        </div>
-
-        </div>
+<div class="container">
+    <div class="columns">
+        <div class="column col-12">
+            <header class="global-header">
+                <div class="content community-bg">
+                    <div class="container">
+                        <g:render template="../templates/_navGlobal"/>
+                    </div>
+                </div>
+            </header>
+            <g:render template="../templates/_navHome"/>
+            <div style="text-align: center;">
+                <section class="global-body">
+                    <section class="community-content">
+                        <g:render template="../templates/_mainPagePerfil"/>
+                    </section>
+                    <div class="community-livelayer-padding">
+                    </div>
+                    <aside class="community-sidebar"
+                           data-vce="sidebar-community"
+                           data-close-by-overlay="1">
+                        <div class="content community-sidebar-container">
+                            <g:render template="../templates/_perfilAtributos"/>
+                            <g:render template="../templates/_biografia"/>
+                        </div>
+                    </aside>
+                </section>
             </div>
         </div>
     </div>

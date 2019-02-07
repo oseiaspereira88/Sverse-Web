@@ -8,26 +8,39 @@
         <link href=${resource(dir: 'css', file: 'sidebar.css')} rel="stylesheet">
         <link href=${resource(dir: 'css', file: 'pagina-modelo.css')} rel="stylesheet">
         <link href=${resource(dir: 'css', file: 'itens-in-grid.css')} rel="stylesheet">
+        <link rel="stylesheet" href="//wa1.narvii.com/static/dist/css/desktop-style.css?v=266bb8a6f649">
+        <link rel="stylesheet" href="//wa1.narvii.com/static/dist/css/misc-desktop-style.css?v=84527a92ab6d">
+        <asset:link rel="icon" href="faviconSverse.ico" type="image/x-ico"/>
+
     </head>
     <body>
     <div class="container">
         <div class="columns">
-            <div class="col-3" style="border-style: solid; border: 1px">
-                <g:render template="../templates/_sidebar"/>
-            </div>
-
-            <div class="col-9">
-                <div class="mdiv" style="background-color: rgba(0, 0, 0, 0.4);">
-                    <div class="modeloheader">
-                        <h6>Containers de Estudo</h6>
+            <div class="column col-12">
+                <header class="global-header">
+                    <div class="content community-bg">
+                        <div class="container">
+                            <g:render template="../templates/_navGlobal"/>
+                        </div>
                     </div>
-
-                    <div class="conteudo">
-                        <button class="btn btn-action s-circle badd" onclick="window.location.href = '/container/create'">
-                            <i class="icon icon-plus" style="margin-top: 2px"></i>
-                        </button>
-                        <g:render template="containers" model="containers:containers"></g:render>
-                    </div>
+                </header>
+                <g:render template="../templates/_navHome"/>
+                <div style="text-align: center;">
+                    <section class="global-body">
+                        <section class="community-content">
+                            <g:render template="../templates/_mainPagePerfil"/>
+                        </section>
+                        <div class="community-livelayer-padding">
+                        </div>
+                        <aside class="community-sidebar"
+                               data-vce="sidebar-community"
+                               data-close-by-overlay="1">
+                            <div class="content community-sidebar-container">
+                                <g:render template="../templates/_perfilAtributos"/>
+                                <g:render template="../templates/_biografia"/>
+                            </div>
+                        </aside>
+                    </section>
                 </div>
             </div>
         </div>

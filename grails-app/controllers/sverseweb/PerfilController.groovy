@@ -1,17 +1,21 @@
 package sverseweb
 
 import grails.validation.ValidationException
+import seguranca.Usuario
+
 import static org.springframework.http.HttpStatus.*
 
 class PerfilController {
 
     PerfilService perfilService
+    def springSecurityService;
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond perfilService.list(params), model:[perfilCount: perfilService.count()]
+        Usuario user = (Usuario) springSecurityService.getCurrentUser();
+        Perfil perfil = Perfil.findById(user.getPerfilId())
+        render(view:"index", model:[usuario:user, perfil:perfil])
     }
 
     def timeline(Integer max) {

@@ -31,7 +31,8 @@ class Usuario implements Serializable {
     String tipo
     Integer nNotificacoes
     Lixeira lixeira
-    Perfil perfil
+
+    static hasOne = [perfil:Perfil]
 
     Set<Permissao> getAuthorities() {
         (UsuarioPermissao.findAllByUsuario(this) as List<UsuarioPermissao>)*.permissao as Set<Permissao>
@@ -55,7 +56,6 @@ class Usuario implements Serializable {
         nome(nullable: false, blank: false, size: 3..24, maxSize: 100, unique: false)
         tipo(nullable: false, blank: false, maxSize: 100, unique: false, inList: ["Aluno","Professor","Administrador"])
         nNotificacoes(nullable: false, blank: false, maxSize: 100, unique: false)
-        perfil(nullable: true, unique: true)
         lixeira(nullable: true, unique: true)
     }
 

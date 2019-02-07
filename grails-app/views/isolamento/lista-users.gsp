@@ -34,14 +34,12 @@
 			<div id="card-login" class="card-body">
 				<g:if test="${users != null}">
 					<g:each in="${users}" var="usuario" status="i">
-						<h6>${i+1 + "º "}</h6>
+						${i+1 + "º "}
 						<h6>${usuario.getNome()}</h6>
 					</g:each>
 				</g:if>
 				<g:else>
-					<h6>Não Salvou.</h6>]
-					<h6>Algo de errado não está certo.</h6>
-					<h6>Erros: ${errors}</h6>
+					<h6>Não existe usuarios salvos no banco.</h6>
 				</g:else>
 			</div>
 			<div class="card-footer">

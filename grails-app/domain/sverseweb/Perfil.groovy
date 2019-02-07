@@ -12,15 +12,15 @@ class Perfil {
     Integer nFollowing
     Integer nFollowers
 
-    static belongsTo = Usuario
+    static belongsTo = [usuario:Usuario]
     static constraints = {
-        imgPerfil(nullable: false, blank: false, maxSize: 100, unique:true)
-        email(nullable: false, blank: false, email: true, maxSize: 100, unique:true)
-        trello(nullable: false, blank: false, maxSize: 100, unique:true)
-        github(nullable: false, blank: false, maxSize: 100, unique:true)
-        contato(nullable: false, blank: false,  maxSize: 100, unique:true)
-        biografia(nullable: false, blank: false, maxSize: 100, unique:false)
-        nFollowing(nullable: false, blank: false, maxSize: 100, unique:false)
-        nFollowers(nullable: false, blank: false, maxSize: 100, unique:false)
+        imgPerfil(nullable: true, blank: true, maxSize: 100, unique:false)
+        email(nullable: true, blank: true, email: true, maxSize: 100, unique:false)
+        trello(nullable: true, blank: true, maxSize: 100, unique:false)
+        github(nullable: true, blank: true, maxSize: 100, unique:false)
+        contato(nullable: true, blank: true,  maxSize: 100, unique:false)
+        biografia(nullable: true, blank: true, maxSize: 100, unique:false)
+        nFollowing(nullable: true, blank: true, maxSize: 100, unique:false)
+        nFollowers(nullable: true, blank: true, maxSize: 100, unique:false)
     }
 }
