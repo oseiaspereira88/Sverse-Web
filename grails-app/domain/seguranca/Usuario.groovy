@@ -12,6 +12,7 @@ import sverseweb.Envio
 import sverseweb.Lixeira
 import sverseweb.Nota
 import sverseweb.Perfil
+import sverseweb.Solicitacao
 import sverseweb.TrabalhoEmGrupo
 
 @GrailsCompileStatic
@@ -32,29 +33,31 @@ class Usuario implements Serializable {
     Integer nNotificacoes
     Lixeira lixeira
 
-    static hasOne = [perfil:Perfil]
+    static hasOne = [perfil: Perfil]
 
     Set<Permissao> getAuthorities() {
         (UsuarioPermissao.findAllByUsuario(this) as List<UsuarioPermissao>)*.permissao as Set<Permissao>
     }
 
-    static hasMany = [boletinsDeEstudo  : BoletimDeEstudo,
-                      boletinsDeEtapas  : BoletimDeEtapas,
-                      boletinsDeObjetivo: BoletimDeObjetivos,
-                      notas             : Nota,
-                      containers        : Container,
-                      containersAdmin   : Container,
-                      ciclosDeEstudo    : CicloDeEstudo,
-                      envios            : Envio,
-                      recibos           : Envio,
-                      trabalhosEmGrupo  : TrabalhoEmGrupo,
-                      amigos            : Usuario]
+    static hasMany = [boletinsDeEstudo     : BoletimDeEstudo,
+                      boletinsDeEtapas     : BoletimDeEtapas,
+                      boletinsDeObjetivo   : BoletimDeObjetivos,
+                      notas                : Nota,
+                      containers           : Container,
+                      containersAdmin      : Container,
+                      ciclosDeEstudo       : CicloDeEstudo,
+                      envios               : Envio,
+                      recibos              : Envio,
+                      trabalhosEmGrupo     : TrabalhoEmGrupo,
+                      amigos               : Usuario,
+                      solicitacoesFeitas   : Solicitacao,
+                      solicitacoesRecebidas: Solicitacao]
 
     static constraints = {
         password nullable: false, blank: false, password: true
         username nullable: false, blank: false, unique: true
         nome(nullable: false, blank: false, size: 3..24, maxSize: 100, unique: false)
-        tipo(nullable: false, blank: false, maxSize: 100, unique: false, inList: ["Aluno","Professor","Administrador"])
+        tipo(nullable: false, blank: false, maxSize: 100, unique: false, inList: ["Aluno", "Professor", "Administrador"])
         nNotificacoes(nullable: false, blank: false, maxSize: 100, unique: false)
         lixeira(nullable: true, unique: true)
     }
