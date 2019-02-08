@@ -11,11 +11,21 @@ class PerfilController {
     def springSecurityService;
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    def usuariosEncontrados = null;
 
     def index(Integer max) {
         Usuario user = (Usuario) springSecurityService.getCurrentUser();
-        Perfil perfil = Perfil.findById(user.getPerfilId())
-        render(view:"index", model:[usuario:user, perfil:perfil])
+        def containers = Container.all;
+        def usuarios = Usuario.all;
+        render(view:"index", model:[usuario:user, containers:containers, usuarios:usuarios, usuariosEncontrados:usuariosEncontrados])
+    }
+
+    def pesquisarPorUsuarios(){
+        String pesquisa = params.q;
+        if(pesquisa){
+            usuariosEncontrados = Usuario.findByNomeIlikeAndNomeBetween(pesquisa, pesquisa.toLowerCase(), pesquisa.toUpperCase())
+        }
+        redirect(action: "index")
     }
 
     def timeline(Integer max) {

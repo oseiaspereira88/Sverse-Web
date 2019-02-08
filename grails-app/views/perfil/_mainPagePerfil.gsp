@@ -1,14 +1,204 @@
+<link rel="stylesheet" href="${resource(dir: 'css', file: 'spectre.min.css')}" type="text/css">
+<link href=${resource(dir: 'css', file: 'itens-in-grid.css')} rel="stylesheet">
+
+<script>
+    function setDisplayNone() {
+        listAmigos.style.display = "none";
+        listSolicitacoes.style.display = "none";
+        listGrupos.style.display = "none";
+        listPessoas.style.display = "none";
+    }
+
+    function setAnabled() {
+        bGrupos.disabled = false;
+        bPessoas.disabled = false;
+        bExplorar.disabled = false;
+        bAmigos.disabled = false;
+        bSolicitacoes.disabled = false;
+    }
+
+    function alternarMenuMode(menuMode) {
+        var bGrupos = document.getElementById("bGrupos");
+        var bPessoas = document.getElementById("bPessoas");
+        var bExplorar = document.getElementById("bExplorar");
+        var bAmigos = document.getElementById("bAmigos");
+        var bSolicitacoes = document.getElementById("bSolicitacoes");
+
+        var listAmigos = document.getElementById("listAmigos");
+        var listSolicitacoes = document.getElementById("listSolicitacoes");
+        var listGrupos = document.getElementById("listGrupos");
+        var listPessoas = document.getElementById("listPessoas");
+
+        var mDisplay = "block";
+        var mDisplayButton = "block";
+
+        switch (menuMode) {
+            case "explorar":
+                bAmigos.style.backgroundColor = "#4CAF50";
+                bSolicitacoes.style.backgroundColor = "#4CAF50";
+                bExplorar.style.backgroundColor = "#006400";
+
+                setDisplayNone();
+                listGrupos.style.display = mDisplay;
+                setAnabled();
+                bExplorar.disabled = true;
+                bGrupos.disabled = true;
+                bPessoas.style.display = mDisplayButton;
+                bGrupos.style.display = mDisplayButton;
+                bGrupos.style.backgroundColor = "#006400";
+                bPessoas.style.backgroundColor = "#4CAF50";
+                break;
+            case "amigos":
+                bAmigos.style.backgroundColor = "#006400";
+                bSolicitacoes.style.backgroundColor = "#4CAF50";
+                bExplorar.style.backgroundColor = "#4CAF50";
+
+                setDisplayNone();
+                listAmigos.style.display = mDisplay;
+                setAnabled();
+                bAmigos.disabled = true;
+                bPessoas.style.display = "none";
+                bGrupos.style.display = "none";
+
+                break;
+            case "solicitacoes":
+                bAmigos.style.backgroundColor = "#4CAF50";
+                bSolicitacoes.style.backgroundColor = "#006400";
+                bExplorar.style.backgroundColor = "#4CAF50";
+
+                setDisplayNone();
+                listSolicitacoes.style.display = mDisplay;
+                setAnabled();
+                bSolicitacoes.disabled = true;
+                bPessoas.style.display = "none";
+                bGrupos.style.display = "none";
+                break;
+        }
+    }
+
+    function alternarPesquisaMode(isGrupoMode) {
+        var bGrupos = document.getElementById("bGrupos");
+        var bPessoas = document.getElementById("bPessoas");
+        var listGrupos = document.getElementById("listGrupos");
+        var listPessoas = document.getElementById("listPessoas");
+
+        if (!isGrupoMode) {
+            bGrupos.style.backgroundColor = bPessoas.style.background;
+            bPessoas.style.backgroundColor = "#006400";
+            listPessoas.style.display = listGrupos.style.display;
+            listGrupos.style.display = "none";
+            bPessoas.disabled = true;
+            bGrupos.disabled = false;
+
+        } else {
+            bPessoas.style.backgroundColor = bGrupos.style.backgroundColor;
+            bGrupos.style.backgroundColor = "#006400";
+            listGrupos.style.display = listPessoas.style.display;
+            listPessoas.style.display = "none";
+            bPessoas.disabled = false;
+            bGrupos.disabled = true;
+        }
+    }
+</script>
+
+<style>
+.container-pesquisa {
+    width: 100%;
+    position: relative;
+    height: 50px;
+}
+
+.input-pesquisa {
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 50px;
+    width: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: none;
+    z-index: 3;
+    transition: width 1s ease-out;
+    cursor: pointer;
+}
+
+.input-pesquisa:focus {
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    width: 100%;
+    z-index: 1;
+    transition: width 1s ease-in;
+}
+
+.button-pesquisa {
+    height: 50px;
+    width: 50px;
+    background: url('/assets/lupa1.png') center no-repeat;
+    background-size: 50%;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.button-pesquisa:focus {
+    outline: none;
+}
+
+/* esconde o LABEL "Buscar" */
+.label-pesquisa {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+
+.btn-group button {
+    background-color: #4CAF50; /* Green background */
+    border: 1px solid green; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+.btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+    background-color: #3e8e41;
+}
+</style>
+
 <section class="main-page content user-normal">
     <article class="post main-post user-profile-page">
-        <div
-                class="user-canopy community-bg j-followee-number-container">
-            <div
-                    class="user-header hide-blocker" data-vce="fade-image-switcher"
-                    data-author-uid="67bc0342-1c11-4abb-8df8-057a6bb1243d">
-                <img
-                        class="switch show img-cover"
-                        src="//pm1.narvii.com/7096/a524bb5f105691a618ccc614ee09a34fc749c2acr1-96-96v2_hq.jpg"
-                        alt="user selected cover">
+        <div style="height: auto;" class="user-canopy community-bg j-followee-number-container">
+            <div class="user-header hide-blocker" data-vce="fade-image-switcher"
+                 data-author-uid="67bc0342-1c11-4abb-8df8-057a6bb1243d">
+                <img class="switch show img-cover"
+                     src="//pm1.narvii.com/7096/a524bb5f105691a618ccc614ee09a34fc749c2acr1-96-96v2_hq.jpg"
+                     alt="user selected cover">
             </div>
 
             <div class="blocked-spacer blocked-indicator"
@@ -17,198 +207,77 @@
             </div>
 
             <div class="user-profile">
-                <a class="user-link"
-                   href="https://aminoapps.com/c/kdesign/page/user/oseias-pereira/molX_r7jhnfxE2Yvae4G76NWdWRJJYVX2Q7"
-                   data-refer-type="user_profile_page">
-                    <img
-                            class="user-avatar img-cover" data-vce="image"
-                            src="//pm1.narvii.com/7096/a524bb5f105691a618ccc614ee09a34fc749c2acr1-96-96v2_128.jpg">
+                <a class="user-link" data-refer-type="user_profile_page">
+                    <img class="user-avatar img-cover" data-vce="image"
+                         src="//pm1.narvii.com/7096/a524bb5f105691a618ccc614ee09a34fc749c2acr1-96-96v2_128.jpg">
                 </a>
 
                 <h1 class="user-name">
-                    <a class="link"
-                       href="https://aminoapps.com/c/kdesign/page/user/oseias-pereira/molX_r7jhnfxE2Yvae4G76NWdWRJJYVX2Q7"
-                       data-vce="rich-content"
+                    <a class="link" data-vce="rich-content"
                        data-refer-type="user_profile_page">
-                        <span
-                                class="user-name-truncate">${usuario.nome}</span>
+                        <span class="user-name-truncate">${usuario.nome}</span>
+
+                        <div class="btn-group" style="width: 100%;">
+                            <button id="bExplorar" onclick="alternarMenuMode('explorar')"
+                                    style="background-color: #006400; width: 33.3%; font-size: 12pt;">Explorar</button>
+                            <button id="bAmigos" onclick="alternarMenuMode('amigos')"
+                                    style="width: 33.3%; font-size: 12pt;">Amigos</button>
+                            <button id="bSolicitacoes" onclick="alternarMenuMode('solicitacoes')"
+                                    style="width: 33.3%; font-size: 12pt;">Solicitações</button>
+                        </div>
                     </a>
                 </h1>
-
-                <div class="user-ranking">
-                    <i class="level-badge level-badge-1">
-
-                    </i>
-
-                    <div class="reputation-bar">
-                        <span class="rank-progress"
-                              style="width:20.0px">
-
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="counter-info hide-blocker"
-                 data-author-uid="67bc0342-1c11-4abb-8df8-057a6bb1243d">
-                <div
-                        class="counter rep">
-                    <div
-                            class="number">0</div>
-
-                    <div class="label">Reputation</div>
-                </div>
-
-                <div class="counter following">
-                    <div class="number">0</div>
-
-                    <div class="label">Following</div>
-                </div>
-
-                <div class="counter followers">
-                    <div class="number j-followee-number-target">0</div>
-
-                    <div class="label">Followers</div>
-                </div>
             </div>
 
             <div class="counter-info-backdrop hide-blocker"
                  data-author-uid="67bc0342-1c11-4abb-8df8-057a6bb1243d">
 
             </div>
-        </div>   <section
-            class="user-bio hide-blocker"
-            data-author-uid="67bc0342-1c11-4abb-8df8-057a6bb1243d">
-        <header class="title">
-            <h3
-                    class="title community-color">Biografia  <time
-                    class="muted date">Since Feb 2019 (1 Day)</time>
-            </h3>
-        </header>
-
-        <div class="bio-body" data-vce="toggle-content" data-threshold="350">
-            <div
-                    class="empty-content muted">Aparentemente este usuário não tem nada a dizer sobre si.</div>
         </div>
-    </section>   <section class="user-posts hide-blocker" data-vce="tab"
-                          data-author-uid="67bc0342-1c11-4abb-8df8-057a6bb1243d">
-        <header
-                class="title">
-            <h3 class="title community-color tab-toggles">
-                <a
-                        class="tab-toggle active" href="javascript:void 0;">Publicações</a>
-                <a
-                        class="tab-toggle" href="javascript:void 0; ">Mural</a>
-            </h3>
-        </header>
-
-        <div class="tab-pane active">
-            <section class="post-list new-post-list" data-vce="list"
-                     data-list-name="post-list" data-max-page="2"
-                     data-cur-page="1" data-read-more="100"
-                     data-base="/c/kdesign/page/user/oseias-pereira/molX_r7jhnfxE2Yvae4G76NWdWRJJYVX2Q7">
-                <div
-                        class="empty-content muted">Gosta de publicações? Bem, não há nenhuma aqui.</div>
-
-                <div class="paginator">
-
-                </div>
-            </section>
-        </div>
-
-        <div class="tab-pane">
-            <a name="comment-list">
-
-            </a>
-            <section class="comment-list"
-                     data-target-ndc-id="225544014"
-                     data-target-post-type="user"
-                     data-target-post-id="67bc0342-1c11-4abb-8df8-057a6bb1243d"
-                     data-target-log-type="profile">
-                <h3
-                        class="title community-color">Comentar</h3>
-
-                <div class="content" data-vce="comment-area">
-                    <section
-                            class="comment-input-bar main"
-                            data-vce="comment-input-bar"
-                            data-join-icons="//pm1.narvii.com/7096/a524bb5f105691a618ccc614ee09a34fc749c2acr1-96-96v2_128.jpg"
-                            data-join-deeplink="narviiapp://x225544014/user-profile/67bc0342-1c11-4abb-8df8-057a6bb1243d"
-                            data-join-motivation="reply"
-                            data-source="Comment Reply"
-                            data-success-redirect=""
-                            data-event-label="comment_new">
-                        <img
-                                class="user-icon"
-                                src="//pm1.narvii.com/7096/a524bb5f105691a618ccc614ee09a34fc749c2acr1-96-96v2_68.jpg"
-                                alt="Oseias Pereira">
-                        <textarea name="content"
-                                  placeholder="Diga algo..."
-                                  readonly="">
-
-                        </textarea>
-                        <button
-                                class="pointer btn btn-send community-bg" disabled="">
-                            <i
-                                    class="amino-icon amino-icon-send">
-
-                            </i>
-                            <i
-                                    class="fa fa-spin fa-spinner">
-
-                            </i>
-                        </button>
-                    </section>
-
-                    <div class="empty-content muted">Ninguém falou nada neste mural.</div>
-                </div>
-                <section class="live-comment">
-                    <div class="content">
-                        <div class="upper">
-                            <ul
-                                    class="comments unstyled">
-
-                            </ul>
-                        </div>
-
-                        <div class="pointer state-switch">
-                            <span class="switch-on">
-                                <i
-                                        class="amino-icon amino-icon-show-comment">
-
-                                </i>
-                            </span>
-                            <span
-                                    class="switch-off">
-                                <i
-                                        class="amino-icon amino-icon-hide-comment">
-
-                                </i>
-                            </span>
-                        </div>
-
-                        <div class="comment-input-bar placeholder pointer">
-                            <textarea name="content"
-                                      readonly=""
-                                      placeholder="Diga algo...">
-
-                            </textarea>
-                        </div>
-                    </div>
-                </section>
-            </section>
-        </div>
-    </section>
-        <section
-                class="blocked-indicator"
-                data-author-uid="67bc0342-1c11-4abb-8df8-057a6bb1243d">
-            <div
-                    class="blocked-container">
-                <i
-                        class="fa fa-ban">
-
-                </i> Você está bloqueado de seguir este usuário e visualizar as postagens deste usuário.
+        <section class="user-bio hide-blocker" data-author-uid="67bc0342-1c11-4abb-8df8-057a6bb1243d">
+            <div class="btn-group" style="width: 100px; float: right; margin-right: 10px;">
+                <button id="bGrupos" onclick="alternarPesquisaMode(true)" disabled="disabled"
+                        style="background-color: #006400; font-size: 8pt; width: 50%; padding: 4px; border-bottom-left-radius: 10px; border-top-left-radius: 10px;">Grupos</button>
+                <button id="bPessoas" onclick="alternarPesquisaMode(false)"
+                        style="font-size: 8pt; width: 50%; padding: 4px; border-bottom-right-radius: 10px; border-top-right-radius: 10px;">Pessoas</button>
             </div>
+            <header class="title" style="padding-top: 0;">
+                <h3 class="title community-color">Explore por grupos de estudo ou amigos</h3>
+
+                <div>
+                    <g:form name="FormCadastro" url="[controller: 'perfil', action: 'pesquisarPorUsuarios']"
+                            style="margin-left: 10px; margin-right: 10px; margin-top: 10px;">
+                        <label class="label-pesquisa" for="busca">Buscar</label>
+                        <div class="container-pesquisa">
+                            <input class="input-pesquisa" type="search" id="busca" name="q">
+                            <button class="button-pesquisa" type="submit"></button>
+                        </div>
+                    </g:form>
+                </div>
+            </header>
+
+            <div id="listGrupos" class="bio-body" data-vce="toggle-content" data-threshold="350">
+                <g:render template="itens" model="containers:containers"></g:render>
+            </div>
+
+            <div style="display: none;" id="listPessoas" class="bio-body" data-vce="toggle-content"
+                 data-threshold="350">
+                <g:render template='usuarios' model='usuarios:usuarios'></g:render>
+            </div>
+
+            <div style="display: none;" id="listAmigos" class="bio-body" data-vce="toggle-content" data-threshold="350">
+                <g:render template='amigos' model='usuario:usuario'></g:render>
+            </div>
+
+            <div style="display: none;" id="listSolicitacoes" class="bio-body" data-vce="toggle-content"
+                 data-threshold="350">
+                <g:render template='amigos' model='usuario:usuario'></g:render>
+            </div>
+
+            <g:if test="${usuariosEncontrados != null}">
+                <h1>Retornou!</h1>
+            </g:if>
+
         </section>
     </article>
 </section>

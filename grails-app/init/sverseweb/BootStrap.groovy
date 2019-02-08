@@ -54,8 +54,8 @@ class BootStrap {
             jeff.setPerfil(perfil1)
             administrador.setPerfil(perfil2)
 
-            //administrador.addToAmigos(jeff)
-            //jeff.addToAmigos(administrador)
+            administrador.addToAmigos(jeff)
+            jeff.addToAmigos(administrador)
 
             jeff.save(flash:true)
             administrador.save(flash:true)
