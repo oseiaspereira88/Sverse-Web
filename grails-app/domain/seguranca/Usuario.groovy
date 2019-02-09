@@ -50,7 +50,7 @@ class Usuario implements Serializable {
                       recibos              : Envio,
                       trabalhosEmGrupo     : TrabalhoEmGrupo,
                       amigos               : Usuario,
-                      solicitacoesFeitas   : Solicitacao,
+                      solicitacoesEnviadas : Solicitacao,
                       solicitacoesRecebidas: Solicitacao]
 
     static constraints = {

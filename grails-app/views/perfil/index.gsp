@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="//wa1.narvii.com/static/dist/css/misc-desktop-style.css?v=84527a92ab6d">
     <asset:link rel="icon" href="faviconSverse.ico" type="image/x-ico"/>
 
-
     <style>
     * {
         padding: 0;
@@ -36,13 +35,20 @@
                 </div>
             </header>
             <g:render template="../templates/_navHome"/>
-            <div style="text-align: center;">
+            <div style="text-align: center; margin-right: 0;">
                 <section class="global-body">
+                    <a onclick="abrirCalendario()" href="#" style=" margin-left: 88%;">
+                        <g:img style="margin-top: 10px; height: 30px; width: 30px;" src="calendar-icon.png"></g:img>
+                    </a>
+                    <a onclick="abrirConfiguracoes()" href="#"
+                       style=" margin-bottom: 4px; margin-top: 4px; margin-left: 20px; margin-right: 10px;">
+                        <g:img class="rotate" style="margin-top: 10px; height: 30px; width: 30px;"
+                               src="settings-icon.png"></g:img>
+                    </a>
+
                     <section class="community-content">
                         <g:render template="mainPagePerfil"/>
                     </section>
-                    <div class="community-livelayer-padding">
-                    </div>
                     <aside class="community-sidebar"
                            data-vce="sidebar-community"
                            data-close-by-overlay="1">

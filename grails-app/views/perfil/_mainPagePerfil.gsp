@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="${resource(dir: 'css', file: 'spectre.min.css')}" type="text/css">
 <link href=${resource(dir: 'css', file: 'itens-in-grid.css')} rel="stylesheet">
 
 <script>
@@ -7,6 +6,8 @@
         listSolicitacoes.style.display = "none";
         listGrupos.style.display = "none";
         listPessoas.style.display = "none";
+        calendario.style.display = "none";
+        configuracoes.style.display = "none";
     }
 
     function setAnabled() {
@@ -16,8 +17,59 @@
         bAmigos.disabled = false;
         bSolicitacoes.disabled = false;
     }
+    function abrirCalendario() {
+        var bGrupos = document.getElementById("bGrupos");
+        var bPessoas = document.getElementById("bPessoas");
+        var bExplorar = document.getElementById("bExplorar");
+        var bAmigos = document.getElementById("bAmigos");
+        var bSolicitacoes = document.getElementById("bSolicitacoes");
+        var calendario = document.getElementById("calendario");
+        var configuracoes = document.getElementById("configuracoes");
+
+
+        var mDisplay = "block";
+        var mDisplayButton = "block";
+
+        var listAmigos = document.getElementById("listAmigos");
+        var listSolicitacoes = document.getElementById("listSolicitacoes");
+        var listGrupos = document.getElementById("listGrupos");
+        var listPessoas = document.getElementById("listPessoas");
+
+        setDisplayNone();
+        calendario.style.display = mDisplay;
+        setAnabled();
+
+        bPessoas.style.display = "none";
+        bGrupos.style.display = "none";
+    }
+
+    function abrirConfiguracoes() {
+        var bGrupos = document.getElementById("bGrupos");
+        var bPessoas = document.getElementById("bPessoas");
+        var bExplorar = document.getElementById("bExplorar");
+        var bAmigos = document.getElementById("bAmigos");
+        var bSolicitacoes = document.getElementById("bSolicitacoes");
+        var calendario = document.getElementById("calendario");
+        var configuracoes = document.getElementById("configuracoes");
+
+        var mDisplay = "block";
+        var mDisplayButton = "block";
+
+        var listAmigos = document.getElementById("listAmigos");
+        var listSolicitacoes = document.getElementById("listSolicitacoes");
+        var listGrupos = document.getElementById("listGrupos");
+        var listPessoas = document.getElementById("listPessoas");
+
+        setDisplayNone();
+        configuracoes.style.display = mDisplay;
+        setAnabled();
+
+        bPessoas.style.display = "none";
+        bGrupos.style.display = "none";
+    }
 
     function alternarMenuMode(menuMode) {
+        var calendario = document.getElementById("calendario");
         var bGrupos = document.getElementById("bGrupos");
         var bPessoas = document.getElementById("bPessoas");
         var bExplorar = document.getElementById("bExplorar");
@@ -28,6 +80,8 @@
         var listSolicitacoes = document.getElementById("listSolicitacoes");
         var listGrupos = document.getElementById("listGrupos");
         var listPessoas = document.getElementById("listPessoas");
+        var configuracoes = document.getElementById("configuracoes");
+
 
         var mDisplay = "block";
         var mDisplayButton = "block";
@@ -77,6 +131,8 @@
     }
 
     function alternarPesquisaMode(isGrupoMode) {
+        var calendario = document.getElementById("calendario");
+        var configuracoes = document.getElementById("configuracoes");
         var bGrupos = document.getElementById("bGrupos");
         var bPessoas = document.getElementById("bPessoas");
         var listGrupos = document.getElementById("listGrupos");
@@ -102,6 +158,23 @@
 </script>
 
 <style>
+.rotate{
+    animation: rotation 3s infinite;
+}
+
+@keyframes  rotation {
+    from {transform: rotate(0deg)}
+    to {transform: rotate(359deg)}
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 100px;
+    grid-column-gap: 10px;
+    grid-auto-rows: 200px;
+}
+
 .container-pesquisa {
     width: 100%;
     position: relative;
@@ -191,14 +264,11 @@
 }
 </style>
 
-<section class="main-page content user-normal">
-    <article class="post main-post user-profile-page">
-        <div style="height: auto;" class="user-canopy community-bg j-followee-number-container">
-            <div class="user-header hide-blocker" data-vce="fade-image-switcher"
-                 data-author-uid="67bc0342-1c11-4abb-8df8-057a6bb1243d">
-                <img class="switch show img-cover"
-                     src="//pm1.narvii.com/7096/a524bb5f105691a618ccc614ee09a34fc749c2acr1-96-96v2_hq.jpg"
-                     alt="user selected cover">
+<section style="margin-left: 20px; background: whitesmoke;" class="main-page content user-normal">
+    <article class="post main-post user-profile-page" style="background-color: whitesmoke;">
+        <div style="height: auto; background: whitesmoke;" class="user-canopy community-bg j-followee-number-container">
+            <div class="user-header hide-blocker">
+                <img src="/assets/logoweb.png">
             </div>
 
             <div class="blocked-spacer blocked-indicator"
@@ -257,7 +327,7 @@
             </header>
 
             <div id="listGrupos" class="bio-body" data-vce="toggle-content" data-threshold="350">
-                <g:render template="itens" model="containers:containers"></g:render>
+                <g:render template="containers" model="containers:containers"></g:render>
             </div>
 
             <div style="display: none;" id="listPessoas" class="bio-body" data-vce="toggle-content"
@@ -270,8 +340,18 @@
             </div>
 
             <div style="display: none;" id="listSolicitacoes" class="bio-body" data-vce="toggle-content"
+                       data-threshold="350">
+            <g:render template='solicitacoes' model='usuario:usuario'></g:render>
+            </div>
+
+            <div style="display: none;" id="calendario" class="bio-body" data-vce="toggle-content"
                  data-threshold="350">
-                <g:render template='amigos' model='usuario:usuario'></g:render>
+                <g:render template='calendario' model='usuario:usuario'></g:render>
+            </div>
+
+            <div style="display: none;" id="configuracoes" class="bio-body" data-vce="toggle-content"
+                 data-threshold="350">
+                <g:render template='configuracoes' model='usuario:usuario'></g:render>
             </div>
 
             <g:if test="${usuariosEncontrados != null}">

@@ -8,6 +8,7 @@ import static org.springframework.http.HttpStatus.*
 class PerfilController {
 
     PerfilService perfilService
+    UsuarioService usuarioService
     def springSecurityService;
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
@@ -18,6 +19,26 @@ class PerfilController {
         def containers = Container.all;
         def usuarios = Usuario.all;
         render(view:"index", model:[usuario:user, containers:containers, usuarios:usuarios, usuariosEncontrados:usuariosEncontrados])
+    }
+
+    def atualizarPerfil(){
+        Usuario user = (Usuario) springSecurityService.getCurrentUser();
+        Perfil p = user.perfil;
+        p.setEmail(params.email)
+        p.setTrello(params.trello)
+        p.setGithub(params.github)
+        p.setContato(params.contato)
+        perfilService.save(p)
+        redirect(view:"index")
+    }
+
+    def atualizarUsuario(){
+        Usuario user = (Usuario) springSecurityService.getCurrentUser();
+        user.nome = params.nome
+        user.username = params.username
+        user.password = params.password
+        usuarioService.save(user)
+        redirect(view:"index")
     }
 
     def pesquisarPorUsuarios(){
