@@ -7,19 +7,24 @@ import seguranca.UsuarioPermissao
 class BootStrap {
 
     def init = { servletContext ->
+
+        //procura pela permissão hole, se ela não existir, cria e salva;
         Permissao admin = Permissao.findByAuthority("ROLE_ADMIN")
         if (admin == null){
             admin = new Permissao(authority: "ROLE_ADMIN")
             admin.save(flush:true)
         }
 
-        Usuario jeff = Usuario.findByUsername("jeff")
-        Usuario administrador = Usuario.findByUsername("admin")
+        //procura pelos usuarios
+        Usuario jeff = Usuario.findByUsername("jefferson")
+        Usuario os = Usuario.findByUsername("oseiaspereira88")
+        Usuario ro = Usuario.findByUsername("roberthlima0")
 
-        if (administrador == null || jeff == null){
+        //caso não exista, cria os usuarios
+        if (jeff == null || os == null || ro == null){
             jeff = new Usuario(
-                    username: "jeff", password: "123", nome: "Jefferson Igor",
-                    tipo: "Aluno", nNotificacoes: 0,
+                    username: "jefferson", password: "1234ate8", nome: "Jefferson Igor",
+                    tipo: "Aluno", sexo: "Masculino", nNotificacoes: 0,
                     enabled: true, accountExpired: false, accountLocked: false,
                     passwordExpired: false)
             Perfil perfil1 = new Perfil(
@@ -29,14 +34,16 @@ class BootStrap {
                     github: "Jeff88",
                     contato: "(84)99443299",
                     biografia: "My name is Garfanhoto and i am the flash man on live.",
+                    curso: "Técnico em Informática",
+                    hobbie: "Design",
                     nFollowing: "0",
                     nFollowers: "0",
                     usuario: jeff
             )
 
-            administrador = new Usuario(
-                    username: "admin", password: "123", nome: "Administrador",
-                    tipo: "Administrador", nNotificacoes: 0,
+            os = new Usuario(
+                    username: "oseiaspereira88", password: "1234ate8", nome: "Oséias Pereira",
+                    tipo: "Aluno", sexo: "Masculino", nNotificacoes: 0,
                     enabled: true, accountExpired: false, accountLocked: false,
                     passwordExpired: false)
             Perfil perfil2 = new Perfil(
@@ -46,29 +53,64 @@ class BootStrap {
                     github: "oseiaspereira88",
                     contato: "(84)99442299",
                     biografia: "My name is Barry Alan and i am the flash man on live.",
+                    curso: "Engenharia Mecatrônica",
+                    hobbie: "Game Developer & Mobile Developer (Programador por Natureza)",
                     nFollowing: "0",
                     nFollowers: "0",
-                    usuario: administrador
+                    usuario: os
             )
 
+            ro = new Usuario(
+                    username: "roberthlima0", password: "1234ate8", nome: "Roberth",
+                    tipo: "Aluno", sexo: "Masculino", nNotificacoes: 0,
+                    enabled: true, accountExpired: false, accountLocked: false,
+                    passwordExpired: false)
+            Perfil perfil3 = new Perfil(
+                    imgPerfil: "qualquer2",
+                    email: "oseiaspereira88@gmail.com",
+                    trello: "oseiaspereira88",
+                    github: "oseiaspereira88",
+                    contato: "(84)99442299",
+                    biografia: "My name is Barry Alan and i am the flash man on live.",
+                    curso: "Engenharia Elétrica",
+                    hobbie: "Animes",
+                    nFollowing: "0",
+                    nFollowers: "0",
+                    usuario: ro
+            )
+
+            //adicionando perfis
             jeff.setPerfil(perfil1)
-            administrador.setPerfil(perfil2)
+            os.setPerfil(perfil2)
+            ro.setPerfil(perfil3)
 
-            administrador.addToAmigos(jeff)
-            jeff.addToAmigos(administrador)
+            //adicionando amigos
+            os.addToAmigos(jeff)
+            os.addToAmigos(ro)
+            jeff.addToAmigos(os)
+            jeff.addToAmigos(ro)
+            ro.addToAmigos(jeff)
+            ro.addToAmigos(os)
 
+            //salvando usuários
             jeff.save(flash:true)
-            administrador.save(flash:true)
-        }
-
-        if (UsuarioPermissao.findByUsuarioAndPermissao(administrador,admin) == null)
-        {
-            UsuarioPermissao.create(administrador, admin, true)
+            os.save(flash:true)
+            ro.save(flash:true)
         }
 
         if (UsuarioPermissao.findByUsuarioAndPermissao(jeff,admin) == null)
         {
             UsuarioPermissao.create(jeff, admin, true)
+        }
+
+        if (UsuarioPermissao.findByUsuarioAndPermissao(os,admin) == null)
+        {
+            UsuarioPermissao.create(os, admin, true)
+        }
+
+        if (UsuarioPermissao.findByUsuarioAndPermissao(ro,admin) == null)
+        {
+            UsuarioPermissao.create(ro, admin, true)
         }
     }
     def destroy = {

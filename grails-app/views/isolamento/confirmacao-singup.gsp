@@ -55,7 +55,7 @@
                     </g:each>
                     <h6 style="color: whitesmoke; font-size: 10pt;">Atente-se para as restrinções de cadastro e confirme o cadastro novamente.</h6>
                     <a class="login_btn btn" style="float: right; margin-top: 14px; margin-right: 20px;"
-                       href="${createLink(uri: '/')}">Tentar</a>
+                       href="${createLink(uri: '/isolamento/autenticarUsuario/${user.username}')}">Tentar</a>
                 </g:else>
             </div>
 

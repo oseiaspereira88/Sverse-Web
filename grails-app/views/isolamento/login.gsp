@@ -86,6 +86,12 @@
 						<input type="text" name="nome" id="Nome" class="form-control" placeholder="Digite seu nome">
 					</div>
 					<div class="input-group form-group">
+						Masculino
+						<input type="radio" value="Masculino" name="sexo" class="form-control">
+						Feminino
+						<input type="radio" value="Feminino" name="sexo" class="form-control">
+					</div>
+					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>

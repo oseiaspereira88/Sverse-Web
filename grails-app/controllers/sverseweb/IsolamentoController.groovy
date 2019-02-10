@@ -24,6 +24,7 @@ class IsolamentoController {
         user.nome = params.nome
         user.username = params.username
         user.password = params.password
+        user.sexo = params.sexo;
         user.tipo = "Aluno";
         user.nNotificacoes = 0;
         user.enabled = true
@@ -33,11 +34,13 @@ class IsolamentoController {
 
         user.setPerfil(new Perfil(
                 imgPerfil: "aleatoria",
-                email: "aeuEmail@gmail.com",
-                trello: "userName",
-                github: "userName",
+                email: "SeuEmail@gmail.com",
+                trello: "UserName",
+                github: "UserName",
                 contato: "(DDD)99999-9999",
                 biografia: "Escreva sua biografia.",
+                curso: "Seu Curso",
+                hobbie: "Seu Hobbie",
                 nFollowing: "0",
                 nFollowers: "0",
                 usuario: user
@@ -58,7 +61,8 @@ class IsolamentoController {
     }
 
     def autenticarUsuario(String username){
-        String password = spring
+        def params = Usuario.findByUsername(username).properties
+        redirect(view: "${request.contextPath}/login/authenticate", params)
     }
 
     def listarUsuarios() {
