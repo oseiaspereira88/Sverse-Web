@@ -1,30 +1,3 @@
-<style>
-.btn-group button {
-    background-color: #4CAF50; /* Green background */
-    border: 1px solid green; /* Green border */
-    color: white; /* White text */
-    padding: 10px 24px; /* Some padding */
-    cursor: pointer; /* Pointer/hand icon */
-    float: left; /* Float the buttons side by side */
-}
-
-.btn-group button:not(:last-child) {
-    border-right: none; /* Prevent double borders */
-}
-
-/* Clear floats (clearfix hack) */
-.btn-group:after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-/* Add a background color on hover */
-.btn-group button:hover {
-    background-color: #3e8e41;
-}
-</style>
-
 <nav class="global-nav ">
     <ul class="home-section-nav content">
         <li class="nav-item">
@@ -36,13 +9,12 @@
             <a style="margin-top: 6px; margin-right: 270px;" class="home-nav-home community-color" href="/" data-refer-type="community_nav_home"><i class="amino-icon amino-icon-home"></i></a>
         </li>
         <li class="nav-item nav-download">
-            <a class="btn btn-download community-color" href="/"
+            <a class="btn btn-download community-color" href="#" onclick="window.location.href = '/isolamento/baixarApp'"
                data-event-category="NavBar Get App">Baixe o App</a>
         </li>
-        <li class="nav-item nav-user">
-            <a class="nav-link block" onclick="alternarMenuConta()">
-                <img class="user-icon" src="//pm1.narvii.com/7096/00a1604abd6c36e13e1913ab8a7b3e12779f6980r1-96-96v2_68.jpg" alt="Oseias Pereira">
-            </a>
+        <li class="nav-item nav-download">
+            <a class="btn btn-download community-color" href="#" onclick="exibirTelaDeLogin()"
+               data-event-category="NavBar Get App">Entrar</a>
         </li>
     </ul>
 

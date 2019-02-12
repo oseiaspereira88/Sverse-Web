@@ -47,8 +47,7 @@
                     <g:each in="${mErrors}" var="erro">
                         <p style="color: #e6a500; font-size: 11pt;">
                             <g:if test="${erro.field.toString() == 'nome'}">Seu nome não pode ter menos de 6 digitos.</g:if>
-                            <g:elseif
-                                    test="${erro.field.toString() == 'username'}">Seu login não pode ter menos de 6 digitos nem ser igual a um já existente.</g:elseif>
+                            <g:elseif test="${erro.field.toString() == 'username'}">Seu login não pode ter menos de 6 digitos nem ser igual a um já existente.</g:elseif>
                             <g:elseif
                                     test="${erro.field.toString() == 'password'}">Sua senha não pode ter menos de 6 digitos.</g:elseif>
                         </p>

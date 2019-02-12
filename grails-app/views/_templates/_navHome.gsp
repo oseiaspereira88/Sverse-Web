@@ -27,10 +27,7 @@
                                                           data-refer-type="community_nav"><i
                         class="amino-icon amino-icon-folder"></i> <span
                         class="label">Ajuda</span></a></li>
-            <li style="margin-top: 20px; float: left" class="section-item  community-color  hide-on-mobile"><a class="block"
-                                                                         href="/sobre"
-                                                                         data-refer-type="community_nav"><i
-                        class="amino-icon amino-icon-info"></i> <span class="label">Sobre</span>
+
             </a></li>
             <li class="section-item"></li>
             <li class="section-item"></li>

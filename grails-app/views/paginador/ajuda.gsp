@@ -1,65 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="layout" content="layout-secundario"/>
     <g:set var="entityName" value="${message(code: 'paginador.label', default: 'Paginador')}"/>
     <title><g:message code="default.list.label" args="[entityName]"/></title>
 
-    <link href=${resource(dir: 'css', file: 'sidebar.css')} rel="stylesheet">
-    <link href=${resource(dir: 'css', file: 'pagina-modelo.css')} rel="stylesheet">
+    <link rel="stylesheet" href="//wa1.narvii.com/static/dist/css/desktop-style.css?v=266bb8a6f649">
+    <link rel="stylesheet" href="//wa1.narvii.com/static/dist/css/misc-desktop-style.css?v=84527a92ab6d">
+    <asset:link rel="icon" href="faviconSverse.ico" type="image/x-ico"/>
 </head>
 
 <body>
+<div class="container">
     <div class="columns">
-        <div class="col-3" style="border-style: solid; border: 1px">
-            <g:render template="/_templates/sidebar"/>
-        </div>
-
-        <div class="col-9">
-            <div class="mdiv">
-                <div class="modeloheader">
-                    <h6>Mural de Ajuda</h6>
-                </div>
-
-                <div class="conteudo">
-                    <div class="docs-demo columns">
-                        <div class="column col-12">
-                            <div class="accordion">
-                                <input id="accordion-1" type="radio" name="accordion-radio" hidden="" checked="">
-                                <label class="accordion-header c-hand" for="accordion-1"><i class="icon icon-link mr-1"></i><h3>Elements</h3></label>
-                                <div class="accordion-body">
-                                    <ul class="menu menu-nav">
-                                        <li class="menu-item"><a href="#accordions">Element 1</a></li>
-                                        <li class="menu-item"><a href="#accordions">Element 2</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="accordion">
-                                <input id="accordion-2" type="radio" name="accordion-radio" hidden="">
-                                <label class="accordion-header c-hand" for="accordion-2"><i class="icon icon-bookmark mr-1"></i><h3>Layout</h3></label>
-                                <div class="accordion-body">
-                                    <ul class="menu menu-nav">
-                                        <li class="menu-item"><a href="#accordions">Layout 1</a></li>
-                                        <li class="menu-item"><a href="#accordions">Layout 2</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="accordion">
-                                <input id="accordion-3" type="radio" name="accordion-radio" hidden="">
-                                <label class="accordion-header c-hand" for="accordion-3"><i class="icon icon-delete mr-1"></i><h3>Components</h3></label>
-                                <div class="accordion-body">
-                                    <ul class="menu menu-nav">
-                                        <li class="menu-item"><a href="#accordions">Component 1</a></li>
-                                        <li class="menu-item"><a href="#accordions">Component 2</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+        <div class="column col-12">
+            <header class="global-header">
+                <div class="content community-bg">
+                    <div class="container">
+                        <g:render template="../templates/_navGlobal"/>
                     </div>
-
                 </div>
+            </header>
+            <g:render template="../templates/_navHome"/>
+            <div style="text-align: center; margin-right: 0;">
+
+                <g:render template="../templates/_mainPage"/>
+
             </div>
         </div>
     </div>
+</div>
 </body>
 </html>

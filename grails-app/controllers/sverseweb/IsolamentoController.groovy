@@ -60,13 +60,11 @@ class IsolamentoController {
         render(view: "confirmacao-singup", model: [user: user, mErrors: mErrors])
     }
 
-    def autenticarUsuario(String username){
-        def params = Usuario.findByUsername(username).properties
-        redirect(view: "${request.contextPath}/login/authenticate", params)
-    }
-
     def listarUsuarios() {
         def users = Usuario.getAll();
         render(view: "lista-users", model: [users: users])
+    }
+
+    def baixarApp() {
     }
 }

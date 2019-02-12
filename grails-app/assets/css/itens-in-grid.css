@@ -8,20 +8,21 @@
 }
 
 .nota{
-    background-color: #6c6ade;
+    background-color: #74c6d4;
     margin: 12px;
     height: 174px;
     border-top-right-radius: 6px;
     border-top-left-radius: 6px;
     border-bottom-right-radius: 6px;
     border-bottom-left-radius: 6px;
+    align-items: center;
     transition: margin-left 100ms, margin-right 100ms, background-color 300ms;
 }
 
 .nota:hover{
     margin-right: 11px;
     margin-left: 11px;
-    background-color: cadetblue;
+    background-color: #78dfa0;
 }
 
 .nota h6{
@@ -29,12 +30,11 @@
     color: whitesmoke;
     text-align: center;
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+    height: auto;
 }
 
 .mcontainer{
-    background-color: cadetblue;
+    background-color: #78dfa0;
     margin: 12px;
     height: 174px;
     border-top-right-radius: 6px;
@@ -47,7 +47,7 @@
 .mcontainer:hover{
     margin-right: 11px;
     margin-left: 11px;
-    background-color: #6c6ade;
+    background-color: #d8dbde;
 }
 
 .mcontainer h6{

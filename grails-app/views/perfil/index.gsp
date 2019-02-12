@@ -23,7 +23,6 @@
 </head>
 
 <body>
-
 <div class="container">
     <div class="columns">
         <div class="column col-12">

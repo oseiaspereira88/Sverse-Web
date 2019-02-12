@@ -1,4 +1,4 @@
-<section style="height: auto; text-align: left; background-color: #90efa2" class="sidebar-card community-info sidebar-section user-canopy user-loggedin compose-enabled">
+<section style="height: auto; text-align: left; background-color: #44ef72" class="sidebar-card community-info sidebar-section user-canopy user-loggedin compose-enabled">
     <div style="padding: 20px;">
         <h4 style="color: black" class="user-name-truncate">Email: </h4><br>
         <span class="button">${usuario.sexo}</span><br><br>

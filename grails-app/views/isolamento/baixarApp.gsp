@@ -104,17 +104,13 @@
 		</div>
 	</div>
 	<div class="" style="position: absolute; width: 100vw; top: 44px; background-image: url('/assets/introsverse.jpg'); background-size: cover; background-position: center;">
-		<div class="" style="position: relative; width: 100vw; height: 440px; background-image: url('/assets/introsverse.jpg'); background-size: cover; background-position: center;">
+		<div class="" style="position: relative; width: 100vw; height: 30vh; background-image: url('/assets/introsverse.jpg'); background-size: cover; background-position: center;">
 		</div>
-		<div class="" style="position: relative; width: 100vw; height: 540px; background-image: url('/assets/introBG1.jpg'); background-size: cover; background-position: center;">
+		<div class="" style="position: relative; width: 100vw; height: 70vh; background-image: url('/assets/introBG1.jpg'); background-size: cover; background-position: center;">
 		</div>
-		<div class="" style="position: relative; width: 100vw; height: 440px; background-image: url('/assets/introBG2.jpg'); background-size: cover; background-position: center;">
-		</div>
-		<div class="" style="position: relative; width: 100vw; height: 540px; background-image: url('/assets/introBG3.jpg'); background-size: cover; background-position: center;">
-		</div>
-		<div class="" style="position: relative; width: 100vw; height: 340px; background-image: url('/assets/introBG4.jpg'); background-size: cover; background-position: center;">
-		</div>
-		<div class="" style="position: relative; width: 100vw; height: 440px; background-image: url('/assets/introBG5.jpg'); background-size: cover; background-position: center;">
+	</div>
+	<div class="" style=" justify-content: center; align-items: center; width: 100%; height: 100%;">
+		<div class="" style="position: absolute; margin-left: 45%; margin-right: 45%; margin-top: 15%; width: 10vw; height: 10vw; background-color: #2a9a39; background-size: cover; background-position: center;">
 		</div>
 	</div>
 </div>

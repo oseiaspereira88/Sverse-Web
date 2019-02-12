@@ -3,10 +3,7 @@
 <head>
     <title>Sverse Web</title>
 
-    <link href=${resource(dir: 'css', file: 'cycle-cronometer.css')} rel="stylesheet">
-    <asset:javascript src="script-cycle-cronometer.js"/>
-    <link href=${resource(dir: 'css', file: 'sidebar.css')} rel="stylesheet">
-    <link href=${resource(dir: 'css', file: 'pagina-modelo.css')} rel="stylesheet">
+
 
     <link rel="stylesheet" href="//wa1.narvii.com/static/dist/css/desktop-style.css?v=266bb8a6f649">
     <link rel="stylesheet" href="//wa1.narvii.com/static/dist/css/misc-desktop-style.css?v=84527a92ab6d">
@@ -27,22 +24,10 @@
                 </div>
             </header>
             <g:render template="../templates/_navHome"/>
-            <div style="text-align: center;">
-                <section class="global-body">
-                    <section class="community-content">
-                        <g:render template="../templates/_mainPagePerfil"/>
-                    </section>
-                    <div class="community-livelayer-padding">
-                    </div>
-                    <aside class="community-sidebar"
-                           data-vce="sidebar-community"
-                           data-close-by-overlay="1">
-                        <div class="content community-sidebar-container">
-                            <g:render template="../templates/_perfilAtributos"/>
-                            <g:render template="../templates/_biografia"/>
-                        </div>
-                    </aside>
-                </section>
+            <div style="text-align: center; margin-right: 0;">
+
+                <g:render template="../templates/_mainPage"/>
+
             </div>
         </div>
     </div>
