@@ -1,0 +1,57 @@
+
+#divForm {
+    display: none;
+    z-index: 2;
+    position: fixed;
+    right: 48px;
+    bottom: 48px;
+    border-style: solid;
+    border-color: #61d290;
+    width: auto;
+    height: auto;
+    align-items: center;
+    padding-top: 8px;
+    border-radius: 8px;
+    background-color: whitesmoke;
+}
+
+fieldset {
+    width: 350px;
+    height: auto;
+    margin-bottom: 4px;
+}
+
+legend {
+    font-weight: bold;
+    font-family: "Segoe UI";
+}
+
+input, select {
+    height: 32px;
+}
+
+textarea {
+    background: url(/assets/textareaBG.jpg) center center no-repeat; /* This ruins default border */
+    padding: 10px;
+    outline: none;
+    resize: none;
+    font-weight: bold;
+    text-align: center;
+    overflow: auto;
+}
+
+input, textarea, select {
+    position: relative;
+    width: 230px;
+    margin-left: 28%;
+}
+
+input#submit {
+    bottom: 8px;
+}
+
+label {
+    position: absolute;
+    left: 8px;
+    padding: 8px;
+}

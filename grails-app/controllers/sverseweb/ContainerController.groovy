@@ -1,17 +1,57 @@
 package sverseweb
 
 import grails.validation.ValidationException
+import seguranca.Usuario
+
 import static org.springframework.http.HttpStatus.*
 
 class ContainerController {
 
     ContainerService containerService
+    UsuarioService usuarioService
+    PostService postService
+    def springSecurityService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(){
         def lista = containerService.list();
         render(view: "/container/index", model: [containers:lista])
+    }
+
+    def newContainer(){
+        //criando containers e associando ao usuario
+        Usuario user = springSecurityService.getCurrentUser()
+        Container container = new Container()
+        container.nome = params.nome
+        container.descricao = params.descricao
+        container.tipo = params.tipo
+        container.imgContainer = "default"
+        container.dificuldade = params.dificuldade
+        container.importancia = params.importancia
+        container.nNotificacoes = 0
+        container.imgBackground = "default"
+        container.dataCriacao = new Date()
+        container.dataAtualizacao = new Date()
+
+        //adicionando participantes, administradores e salvando
+        container.addToParticipantes(user)
+        container.addToAdmins(user)
+        user.addToContainers(container)
+        user.addToContainersAdmin(container)
+        containerService.save(container)
+
+        def publico = user.amigos
+        publico.add(user)
+
+        //criando publicaçao de container publico e salvando
+        Post post = new Post(tipo: "Container Publico", usuario: user, publico: publico, dataDePublicacao: new Date())
+        post.validate()
+        postService.save(post)
+        user.addToPots(post)
+        usuarioService.save(user)
+
+        redirect(action: "index")
     }
 
     def show(Long id) {
