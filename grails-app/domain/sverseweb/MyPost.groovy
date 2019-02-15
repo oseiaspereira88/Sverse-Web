@@ -2,7 +2,7 @@ package sverseweb
 
 import seguranca.Usuario
 
-class Post {
+class MyPost {
     String tipo
     Integer containerId
     Date dataDePublicacao

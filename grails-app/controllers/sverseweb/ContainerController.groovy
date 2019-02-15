@@ -45,7 +45,7 @@ class ContainerController {
         publico.add(user)
 
         //criando publicaçao de container publico e salvando
-        Post post = new Post(tipo: "Container Publico", usuario: user, publico: publico, dataDePublicacao: new Date())
+        MyPost post = new MyPost(tipo: "Container Publico", usuario: user, publico: publico, dataDePublicacao: new Date())
         post.validate()
         postService.save(post)
         user.addToPots(post)
