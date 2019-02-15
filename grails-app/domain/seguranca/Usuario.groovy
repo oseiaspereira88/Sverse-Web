@@ -54,14 +54,11 @@ class Usuario implements Serializable {
                       amigos               : Usuario,
                       solicitacoesEnviadas : Solicitacao,
                       solicitacoesRecebidas: Solicitacao,
-                      pots                 : MyPost]
+                      posts                 : MyPost]
 
     static constraints = {
-        username nullable: false, minSize: 8; blank: false;
-        unique: true
-        password nullable: false, minSize: 8;
-        blank: false;
-        password: true
+        username nullable: false, minSize: 8, blank: false, unique: true
+        password nullable: false, minSize: 8, blank: false, password: true
         nome(nullable: false, blank: false, size: 3..44, unique: false)
         tipo(nullable: false, blank: false, unique: false, inList: ["Aluno", "Professor", "Administrador"])
         sexo(nullable: true, blank: true, unique: false, inList: ["Masculino", "Feminino"])

@@ -1,9 +1,11 @@
 package sverseweb
 
-import grails.converters.JSON
+
 import seguranca.Permissao
 import seguranca.Usuario
 import seguranca.UsuarioPermissao
+import grails.validation.ValidationException
+import static org.springframework.http.HttpStatus.*
 
 class UsuarioController {
 
@@ -20,8 +22,9 @@ class UsuarioController {
     }
 
     def index(){
-        def lista = usuarioService.list();
-        render(view: "/container/index", model: [containers:lista])
+        String username = springSecurityService.principal.username
+        Usuario usuario = Usuario.findByUsername(username)
+        render(view:"muralAcademico", model:[usuario:usuario])
     }
 
     def calendarioAcademico(){

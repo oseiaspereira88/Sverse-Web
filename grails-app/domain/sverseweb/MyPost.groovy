@@ -7,8 +7,8 @@ class MyPost {
     Integer containerId
     Date dataDePublicacao
 
-    def belongsTo = [usuario: Usuario]
-    def hasMany = [comentarios: Comentario, publico: Usuario]
+    static belongsTo = Usuario
+    static hasMany = [comentarios: Comentario, publico: Usuario]
 
     static constraints = {
         tipo(nullable: false, blank: false, unique: false, inList: [
