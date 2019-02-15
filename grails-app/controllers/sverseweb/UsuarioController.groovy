@@ -24,7 +24,7 @@ class UsuarioController {
     def index(){
         String username = springSecurityService.principal.username
         Usuario usuario = Usuario.findByUsername(username)
-        render(view:"muralAcademico", model:[usuario:usuario])
+        render(view:"/usuario/muralAcademico", model:[nome:usuario.nome, posts:usuario.posts])
     }
 
     def calendarioAcademico(){
