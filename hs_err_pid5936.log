@@ -1,0 +1,354 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x02853c8c, pid=5936, tid=0x0000161c
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_191-b12) (build 1.8.0_191-b12)
+# Java VM: Java HotSpot(TM) Client VM (25.191-b12 mixed mode windows-x86 )
+# Problematic frame:
+# j  org.springframework.boot.SpringApplication.getExitCodeFromExitCodeGeneratorException(Ljava/lang/Throwable;)I+0
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x02644800):  JavaThread "main" [_thread_in_Java, id=5660, stack(0x024f0000,0x02540000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0xcccccccc
+
+Registers:
+EAX=0x36e27d38, EBX=0x0000039f, ECX=0x00000010, EDX=0x7416c850
+ESP=0x0253f4a8, EBP=0x0253f4cc, ESI=0x36e24137, EDI=0xcccccccc
+EIP=0x02853c8c, EFLAGS=0x00010246
+
+Top of Stack: (sp=0x0253f4a8)
+0x0253f4a8:   0253f4d8 0253f4ac 36e24130 0253f4d8
+0x0253f4b8:   36e25b30 00000000 36e24178 00000000
+0x0253f4c8:   0253f4d4 0253f4fc 028444f0 0253de0c
+0x0253f4d8:   14d8e120 0253f4dc 36e2414c 0253f508
+0x0253f4e8:   36e25b30 00000000 36e24178 0253f4d4
+0x0253f4f8:   0253f504 0253f52c 028444f0 0f85fb50
+0x0253f508:   14d8e120 0253f50c 36e2414c 0253f538
+0x0253f518:   36e25b30 00000000 36e24178 0253f504 
+
+Instructions: (pc=0x02853c8c)
+0x02853c6c:   d0 0f 84 31 00 00 00 8b 48 08 3b 04 0a 0f 84 25
+0x02853c7c:   00 00 00 83 f9 10 0f 85 18 00 00 00 57 8b 7a 14
+0x02853c8c:   8b 0f 83 c7 04 85 c0 f2 af 5f 75 08 89 42 10 e9
+0x02853c9c:   04 00 00 00 33 c0 eb 05 b8 01 00 00 00 0f b6 5e 
+
+
+Register to memory mapping:
+
+EAX=0x36e27d38 is pointing into metadata
+EBX=0x0000039f is an unknown value
+ECX=0x00000010 is an unknown value
+EDX=0x7416c850 is an unknown value
+ESP=0x0253f4a8 is pointing into the stack for thread: 0x02644800
+EBP=0x0253f4cc is pointing into the stack for thread: 0x02644800
+ESI=0x36e24137 is pointing into metadata
+EDI=0xcccccccc is an unknown value
+
+
+Stack: [0x024f0000,0x02540000],  sp=0x0253f4a8,  free space=317k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+j  org.springframework.boot.SpringApplication.getExitCodeFromExitCodeGeneratorException(Ljava/lang/Throwable;)I+0
+j  org.springframework.boot.SpringApplication.getExitCodeFromExitCodeGeneratorException(Ljava/lang/Throwable;)I+28
+j  org.springframework.boot.SpringApplication.getExitCodeFromExitCodeGeneratorException(Ljava/lang/Throwable;)I+28
+j  org.springframework.boot.SpringApplication.getExitCodeFromExitCodeGeneratorException(Ljava/lang/Throwable;)I+28
+j  org.springframework.boot.SpringApplication.getExitCodeFromExitCodeGeneratorException(Ljava/lang/Throwable;)I+28
+j  org.springframework.boot.SpringApplication.getExitCodeFromException(Lorg/springframework/context/ConfigurableApplicationContext;Ljava/lang/Throwable;)I+13
+j  org.springframework.boot.SpringApplication.handleExitCode(Lorg/springframework/context/ConfigurableApplicationContext;Ljava/lang/Throwable;)V+3
+j  org.springframework.boot.SpringApplication.handleRunFailure(Lorg/springframework/context/ConfigurableApplicationContext;Lorg/springframework/boot/SpringApplicationRunListeners;Lorg/springframework/boot/diagnostics/FailureAnalyzers;Ljava/lang/Throwable;)V+4
+j  org.springframework.boot.SpringApplication.run([Ljava/lang/String;)Lorg/springframework/context/ConfigurableApplicationContext;+150
+j  grails.boot.GrailsApp.run([Ljava/lang/String;)Lorg/springframework/context/ConfigurableApplicationContext;+2
+j  grails.boot.GrailsApp.run([Ljava/lang/Object;[Ljava/lang/String;)Lorg/springframework/context/ConfigurableApplicationContext;+43
+j  grails.boot.GrailsApp.run(Ljava/lang/Object;[Ljava/lang/String;)Lorg/springframework/context/ConfigurableApplicationContext;+9
+j  grails.boot.GrailsApp$run.call(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+18
+j  org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(Lorg/codehaus/groovy/runtime/callsite/CallSite;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+8
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+3
+j  org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+38
+j  sverseweb.Application.main([Ljava/lang/String;)V+57
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x15c315]
+V  [jvm.dll+0x223ece]
+V  [jvm.dll+0x15c3ae]
+V  [jvm.dll+0xddb27]
+V  [jvm.dll+0xe60bf]
+C  [java.exe+0x2363]
+C  [java.exe+0xb03f]
+C  [java.exe+0xb0c9]
+C  [KERNEL32.DLL+0x138f4]
+C  [ntdll.dll+0x65e13]
+C  [ntdll.dll+0x65dde]
+C  0x00000000
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x37f20800 JavaThread "Abandoned connection cleanup thread" daemon [_thread_blocked, id=5940, stack(0x02310000,0x02360000)]
+  0x37f20400 JavaThread "Tomcat JDBC Pool Cleaner[11840194:1550134574890]" daemon [_thread_blocked, id=6816, stack(0x00b30000,0x00b80000)]
+  0x35b7d800 JavaThread "FileSystemWatcher: files=#105 cl=sun.misc.Launcher$AppClassLoader@b4aac2" daemon [_thread_blocked, id=4520, stack(0x36450000,0x364a0000)]
+  0x35a81400 JavaThread "Service Thread" daemon [_thread_blocked, id=5868, stack(0x36330000,0x36380000)]
+  0x35a57400 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=4220, stack(0x362a0000,0x362f0000)]
+  0x35a65800 JavaThread "C1 CompilerThread1" daemon [_thread_blocked, id=2140, stack(0x36210000,0x36260000)]
+  0x35a0d000 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=4380, stack(0x36180000,0x361d0000)]
+  0x34fb5c00 JavaThread "Attach Listener" daemon [_thread_blocked, id=6220, stack(0x354f0000,0x35540000)]
+  0x34fb4c00 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=5756, stack(0x35460000,0x354b0000)]
+  0x34f97800 JavaThread "Finalizer" daemon [_thread_blocked, id=712, stack(0x352d0000,0x35320000)]
+  0x34f91800 JavaThread "Reference Handler" daemon [_thread_blocked, id=6708, stack(0x35240000,0x35290000)]
+=>0x02644800 JavaThread "main" [_thread_in_Java, id=5660, stack(0x024f0000,0x02540000)]
+
+Other Threads:
+  0x34f7c000 VMThread [stack: 0x351b0000,0x35200000] [id=5472]
+  0x35a82800 WatcherThread [stack: 0x363c0000,0x36410000] [id=68]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ def new generation   total 235968K, used 192046K [0x04a00000, 0x14a00000, 0x14a00000)
+  eden space 209792K,  85% used [0x04a00000, 0x0f9ad078, 0x116e0000)
+  from space 26176K,  46% used [0x116e0000, 0x122bea20, 0x13070000)
+  to   space 26176K,   0% used [0x13070000, 0x13070000, 0x14a00000)
+ tenured generation   total 524288K, used 70236K [0x14a00000, 0x34a00000, 0x34a00000)
+   the space 524288K,  13% used [0x14a00000, 0x18e97158, 0x18e97200, 0x34a00000)
+ Metaspace       used 33501K, capacity 33900K, committed 33920K, reserved 34176K
+
+Card table byte_map: [0x04840000,0x049d0000] byte_map_base: 0x0481b000
+
+Polling page: 0x023a0000
+
+CodeCache: size=32768Kb used=6499Kb max_used=6499Kb free=26268Kb
+ bounds [0x02840000, 0x02ea0000, 0x04840000]
+ total_blobs=2830 nmethods=2396 adapters=361
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 95.868 Thread 0x35a65800 nmethod 2441 0x02e91908 code [0x02e91a80, 0x02e91e0c]
+Event: 95.879 Thread 0x35a57400 nmethod 2439 0x02e92248 code [0x02e928c0, 0x02e94c1c]
+Event: 96.021 Thread 0x35a65800 2442             sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl::hashCode (24 bytes)
+Event: 96.022 Thread 0x35a65800 nmethod 2442 0x02e98208 code [0x02e98320, 0x02e98434]
+Event: 96.786 Thread 0x35a0d000 2443             sun.reflect.generics.tree.MethodTypeSignature::getFormalTypeParameters (5 bytes)
+Event: 96.786 Thread 0x35a0d000 nmethod 2443 0x02e98508 code [0x02e98600, 0x02e98680]
+Event: 98.429 Thread 0x35a57400 2444             sun.reflect.NativeMethodAccessorImpl::invoke (104 bytes)
+Event: 98.432 Thread 0x35a57400 nmethod 2444 0x02e98988 code [0x02e98b00, 0x02e98eb8]
+Event: 98.469 Thread 0x35a65800 2446             org.codehaus.groovy.reflection.stdclasses.ObjectCachedClass::isAssignableFrom (2 bytes)
+Event: 98.470 Thread 0x35a65800 nmethod 2446 0x02e993c8 code [0x02e994c0, 0x02e99540]
+
+GC Heap History (10 events):
+Event: 58.972 GC heap before
+{Heap before GC invocations=7 (full 2):
+ def new generation   total 235968K, used 223894K [0x04a00000, 0x14a00000, 0x14a00000)
+  eden space 209792K,  98% used [0x04a00000, 0x1136ed08, 0x116e0000)
+  from space 26176K,  67% used [0x13070000, 0x141a6c50, 0x14a00000)
+  to   space 26176K,   0% used [0x116e0000, 0x116e0000, 0x13070000)
+ tenured generation   total 524288K, used 25413K [0x14a00000, 0x34a00000, 0x34a00000)
+   the space 524288K,   4% used [0x14a00000, 0x162d16c0, 0x162d1800, 0x34a00000)
+ Metaspace       used 26871K, capacity 27191K, committed 27264K, reserved 28032K
+Event: 59.154 GC heap after
+Heap after GC invocations=8 (full 2):
+ def new generation   total 235968K, used 9806K [0x04a00000, 0x14a00000, 0x14a00000)
+  eden space 209792K,   0% used [0x04a00000, 0x04a00000, 0x116e0000)
+  from space 26176K,  37% used [0x116e0000, 0x12073be8, 0x13070000)
+  to   space 26176K,   0% used [0x13070000, 0x13070000, 0x14a00000)
+ tenured generation   total 524288K, used 41922K [0x14a00000, 0x34a00000, 0x34a00000)
+   the space 524288K,   7% used [0x14a00000, 0x172f0ae0, 0x172f0c00, 0x34a00000)
+ Metaspace       used 26871K, capacity 27191K, committed 27264K, reserved 28032K
+}
+Event: 61.337 GC heap before
+{Heap before GC invocations=8 (full 2):
+ def new generation   total 235968K, used 213390K [0x04a00000, 0x14a00000, 0x14a00000)
+  eden space 209792K,  97% used [0x04a00000, 0x110cfe50, 0x116e0000)
+  from space 26176K,  37% used [0x116e0000, 0x12073be8, 0x13070000)
+  to   space 26176K,   0% used [0x13070000, 0x13070000, 0x14a00000)
+ tenured generation   total 524288K, used 41922K [0x14a00000, 0x34a00000, 0x34a00000)
+   the space 524288K,   7% used [0x14a00000, 0x172f0ae0, 0x172f0c00, 0x34a00000)
+ Metaspace       used 27105K, capacity 27435K, committed 27520K, reserved 28032K
+Event: 61.542 GC heap after
+Heap after GC invocations=9 (full 2):
+ def new generation   total 235968K, used 22087K [0x04a00000, 0x14a00000, 0x14a00000)
+  eden space 209792K,   0% used [0x04a00000, 0x04a00000, 0x116e0000)
+  from space 26176K,  84% used [0x13070000, 0x14601d40, 0x14a00000)
+  to   space 26176K,   0% used [0x116e0000, 0x116e0000, 0x13070000)
+ tenured generation   total 524288K, used 41922K [0x14a00000, 0x34a00000, 0x34a00000)
+   the space 524288K,   7% used [0x14a00000, 0x172f0ae0, 0x172f0c00, 0x34a00000)
+ Metaspace       used 27105K, capacity 27435K, committed 27520K, reserved 28032K
+}
+Event: 72.656 GC heap before
+{Heap before GC invocations=9 (full 2):
+ def new generation   total 235968K, used 231879K [0x04a00000, 0x14a00000, 0x14a00000)
+  eden space 209792K, 100% used [0x04a00000, 0x116e0000, 0x116e0000)
+  from space 26176K,  84% used [0x13070000, 0x14601d40, 0x14a00000)
+  to   space 26176K,   0% used [0x116e0000, 0x116e0000, 0x13070000)
+ tenured generation   total 524288K, used 41922K [0x14a00000, 0x34a00000, 0x34a00000)
+   the space 524288K,   7% used [0x14a00000, 0x172f0ae0, 0x172f0c00, 0x34a00000)
+ Metaspace       used 28537K, capacity 28896K, committed 28928K, reserved 29056K
+Event: 72.932 GC heap after
+Heap after GC invocations=10 (full 2):
+ def new generation   total 235968K, used 8254K [0x04a00000, 0x14a00000, 0x14a00000)
+  eden space 209792K,   0% used [0x04a00000, 0x04a00000, 0x116e0000)
+  from space 26176K,  31% used [0x116e0000, 0x11eef9b0, 0x13070000)
+  to   space 26176K,   0% used [0x13070000, 0x13070000, 0x14a00000)
+ tenured generation   total 524288K, used 63929K [0x14a00000, 0x34a00000, 0x34a00000)
+   the space 524288K,  12% used [0x14a00000, 0x1886e7e8, 0x1886e800, 0x34a00000)
+ Metaspace       used 28537K, capacity 28896K, committed 28928K, reserved 29056K
+}
+Event: 84.789 GC heap before
+{Heap before GC invocations=10 (full 2):
+ def new generation   total 235968K, used 218046K [0x04a00000, 0x14a00000, 0x14a00000)
+  eden space 209792K, 100% used [0x04a00000, 0x116e0000, 0x116e0000)
+  from space 26176K,  31% used [0x116e0000, 0x11eef9b0, 0x13070000)
+  to   space 26176K,   0% used [0x13070000, 0x13070000, 0x14a00000)
+ tenured generation   total 524288K, used 63929K [0x14a00000, 0x34a00000, 0x34a00000)
+   the space 524288K,  12% used [0x14a00000, 0x1886e7e8, 0x1886e800, 0x34a00000)
+ Metaspace       used 30187K, capacity 30552K, committed 30592K, reserved 31104K
+Event: 84.916 GC heap after
+Heap after GC invocations=11 (full 2):
+ def new generation   total 235968K, used 13156K [0x04a00000, 0x14a00000, 0x14a00000)
+  eden space 209792K,   0% used [0x04a00000, 0x04a00000, 0x116e0000)
+  from space 26176K,  50% used [0x13070000, 0x13d49128, 0x14a00000)
+  to   space 26176K,   0% used [0x116e0000, 0x116e0000, 0x13070000)
+ tenured generation   total 524288K, used 63929K [0x14a00000, 0x34a00000, 0x34a00000)
+   the space 524288K,  12% used [0x14a00000, 0x1886e7e8, 0x1886e800, 0x34a00000)
+ Metaspace       used 30187K, capacity 30552K, committed 30592K, reserved 31104K
+}
+Event: 94.294 GC heap before
+{Heap before GC invocations=11 (full 2):
+ def new generation   total 235968K, used 222948K [0x04a00000, 0x14a00000, 0x14a00000)
+  eden space 209792K, 100% used [0x04a00000, 0x116e0000, 0x116e0000)
+  from space 26176K,  50% used [0x13070000, 0x13d49128, 0x14a00000)
+  to   space 26176K,   0% used [0x116e0000, 0x116e0000, 0x13070000)
+ tenured generation   total 524288K, used 63929K [0x14a00000, 0x34a00000, 0x34a00000)
+   the space 524288K,  12% used [0x14a00000, 0x1886e7e8, 0x1886e800, 0x34a00000)
+ Metaspace       used 31775K, capacity 32157K, committed 32256K, reserved 33152K
+Event: 94.471 GC heap after
+Heap after GC invocations=12 (full 2):
+ def new generation   total 235968K, used 12154K [0x04a00000, 0x14a00000, 0x14a00000)
+  eden space 209792K,   0% used [0x04a00000, 0x04a00000, 0x116e0000)
+  from space 26176K,  46% used [0x116e0000, 0x122bea20, 0x13070000)
+  to   space 26176K,   0% used [0x13070000, 0x13070000, 0x14a00000)
+ tenured generation   total 524288K, used 70236K [0x14a00000, 0x34a00000, 0x34a00000)
+   the space 524288K,  13% used [0x14a00000, 0x18e97158, 0x18e97200, 0x34a00000)
+ Metaspace       used 31775K, capacity 32157K, committed 32256K, reserved 33152K
+}
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 98.356 Thread 0x02644800 Exception <a 'java/lang/ClassNotFoundException': org/grails/orm/hibernate/cfg/JoinTableBeanInfo> (0x0f487ab0) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u191\11896\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 98.360 Thread 0x02644800 Exception <a 'java/lang/ClassNotFoundException': org/grails/orm/hibernate/cfg/JoinTableCustomizer> (0x0f4ac080) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u191\11896\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 98.453 Thread 0x02644800 Exception <a 'java/lang/ClassNotFoundException': org/grails/orm/hibernate/cfg/ColumnConfigBeanInfo> (0x0f67ad68) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u191\11896\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 98.457 Thread 0x02644800 Exception <a 'java/lang/ClassNotFoundException': org/grails/orm/hibernate/cfg/ColumnConfigCustomizer> (0x0f6a0820) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u191\11896\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 98.571 Thread 0x02644800 Exception <a 'java/lang/ClassNotFoundException': org/grails/plugins/web/controllers/api/ControllersDomainBindingApiBeanInfo> (0x0f7a0280) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u191\11896\hotspot\src\share\vm\classfile\systemDictionary.
+Event: 98.577 Thread 0x02644800 Exception <a 'java/lang/ClassNotFoundException': org/grails/plugins/web/controllers/api/ControllersDomainBindingApiCustomizer> (0x0f7d1868) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u191\11896\hotspot\src\share\vm\classfile\systemDictionar
+Event: 98.586 Thread 0x02644800 Exception <a 'java/lang/ClassNotFoundException': org/grails/plugins/converters/api/ConvertersApiBeanInfo> (0x0f81a060) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u191\11896\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 98.595 Thread 0x02644800 Exception <a 'java/lang/ClassNotFoundException': org/grails/plugins/converters/api/ConvertersApiCustomizer> (0x0f842ec0) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u191\11896\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 98.596 Thread 0x02644800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x0f844f70) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u191\11896\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 98.601 Thread 0x02644800 Exception <a 'java/lang/reflect/InvocationTargetException'> (0x0f84c320) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u191\11896\hotspot\src\share\vm\runtime\reflection.cpp, line 1092]
+
+Events (10 events):
+Event: 98.614 loading class sun/util/resources/TimeZoneNamesBundle done
+Event: 98.614 loading class sun/util/resources/TimeZoneNames done
+Event: 98.615 loading class sun/util/resources/en/TimeZoneNames_en
+Event: 98.615 loading class sun/util/resources/en/TimeZoneNames_en done
+Event: 98.626 loading class java/util/AbstractMap$1$1
+Event: 98.627 loading class java/util/AbstractMap$1$1 done
+Event: 98.627 loading class org/springframework/util/ConcurrentReferenceHashMap$EntrySet
+Event: 98.627 loading class org/springframework/util/ConcurrentReferenceHashMap$EntrySet done
+Event: 98.633 loading class org/springframework/util/ConcurrentReferenceHashMap$EntryIterator
+Event: 98.633 loading class org/springframework/util/ConcurrentReferenceHashMap$EntryIterator done
+
+
+Dynamic libraries:
+0x003f0000 - 0x00423000 	C:\Program Files (x86)\Java\jdk1.8.0_191\bin\java.exe
+0x76f70000 - 0x770eb000 	C:\Windows\SYSTEM32\ntdll.dll
+0x73fd0000 - 0x740b0000 	C:\Windows\SYSTEM32\KERNEL32.DLL
+0x740b0000 - 0x7422e000 	C:\Windows\SYSTEM32\KERNELBASE.dll
+0x72ed0000 - 0x72f62000 	C:\Windows\system32\apphelp.dll
+0x745b0000 - 0x7462b000 	C:\Windows\SYSTEM32\ADVAPI32.dll
+0x75630000 - 0x756ee000 	C:\Windows\SYSTEM32\msvcrt.dll
+0x74750000 - 0x74794000 	C:\Windows\SYSTEM32\sechost.dll
+0x73d90000 - 0x73e3d000 	C:\Windows\SYSTEM32\RPCRT4.dll
+0x73ca0000 - 0x73cbe000 	C:\Windows\SYSTEM32\SspiCli.dll
+0x73c90000 - 0x73c9a000 	C:\Windows\SYSTEM32\CRYPTBASE.dll
+0x74540000 - 0x74598000 	C:\Windows\SYSTEM32\bcryptPrimitives.dll
+0x76d00000 - 0x76e47000 	C:\Windows\SYSTEM32\USER32.dll
+0x76bb0000 - 0x76cfe000 	C:\Windows\SYSTEM32\GDI32.dll
+0x734c0000 - 0x736cf000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.10586.839_none_ea8af107b9b5cbb4\COMCTL32.dll
+0x748b0000 - 0x74a6a000 	C:\Windows\SYSTEM32\combase.dll
+0x74630000 - 0x7465b000 	C:\Windows\SYSTEM32\IMM32.DLL
+0x73bd0000 - 0x73c8f000 	C:\Program Files (x86)\Java\jdk1.8.0_191\jre\bin\msvcr100.dll
+0x737f0000 - 0x73bc3000 	C:\Program Files (x86)\Java\jdk1.8.0_191\jre\bin\client\jvm.dll
+0x76af0000 - 0x76af6000 	C:\Windows\SYSTEM32\PSAPI.DLL
+0x70bd0000 - 0x70bd8000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x76b50000 - 0x76baf000 	C:\Windows\SYSTEM32\WS2_32.dll
+0x6f3c0000 - 0x6f3e4000 	C:\Windows\SYSTEM32\WINMM.dll
+0x73700000 - 0x73708000 	C:\Windows\SYSTEM32\VERSION.dll
+0x6f230000 - 0x6f253000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x75580000 - 0x755b7000 	C:\Windows\SYSTEM32\cfgmgr32.dll
+0x737e0000 - 0x737ec000 	C:\Program Files (x86)\Java\jdk1.8.0_191\jre\bin\verify.dll
+0x737b0000 - 0x737d2000 	C:\Program Files (x86)\Java\jdk1.8.0_191\jre\bin\java.dll
+0x6bac0000 - 0x6bae0000 	C:\Program Files (x86)\Java\jdk1.8.0_191\jre\bin\instrument.dll
+0x73790000 - 0x737a4000 	C:\Program Files (x86)\Java\jdk1.8.0_191\jre\bin\zip.dll
+0x756f0000 - 0x76aee000 	C:\Windows\SYSTEM32\SHELL32.dll
+0x74ad0000 - 0x74fca000 	C:\Windows\SYSTEM32\windows.storage.dll
+0x74860000 - 0x748a5000 	C:\Windows\SYSTEM32\shlwapi.dll
+0x755c0000 - 0x755cc000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x74330000 - 0x743bd000 	C:\Windows\SYSTEM32\shcore.dll
+0x74700000 - 0x74744000 	C:\Windows\SYSTEM32\powrprof.dll
+0x73ce0000 - 0x73cef000 	C:\Windows\SYSTEM32\profapi.dll
+0x73770000 - 0x73785000 	C:\Program Files (x86)\Java\jdk1.8.0_191\jre\bin\net.dll
+0x6f370000 - 0x6f3bf000 	C:\Windows\system32\mswsock.dll
+0x6baa0000 - 0x6bab2000 	C:\Windows\system32\napinsp.dll
+0x6ba80000 - 0x6ba96000 	C:\Windows\system32\pnrpnsp.dll
+0x6ba60000 - 0x6ba74000 	C:\Windows\system32\NLAapi.dll
+0x6f2b0000 - 0x6f334000 	C:\Windows\SYSTEM32\DNSAPI.dll
+0x73d80000 - 0x73d87000 	C:\Windows\SYSTEM32\NSI.dll
+0x73110000 - 0x7311b000 	C:\Windows\System32\winrnr.dll
+0x6eca0000 - 0x6eca8000 	C:\Windows\System32\rasadhlp.dll
+0x73710000 - 0x7373f000 	C:\Windows\SYSTEM32\IPHLPAPI.DLL
+0x6ebf0000 - 0x6ec37000 	C:\Windows\System32\fwpuclnt.dll
+0x73140000 - 0x7315b000 	C:\Windows\SYSTEM32\bcrypt.dll
+0x734b0000 - 0x734ba000 	C:\Program Files (x86)\Java\jdk1.8.0_191\jre\bin\management.dll
+0x73760000 - 0x7376f000 	C:\Program Files (x86)\Java\jdk1.8.0_191\jre\bin\nio.dll
+0x72fa0000 - 0x730df000 	C:\Windows\SYSTEM32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dendpoints.shutdown.enabled=true -Denv=development -Dfull.stacktrace=false -Dgrails.env=development -Dgrails.full.stacktrace=false -Dinfo.app.grailsVersion=3.3.8 -Dinfo.app.name=sverse-web -Dinfo.app.version=0.1 -Djdk.reflect.allowGetCallerClass=true -Drun.active=true -Dspring.output.ansi.enabled=always -Dspringloaded=inclusions=grails.plugins..*;synchronize=true;allowSplitPackages=true;cacheDir=C:\Users\Pereira\sverse-web\build\springloaded -Dverbose=false -XX:+TieredCompilation -XX:TieredStopAtLevel=1 -XX:CICompilerCount=3 -javaagent:C:\Users\Pereira\.gradle\caches\modules-2\files-2.1\org.springframework\springloaded\1.2.8.RELEASE\b60bac05b0451cdc1863bfec617f39aa0dcaaa43\springloaded-1.2.8.RELEASE.jar -Xverify:none -Xms768m -Xmx768m -Dfile.encoding=UTF-8 -Duser.country=BR -Duser.language=pt -Duser.variant 
+java_command: sverseweb.Application
+java_class_path (initial): C:\Users\Pereira\sverse-web\src\main\resources;C:\Users\Pereira\sverse-web\grails-app\views;C:\Users\Pereira\sverse-web\grails-app\i18n;C:\Users\Pereira\sverse-web\grails-app\conf;C:\Users\Pereira\sverse-web\build\classes\main;C:\Users\Pereira\sverse-web\build\resources\main;C:\Users\Pereira\sverse-web\gsp-classes;C:\Users\Pereira\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-logging\1.5.15.RELEASE\3a0d1b63705bb75ac54884c6c169b1e1908f1375\spring-boot-starter-logging-1.5.15.RELEASE.jar;C:\Users\Pereira\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-autoconfigure\1.5.15.RELEASE\9cb093e335fc58e61581edcb959813b62731ef8e\spring-boot-autoconfigure-1.5.15.RELEASE.jar;C:\Users\Pereira\.gradle\caches\modules-2\files-2.1\org.grails\grails-core\3.3.8\d535a1f07ed1a1ce388bc18c8b63a3f3abd1aeee\grails-core-3.3.8.jar;C:\Users\Pereira\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-actuator\1.5.15.RELEASE\2f2e793c6c4592d99e58cf0668d1fcf2a84247f2\spring-boot-starter-actuator-1.5.15.RELEASE.jar;C:\Users\Pereira\.gradle\caches\modules-2\files-2.1\org.grails\grails-web-boot\3.3.8\173becb00d5a1d7cb1f1a44533d9ca8efd9843a\grails-web-boot-3.3.8.jar;C:\Users\Pereira\.gradle\caches\modules-2\files-2.1\org.grails\grails-logging\3.3.8\2c8647c42d85b7708d239ba3b2c2b422514f4fe9\grails-logging-3.3.8.jar;C:\Users\Pereira\.gradle\caches\modules-2\files-2.1\org.grails\grails-plugin-rest\3.3.8\8c6bc7985e3941e60336443e9f833b29ec573451\grails-plugin-rest-3.3.8.jar;C:\Users\Pereira\.gradle\caches\modules-2\files-2.1\org.grails\grails-plugin-databinding\3.3.8\5dfc9e914c81c413ebf432e1c5459794ce673291\grails-plugin-databinding-3.3.8.jar;C:\Users\Pereira\.gradle\caches\modules-2\files-2.1\org.grails\grails-plugin-i18n\3.3.8\a01c648c61520a89dcbe57b57656ed8d98995852\grails-plugin-i18n-3.3.8.jar;C:\Users\Pereira\.gradle\caches\modules-2\files-2.1\org.grails\grails-plugin-services\3.3.8\3cb9c7df
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-10
+PATH=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\Java\jdk-10\bin;C:\Program Files (x86)\grails-3.3.8\bin;C:\Program Files (x86)\apache-groovy-sdk-2.5.3\bin;C:\Program Files (x86)\Git\cmd
+USERNAME=Pereira
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=AMD64 Family 20 Model 2 Stepping 0, AuthenticAMD
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 10586 (10.0.10586.589)
+
+CPU:total 2 (initial active 2) (2 cores per cpu, 1 threads per core) family 20 model 2 stepping 0, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, popcnt, mmxext, lzcnt, sse4a, tsc, tscinvbit, tscinv
+
+Memory: 4k page, physical 3780600k(955252k free), swap 6795256k(2552988k free)
+
+vm_info: Java HotSpot(TM) Client VM (25.191-b12) for windows-x86 JRE (1.8.0_191-b12), built on Oct  6 2018 08:34:23 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Thu Feb 14 06:56:18 2019
+elapsed time: 98 seconds (0d 0h 1m 38s)
+
