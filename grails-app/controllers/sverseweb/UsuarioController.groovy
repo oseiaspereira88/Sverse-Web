@@ -21,10 +21,11 @@ class UsuarioController {
         render(view: "/usuario/amigos", model: [usuarios:lista])
     }
 
-    def index(){
-        String username = springSecurityService.principal.username
-        Usuario usuario = Usuario.findByUsername(username)
-        render(view:"/usuario/muralAcademico", model:[nome:usuario.nome, posts:usuario.posts])
+    def muralAcademico(){
+        def user = springSecurityService.currentUser
+        user.posts = (MyPost.all)
+        def posts = user.posts
+        render(view:"/usuario/muralAcademico", model: [usuario: user, posts: posts])
     }
 
     def calendarioAcademico(){

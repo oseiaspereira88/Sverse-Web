@@ -50,14 +50,21 @@
 
                         <section class="main-page content user-normal">
                             <article class="post main-post user-profile-page">
-                                <g:if test="${posts != null}">
-                                    <g:each in="${posts}" var="post">
-                                        <h6>${post.dataDePublicacao}</h6>
-                                    </g:each>
+                                <g:if test="${usuario != null}">
+                                    <g:if test="${posts != null}">
+                                        <g:each in="${posts}" var="post">
+                                            <h6>${post.dataDePublicacao}</h6>
+                                        </g:each>
+                                    </g:if>
+                                    <g:else>
+                                        <h4 style="padding: 10px">${usuario?.nome}, seja bem vindo ao Sverse Web</h4>
+                                        <h6 style="padding: 200px">Atualmente você não tem nenhum post.</h6>
+                                    </g:else>
                                 </g:if>
                                 <g:else>
-                                    <h4 style="padding: 10px">${nome}, seja bem vindo ao Sverse Web</h4>
-                                    <h6 style="padding: 200px">Atualmente você não tem nenhum post.</h6>
+                                    <script>
+                                        window.location = "/usuario/muralAcademico"
+                                    </script>
                                 </g:else>
                             </article>
                         </section>

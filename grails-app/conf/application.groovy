@@ -7,7 +7,7 @@ grails.plugin.springsecurity.authority.className = 'seguranca.Permissao'
 
 grails.plugin.springsecurity.auth.loginFormUrl = '/isolamento/login'
 grails.plugin.springsecurity.logout.afterLogoutUrl = '/isolamento/logout'
-grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/usuario/index'
+grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/usuario/muralAcademico'
 grails.plugin.springsecurity.failureHandler.defaultFailureUrl = '/isolamento/error'
 grails.plugin.springsecurity.successHandler.alwaysUseDefault = false
 grails.plugin.springsecurity.dao.hideUserNotFoundExceptions = false

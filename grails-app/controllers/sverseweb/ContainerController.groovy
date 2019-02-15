@@ -2,14 +2,12 @@ package sverseweb
 
 import grails.validation.ValidationException
 import seguranca.Usuario
-
 import static org.springframework.http.HttpStatus.*
 
 class ContainerController {
 
     ContainerService containerService
     UsuarioService usuarioService
-    PostService postService
     def springSecurityService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
@@ -45,11 +43,13 @@ class ContainerController {
         publico.add(user)
 
         //criando publicaçao de container publico e salvando
-        MyPost post = new MyPost(tipo: "Container Publico", usuario: user, publico: publico, dataDePublicacao: new Date())
-        post.validate()
-        postService.save(post)
-        user.addToPots(post)
-        usuarioService.save(user)
+        MyPost post = new MyPost(
+                tipo: "Container Publico",
+                usuario: user,
+                publico: publico,
+                dataDePublicacao: new Date())
+        user.addToPosts(post)
+        user.save(flash:true)
 
         redirect(action: "index")
     }

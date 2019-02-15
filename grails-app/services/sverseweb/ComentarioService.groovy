@@ -1,11 +1,18 @@
 package sverseweb
 
-import grails.gorm.transactions.Transactional
+import grails.gorm.services.Service
 
-@Transactional
-class ComentarioService {
+@Service(Comentario)
+interface ComentarioService {
 
-    def serviceMethod() {
+    Comentario get(Serializable id)
 
-    }
+    List<Comentario> list(Map args)
+
+    Long count()
+
+    void delete(Serializable id)
+
+    Comentario save(Comentario comentario)
+
 }

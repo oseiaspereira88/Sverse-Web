@@ -55,7 +55,7 @@
 }
 
 .rotate {
-    animation: rotation 3s;
+    animation: rotation 1s;
 }
 
 @keyframes rotation {
