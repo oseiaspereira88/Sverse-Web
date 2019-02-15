@@ -37,7 +37,7 @@ class EstudoController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'estudo.label', default: 'Estudo'), estudo.id])
+                //flash.message = message(code: 'default.created.message', args: [message(code: 'estudo.label', default: 'Estudo'), estudo.id])
                 redirect estudo
             }
             '*' { respond estudo, [status: CREATED] }
@@ -63,7 +63,7 @@ class EstudoController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'estudo.label', default: 'Estudo'), estudo.id])
+                //flash.message = message(code: 'default.updated.message', args: [message(code: 'estudo.label', default: 'Estudo'), estudo.id])
                 redirect estudo
             }
             '*'{ respond estudo, [status: OK] }
@@ -80,7 +80,7 @@ class EstudoController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'estudo.label', default: 'Estudo'), id])
+                //flash.message = message(code: 'default.deleted.message', args: [message(code: 'estudo.label', default: 'Estudo'), id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
@@ -90,7 +90,7 @@ class EstudoController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'estudo.label', default: 'Estudo'), params.id])
+                //flash.message = message(code: 'default.not.found.message', args: [message(code: 'estudo.label', default: 'Estudo'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }

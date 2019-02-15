@@ -37,7 +37,7 @@ class AlarmeController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'alarme.label', default: 'Alarme'), alarme.id])
+                //flash.message = message(code: 'default.created.message', args: [message(code: 'alarme.label', default: 'Alarme'), alarme.id])
                 redirect alarme
             }
             '*' { respond alarme, [status: CREATED] }
@@ -63,7 +63,7 @@ class AlarmeController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'alarme.label', default: 'Alarme'), alarme.id])
+                //flash.message = message(code: 'default.updated.message', args: [message(code: 'alarme.label', default: 'Alarme'), alarme.id])
                 redirect alarme
             }
             '*'{ respond alarme, [status: OK] }
@@ -80,7 +80,7 @@ class AlarmeController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'alarme.label', default: 'Alarme'), id])
+                //flash.message = message(code: 'default.deleted.message', args: [message(code: 'alarme.label', default: 'Alarme'), id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
@@ -90,7 +90,7 @@ class AlarmeController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'alarme.label', default: 'Alarme'), params.id])
+                //flash.message = message(code: 'default.not.found.message', args: [message(code: 'alarme.label', default: 'Alarme'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }

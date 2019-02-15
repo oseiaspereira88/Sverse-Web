@@ -37,7 +37,7 @@ class BoletimDeEtapasController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'boletimDeEtapas.label', default: 'BoletimDeEtapas'), boletimDeEtapas.id])
+                //flash.message = message(code: 'default.created.message', args: [message(code: 'boletimDeEtapas.label', default: 'BoletimDeEtapas'), boletimDeEtapas.id])
                 redirect boletimDeEtapas
             }
             '*' { respond boletimDeEtapas, [status: CREATED] }
@@ -63,7 +63,7 @@ class BoletimDeEtapasController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'boletimDeEtapas.label', default: 'BoletimDeEtapas'), boletimDeEtapas.id])
+                //flash.message = message(code: 'default.updated.message', args: [message(code: 'boletimDeEtapas.label', default: 'BoletimDeEtapas'), boletimDeEtapas.id])
                 redirect boletimDeEtapas
             }
             '*'{ respond boletimDeEtapas, [status: OK] }
@@ -80,7 +80,7 @@ class BoletimDeEtapasController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'boletimDeEtapas.label', default: 'BoletimDeEtapas'), id])
+                //flash.message = message(code: 'default.deleted.message', args: [message(code: 'boletimDeEtapas.label', default: 'BoletimDeEtapas'), id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
@@ -90,7 +90,7 @@ class BoletimDeEtapasController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'boletimDeEtapas.label', default: 'BoletimDeEtapas'), params.id])
+                //flash.message = message(code: 'default.not.found.message', args: [message(code: 'boletimDeEtapas.label', default: 'BoletimDeEtapas'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }

@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="${resource(dir: 'css', file: 'itensInCycle.css')}" type="text/css">
 <asset:javascript src="itensInCycle.js"/>
 
-
 <section class="main-page content user-normal">
     <article class="post main-post user-profile-page">
         <ul>

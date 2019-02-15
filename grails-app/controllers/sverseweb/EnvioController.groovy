@@ -42,7 +42,7 @@ class EnvioController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'envio.label', default: 'Envio'), envio.id])
+                //flash.message = message(code: 'default.created.message', args: [message(code: 'envio.label', default: 'Envio'), envio.id])
                 redirect envio
             }
             '*' { respond envio, [status: CREATED] }
@@ -68,7 +68,7 @@ class EnvioController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'envio.label', default: 'Envio'), envio.id])
+                //flash.message = message(code: 'default.updated.message', args: [message(code: 'envio.label', default: 'Envio'), envio.id])
                 redirect envio
             }
             '*'{ respond envio, [status: OK] }
@@ -85,7 +85,7 @@ class EnvioController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'envio.label', default: 'Envio'), id])
+                //flash.message = message(code: 'default.deleted.message', args: [message(code: 'envio.label', default: 'Envio'), id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
@@ -95,7 +95,7 @@ class EnvioController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'envio.label', default: 'Envio'), params.id])
+                //flash.message = message(code: 'default.not.found.message', args: [message(code: 'envio.label', default: 'Envio'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }

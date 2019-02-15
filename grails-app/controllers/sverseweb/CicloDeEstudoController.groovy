@@ -37,7 +37,7 @@ class CicloDeEstudoController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'cicloDeEstudo.label', default: 'CicloDeEstudo'), cicloDeEstudo.id])
+                //flash.message = message(code: 'default.created.message', args: [message(code: 'cicloDeEstudo.label', default: 'CicloDeEstudo'), cicloDeEstudo.id])
                 redirect cicloDeEstudo
             }
             '*' { respond cicloDeEstudo, [status: CREATED] }
@@ -63,7 +63,7 @@ class CicloDeEstudoController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'cicloDeEstudo.label', default: 'CicloDeEstudo'), cicloDeEstudo.id])
+                //flash.message = message(code: 'default.updated.message', args: [message(code: 'cicloDeEstudo.label', default: 'CicloDeEstudo'), cicloDeEstudo.id])
                 redirect cicloDeEstudo
             }
             '*'{ respond cicloDeEstudo, [status: OK] }
@@ -80,7 +80,7 @@ class CicloDeEstudoController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'cicloDeEstudo.label', default: 'CicloDeEstudo'), id])
+                //flash.message = message(code: 'default.deleted.message', args: [message(code: 'cicloDeEstudo.label', default: 'CicloDeEstudo'), id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
@@ -90,7 +90,7 @@ class CicloDeEstudoController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'cicloDeEstudo.label', default: 'CicloDeEstudo'), params.id])
+                //flash.message = message(code: 'default.not.found.message', args: [message(code: 'cicloDeEstudo.label', default: 'CicloDeEstudo'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }

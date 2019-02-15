@@ -89,7 +89,7 @@ class TrabalhoEmGrupoController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'trabalhoEmGrupo.label', default: 'TrabalhoEmGrupo'), trabalhoEmGrupo.id])
+                //flash.message = message(code: 'default.created.message', args: [message(code: 'trabalhoEmGrupo.label', default: 'TrabalhoEmGrupo'), trabalhoEmGrupo.id])
                 redirect trabalhoEmGrupo
             }
             '*' { respond trabalhoEmGrupo, [status: CREATED] }
@@ -115,7 +115,7 @@ class TrabalhoEmGrupoController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'trabalhoEmGrupo.label', default: 'TrabalhoEmGrupo'), trabalhoEmGrupo.id])
+                //flash.message = message(code: 'default.updated.message', args: [message(code: 'trabalhoEmGrupo.label', default: 'TrabalhoEmGrupo'), trabalhoEmGrupo.id])
                 redirect trabalhoEmGrupo
             }
             '*'{ respond trabalhoEmGrupo, [status: OK] }
@@ -132,7 +132,7 @@ class TrabalhoEmGrupoController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'trabalhoEmGrupo.label', default: 'TrabalhoEmGrupo'), id])
+                //flash.message = message(code: 'default.deleted.message', args: [message(code: 'trabalhoEmGrupo.label', default: 'TrabalhoEmGrupo'), id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
@@ -142,7 +142,7 @@ class TrabalhoEmGrupoController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'trabalhoEmGrupo.label', default: 'TrabalhoEmGrupo'), params.id])
+                //flash.message = message(code: 'default.not.found.message', args: [message(code: 'trabalhoEmGrupo.label', default: 'TrabalhoEmGrupo'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }

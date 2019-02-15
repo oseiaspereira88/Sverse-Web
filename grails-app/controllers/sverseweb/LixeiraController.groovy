@@ -37,7 +37,7 @@ class LixeiraController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'lixeira.label', default: 'Lixeira'), lixeira.id])
+                //flash.message = message(code: 'default.created.message', args: [message(code: 'lixeira.label', default: 'Lixeira'), lixeira.id])
                 redirect lixeira
             }
             '*' { respond lixeira, [status: CREATED] }
@@ -63,7 +63,7 @@ class LixeiraController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'lixeira.label', default: 'Lixeira'), lixeira.id])
+                //flash.message = message(code: 'default.updated.message', args: [message(code: 'lixeira.label', default: 'Lixeira'), lixeira.id])
                 redirect lixeira
             }
             '*'{ respond lixeira, [status: OK] }
@@ -80,7 +80,7 @@ class LixeiraController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'lixeira.label', default: 'Lixeira'), id])
+                //flash.message = message(code: 'default.deleted.message', args: [message(code: 'lixeira.label', default: 'Lixeira'), id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
@@ -90,7 +90,7 @@ class LixeiraController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'lixeira.label', default: 'Lixeira'), params.id])
+                //flash.message = message(code: 'default.not.found.message', args: [message(code: 'lixeira.label', default: 'Lixeira'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }
