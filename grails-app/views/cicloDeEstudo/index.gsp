@@ -22,7 +22,6 @@
                     </div>
                 </div>
             </header>
-            <g:render template="../templates/_navHome"/>
             <div style="text-align: center; margin-right: 0;">
                 <g:render template="cycle"/>
             </div>

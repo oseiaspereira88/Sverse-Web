@@ -1,4 +1,11 @@
 <style>
+.contentNavGlobal{
+    border-radius: 0;
+    background: #00b961;
+
+}
+</style>
+<style>
 .btn-group button {
     background-color: #4CAF50; /* Green background */
     border: 1px solid green; /* Green border */
@@ -25,7 +32,7 @@
 }
 </style>
 
-<nav class="global-nav ">
+<nav class="global-nav">
     <ul class="home-section-nav content">
         <li class="nav-item">
             <a class="amino-logo" href="/" data-refer-type="site_navbar_amino_logo">

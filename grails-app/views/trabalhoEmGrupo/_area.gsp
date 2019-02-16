@@ -1,69 +1,53 @@
-<div class="container">
-    <g:if test="${trabalho.etapas.size() > 0}">
-        <div class="columns">
-            <div id="bloco1" class="column col-4" style="padding: 0;">
-                <div class="modeloheader" style="background-color: #309570; margin-left: 16px; margin-right: 16px; margin-bottom: 0;">
-                    <h6>Todas as etapas</h6>
-                </div>
+<div class="drag-container">
+    <ul class="drag-list">
+        <li class="drag-column drag-column-on-hold">
+            <span class="drag-column-header">
+                <h2>On Hold</h2>
+                <svg class="drag-header-more" data-target="options1" fill="#FFFFFF" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/</svg>
+            </span>
 
-                <div class="label"
-                     style="width: 263px; box-shadow: 0px 2px 7px; border-top-left-radius:0; border-top-right-radius:0; padding:0; margin-left: 16px; margin-right: 16px; margin-bottom: 0; background-color: darkgrey;">
-                    <ul id="sortable1" style="margin-top: 0;">
-                        <g:each in="${trabalho.etapas}" var="etapa" status="i">
-                            <li class="ui-state-default label" style="text-align: center; width: 232px;">
-                                <div class="btn-link" style="border-style: none; padding: 4px" onclick="window.location.href = '/etapa/edit/${etapa.id}'">
-                                    ${etapa.titulo}
-                                </div>
-                            </li>
-                        </g:each>
-                    </ul>
-                </div>
-            </div>
+            <div class="drag-options" id="options1"></div>
 
-            <div id="bloco2" class="column col-4" style="padding: 0;">
-                <div class="modeloheader" style="background-color: #309570; margin-left: 16px; margin-right: 16px; margin-bottom: 0;">
-                    <h6>Etapas em Andamento</h6>
-                </div>
-
-                <div class="label"
-                     style="width: 263px; box-shadow: 0px 2px 7px; border-top-left-radius:0; border-top-right-radius:0; padding:0; margin-left: 16px; margin-right: 16px; margin-bottom: 0; background-color: darkgrey;">
-                    <ul id="sortable2" style="margin-top: 0;">
-                        <g:each in="${trabalho.etapas}" var="etapa" status="i">
-                            <g:if test="${etapa.estado == 'Em andamento'}">
-                                <li class="ui-state-default label" style="text-align: center; width: 232px;">
-                                    <div class="btn-link" style="border-style: none; padding: 4px" onclick="window.location.href = '/etapa/edit/${etapa.id}'">
-                                        ${etapa.titulo}
-                                    </div>
-                                </li>
-                            </g:if>
-                        </g:each>
-                    </ul>
-                </div>
-            </div>
-
-            <div id="bloco3" class="column col-4" style="padding: 0;">
-                <div class="modeloheader" style="background-color: #309570; margin-left: 16px; margin-right: 16px; margin-bottom: 0;">
-                    <h6>Etapas Concluidas</h6>
-                </div>
-
-                <div class="label"
-                     style="width: 263px; box-shadow: 0px 2px 7px; border-top-left-radius:0; border-top-right-radius:0; padding:0; margin-left: 16px; margin-right: 16px; margin-bottom: 0; background-color: darkgrey;">
-                    <ul id="sortable3" style="margin-top: 0;">
-                        <g:each in="${trabalho.etapas}" var="etapa" status="i">
-                            <g:if test="${etapa.estado == 'Concluida'}">
-                                <li class="ui-state-default label" style="text-align: center; width: 232px;">
-                                    <div class="btn-link" style="border-style: none; padding: 4px" onclick="window.location.href = '/etapa/edit/${etapa.id}'">
-                                        ${etapa.titulo}
-                                    </div>
-                                </li>
-                            </g:if>
-                        </g:each>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </g:if>
-    <g:else>
-        <h6 style="text-align: center">Organize as etapas do seu trabalho.</h6>
-    </g:else>
+            <ul class="drag-inner-list" id="1">
+                <li class="drag-item"></li>
+                <li class="drag-item"></li>
+            </ul>
+        </li>
+        <li class="drag-column drag-column-in-progress">
+            <span class="drag-column-header">
+                <h2>In Progress</h2>
+                <svg class="drag-header-more" data-target="options2" fill="#FFFFFF" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/</svg>
+            </span>
+            <div class="drag-options" id="options2"></div>
+            <ul class="drag-inner-list" id="2">
+                <li class="drag-item"></li>
+                <li class="drag-item"></li>
+                <li class="drag-item"></li>
+            </ul>
+        </li>
+        <li class="drag-column drag-column-needs-review">
+            <span class="drag-column-header">
+                <h2>Needs Review</h2>
+                <svg data-target="options3" class="drag-header-more" fill="#FFFFFF" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/</svg>
+            </span>
+            <div class="drag-options" id="options3"></div>
+            <ul class="drag-inner-list" id="3">
+                <li class="drag-item"></li>
+                <li class="drag-item"></li>
+                <li class="drag-item"></li>
+                <li class="drag-item"></li>
+            </ul>
+        </li>
+        <li class="drag-column drag-column-approved">
+            <span class="drag-column-header">
+                <h2>Approved</h2>
+                <svg data-target="options4" class="drag-header-more" fill="#FFFFFF" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/</svg>
+            </span>
+            <div class="drag-options" id="options4"></div>
+            <ul class="drag-inner-list" id="4">
+                <li class="drag-item"></li>
+                <li class="drag-item"></li>
+            </ul>
+        </li>
+    </ul>
 </div>

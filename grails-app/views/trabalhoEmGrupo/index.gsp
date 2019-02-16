@@ -4,8 +4,6 @@
     <g:set var="entityName" value="${message(code: 'trabalhoEmGrupo.label', default: 'TrabalhoEmGrupo')}"/>
     <title><g:message code="default.list.label" args="[entityName]"/></title>
 
-    <link rel="stylesheet" href="${resource(dir: 'css', file: 'theme.css')}" type="text/css">
-
     <link rel="stylesheet" href="//wa1.narvii.com/static/dist/css/desktop-style.css?v=266bb8a6f649">
     <link rel="stylesheet" href="//wa1.narvii.com/static/dist/css/misc-desktop-style.css?v=84527a92ab6d">
     <asset:link rel="icon" href="faviconSverse.ico" type="image/x-ico"/>
@@ -27,10 +25,9 @@
             <g:render template="../templates/_navHome"/>
             <div style="text-align: center;">
 
-            <g:render template="mainPageTrabalhos"/>
+                <g:render template="mainPageTrabalhos"/>
 
-
-        </div>
+            </div>
         </div>
     </div>
 </div>

@@ -1,21 +1,16 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="${resource(dir: 'css', file: 'itensInCycle.css')}" type="text/css">
 <asset:javascript src="itensInCycle.js"/>
 
 <section class="main-page content user-normal">
-    <article class="post main-post user-profile-page">
-        <ul>
-            <li>Center</li>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-            <li>Item 4</li>
-            <li>Item 5</li>
-            <li>Item 6</li>
-            <li>Item 7</li>
-            <li>Item 8</li>
-            <li>Item 9</li>
-            <li>Item 10</li>
-            <li>Item 11</li>
+    <article class="post main-post user-profile-page" style="height: 90vh; position: relative;">
+        <img class="bordaCycle" src="https://cdn.pixabay.com/photo/2012/04/01/18/41/button-23949_960_720.png">
+        <img class="imgCycle" src="/assets/logo_sverse.png">
+        <ul id="cycle">
+            <li class="itemCycle" style="visibility: hidden;"></li>
+            <li class="itemCycle"> <img alt="Item1" class="imgItem" src="/assets/logo_sverse.png"> </li>
+            <li class="itemCycle"> <img alt="Item1" class="imgItem" src="/assets/logo_sverse.png"> </li>
+            <li class="itemCycle"> <img alt="Item1" class="imgItem" src="/assets/logo_sverse.png"> </li>
         </ul>
     </article>
 </section>
