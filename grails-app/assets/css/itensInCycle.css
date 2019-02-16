@@ -47,6 +47,11 @@
     width: 40px;
     border-style: solid;
     background-color: #00b961;
+    transition: all 800ms;
+}
+
+#cycle .itemCycle:hover{
+    border-color: #8fdf82;
 }
 
 .imgItem{
