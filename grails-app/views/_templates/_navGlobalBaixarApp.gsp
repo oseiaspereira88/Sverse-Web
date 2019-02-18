@@ -65,7 +65,7 @@
 
 .dropdown-content a:hover {
     font-weight: bold;
-    color: #00ff7f;
+    color: #00b961;
 }
 
 /* Show the dropdown menu on hover */
@@ -77,17 +77,13 @@
 <nav class="global-nav">
     <ul class="home-section-nav content">
         <li class="nav-item">
-            <a class="amino-logo" href="/usuario/muralAcademico" data-refer-type="site_navbar_amino_logo">
+            <a class="amino-logo" href="/" data-refer-type="site_navbar_amino_logo">
                 <asset:image class="logo" style="height: 40px" src="logoweb.png"/>
             </a>
         </li>
         <li class="nav-item">
-            <a style="margin-top: 6px; margin-right: 270px;" class="home-nav-home community-color" href="/usuario/muralAcademico"
+            <a style="margin-top: 6px; margin-right: 270px;" class="home-nav-home community-color" href="/"
                data-refer-type="community_nav_home"><i class="amino-icon amino-icon-home"></i></a>
-        </li>
-        <li id="baixarApp" class="nav-item nav-download">
-            <a class="btn btn-download community-color" href="/paginador/baixarApp"
-               data-event-category="NavBar Get App">Baixe o App</a>
         </li>
         <li class="nav-item nav-user dropdown">
             <a class="nav-link block dropbtn">

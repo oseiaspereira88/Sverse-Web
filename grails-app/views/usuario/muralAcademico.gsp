@@ -6,6 +6,16 @@
     <link rel="stylesheet" href="//wa1.narvii.com/static/dist/css/misc-desktop-style.css?v=84527a92ab6d">
     <asset:link rel="icon" href="faviconSverse.ico" type="image/x-ico"/>
 
+    <script>
+        window.onload = function (ev) {
+            if (${usuario == null}) {
+                window.location = "/usuario/muralAcademico";
+            } else {
+                document.getElementById("divPrincipal").style.display = "block";
+            }
+        }
+    </script>
+
     <style>
     .rotate {
         animation: rotation 3s infinite;
@@ -23,12 +33,11 @@
 </head>
 
 <body>
-
-<div class="container">
+<div style="display: none;" id="divPrincipal" class="container">
     <div class="columns">
         <div class="column col-12">
             <header class="global-header contentNavGlobal">
-                <div class="content community-bg" >
+                <div class="content community-bg">
                     <div class="container">
                         <g:render template="../templates/_navGlobal"/>
                     </div>
@@ -45,26 +54,74 @@
                         <g:img class="rotate" style="margin-top: 10px; height: 30px; width: 30px;"
                                src="settings-icon.png"></g:img>
                     </a>
-
                     <section class="community-content">
-
                         <section class="main-page content user-normal">
-                            <article class="post main-post user-profile-page">
-                                <g:if test="${usuario != null}">
-                                    <g:if test="${posts != null}">
-                                        <g:each in="${posts}" var="post">
-                                            <h6>${post.dataDePublicacao}</h6>
-                                        </g:each>
-                                    </g:if>
-                                    <g:else>
-                                        <h4 style="padding: 10px">${usuario?.nome}, seja bem vindo ao Sverse Web</h4>
-                                        <h6 style="padding: 200px">Atualmente você não tem nenhum post.</h6>
-                                    </g:else>
+                            <article class="post main-post user-profile-page" style="min-height: 70vh;">
+                                <g:if test="${posts != null && posts.size() > 0}">
+                                    <g:each in="${posts}" var="post">
+                                        <div style="position:relative; height: 220px; box-shadow: gainsboro 1px 1px 8px; text-align: left; margin: 18px;">
+
+                                            <g:if test="${post.tipo == "Container Publico"}">
+                                                <div style="height: 18%; padding: 12px; box-shadow: gainsboro 1px 1px 8px; border-radius: 4px 4px 0 0; position: relative; background-color: #747f88;"
+                                                     class="postHeader">
+
+                                                    <!-- ImgDePerfil e Msg do post -->
+                                                    <img style="position: absolute; top: 4px; left: 4px; height: 80%; width: auto;"
+                                                         src="/assets/logo_sverse.png">
+                                                    <label class="tituloHeaderPost"
+                                                           style="font-weight: bold; margin-left: 28px; color:#fff;">
+                                                        <g:if test="${post.usuarioId == usuario.id}">
+                                                            Você
+                                                        </g:if>
+                                                        <g:else>
+                                                            ${idUserPost[post.usuarioId].nome}
+                                                        </g:else>
+                                                        Criou um Novo Grupo de Estudo.
+                                                    </label>
+                                                </div>
+
+                                                <div style="padding:20px; padding-right: 36%; text-align: left; min-height: 62%; position: relative; background-color: #bee1da;"
+                                                     class="postBody">
+
+                                                    <!-- Img do container, nome e figura ilustrativa -->
+                                                    <img style="position: absolute; top: 34px; right: 34px; height: 60%; width: auto;"
+                                                         src="/assets/logo_sverse.png">
+                                                    <h5 style="font-weight: bold; margin-left: 28px; font-size: 14pt; color:#747f88; text-align: right;">
+                                                        ${("Nome do Container")}
+                                                    </h5><br>
+                                                    <label class="tituloHeaderPost"
+                                                           style="margin-right: 28px; color:#747f88;">
+
+                                                        .......................................................................<br>
+                                                        Descrição ....................................................<br>
+                                                        .......................................................................<br>
+                                                        ....................................................Descrição<br>
+                                                        .......................................................................<br>
+                                                    </label>
+                                                </div>
+
+                                                <div style="border-radius:0 0 4px 4px; height: 20%; text-align: left; padding-left: 8px; background-color: #bee1da; color: #747f88;"
+                                                     class="postFooder">
+                                                    <!-- Data e Hora -->
+                                                    <h6 style="display: inline-block">Data:
+                                                    ${post.dataDePublicacao.date + "/" + post.dataDePublicacao.month + "/" + post.dataDePublicacao.year}
+                                                    </h6>
+                                                    <h6 style="display: inline-block">Hora:
+                                                    ${post.dataDePublicacao.hours + ":" + post.dataDePublicacao.minutes + ":" + post.dataDePublicacao.seconds}
+                                                    </h6>
+                                                </div>
+                                            </g:if>
+                                            <g:elseif test="">
+
+                                            </g:elseif>
+                                            <g:elseif test="">
+                                            </g:elseif>
+                                        </div>
+                                    </g:each>
                                 </g:if>
                                 <g:else>
-                                    <script>
-                                        window.location = "/usuario/muralAcademico"
-                                    </script>
+                                    <h4 style="padding: 10px">${usuario?.nome}, seja bem vindo ao Sverse Web</h4>
+                                    <h6 style="padding: 200px">Atualmente você não tem nenhum post.</h6>
                                 </g:else>
                             </article>
                         </section>

@@ -94,7 +94,7 @@
 <div class="contenedor" style="position: relative; width: 100vw;">
 	<div class="columns">
 		<div class="column col-12">
-			<header class="global-header">
+			<header class="global-header contentNavGlobal">
 				<div class="content community-bg">
 					<div class="container">
 						<g:render template="../templates/_navGlobalPublic"/>

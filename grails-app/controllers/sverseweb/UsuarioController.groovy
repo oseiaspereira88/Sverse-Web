@@ -14,24 +14,42 @@ class UsuarioController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def amigos(){
+    def amigos() {
         String username = springSecurityService.principal.username
         Usuario usuario = Usuario.findByUsername(username)
         def lista = usuario.getAmigos()
-        render(view: "/usuario/amigos", model: [usuarios:lista])
+        render(view: "/usuario/amigos", model: [usuarios: lista])
     }
 
-    def muralAcademico(){
-        def user = springSecurityService.currentUser
-        user.posts = (MyPost.all)
-        def posts = user.posts
-        render(view:"/usuario/muralAcademico", model: [usuario: user, posts: posts])
+    def muralAcademico() {
+        String username = springSecurityService.principal.username
+        Usuario user = Usuario.findByUsername(username)
+        user.getDirtyPropertyNames()
+        def posts = []
+        def idUserPost = [:]
+        if (Post.findAllByUsuarioId(user.id) != null && !Post.findAllByUsuarioId(user.id).empty) {
+            posts = Post.findAllByUsuarioId(user.id)
+        }
+        if (Post.all?.publicoIds.size()>0) {
+            Post.all.each {
+                it.publicoIds.each { id ->
+                    if (id == user.id) {
+                        posts.add(it)
+                        if(it.usuarioId){
+                            idUserPost[it.usuarioId] = Usuario.findById(it.usuarioId)
+                        }
+                    }
+                }
+            }
+        }
+
+        render(view: "/usuario/muralAcademico", model: [usuario: user, posts: posts, idUserPost: idUserPost])
     }
 
-    def calendarioAcademico(){
+    def calendarioAcademico() {
         String username = springSecurityService.principal.username
         Usuario usuario = Usuario.findByUsername(username)
-        render(view: "/usuario/calendarioAcademico", model: [usuario:usuario])
+        render(view: "/usuario/calendarioAcademico", model: [usuario: usuario])
     }
 
     def show(Long id) {

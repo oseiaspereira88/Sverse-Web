@@ -2,17 +2,17 @@ package sverseweb
 
 import grails.gorm.services.Service
 
-@Service(MyPost)
+@Service(Post)
 interface MyPostService {
 
-    MyPost get(Serializable id)
+    Post get(Serializable id)
 
-    List<MyPost> list(Map args)
+    List<Post> list(Map args)
 
     Long count()
 
     void delete(Serializable id)
 
-    MyPost save(MyPost post)
+    Post save(Post post)
 
 }

@@ -1,9 +1,9 @@
 package sverseweb
 
-import grails.testing.services.ServiceUnitTest
+import grails.testing.gorm.DomainUnitTest
 import spock.lang.Specification
 
-class MyPostServiceSpec extends Specification implements ServiceUnitTest<PostService>{
+class PostSpec extends Specification implements DomainUnitTest<Post> {
 
     def setup() {
     }

@@ -19,7 +19,7 @@ class ContainerController {
 
     def newContainer(){
         //criando containers e associando ao usuario
-        Usuario user = springSecurityService.getCurrentUser()
+        Usuario user = Usuario.findById(springSecurityService.getCurrentUserId())
         Container container = new Container()
         container.nome = params.nome
         container.descricao = params.descricao
@@ -39,17 +39,14 @@ class ContainerController {
         user.addToContainersAdmin(container)
         containerService.save(container)
 
-        def publico = user.amigos
-        publico.add(user)
-
         //criando publicaçao de container publico e salvando
-        MyPost post = new MyPost(
-                tipo: "Container Publico",
-                usuario: user,
-                publico: publico,
-                dataDePublicacao: new Date())
-        user.addToPosts(post)
-        user.save(flash:true)
+        Post post = new Post()
+        post.tipo = "Container Publico"
+        post.containerId = container.id
+        post.usuarioId = user.id
+        post.publicoIds = Integer.parseInt(user.amigos.id)
+        post.dataDePublicacao = new Date()
+        post.save(flash:true)
 
         redirect(action: "index")
     }

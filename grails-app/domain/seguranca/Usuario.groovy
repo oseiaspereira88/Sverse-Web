@@ -12,7 +12,7 @@ import sverseweb.Envio
 import sverseweb.Lixeira
 import sverseweb.Nota
 import sverseweb.Perfil
-import sverseweb.MyPost
+import sverseweb.Post
 import sverseweb.Solicitacao
 import sverseweb.TrabalhoEmGrupo
 
@@ -53,8 +53,7 @@ class Usuario implements Serializable {
                       trabalhosEmGrupo     : TrabalhoEmGrupo,
                       amigos               : Usuario,
                       solicitacoesEnviadas : Solicitacao,
-                      solicitacoesRecebidas: Solicitacao,
-                      posts                 : MyPost]
+                      solicitacoesRecebidas: Solicitacao]
 
     static constraints = {
         username nullable: false, minSize: 8, blank: false, unique: true

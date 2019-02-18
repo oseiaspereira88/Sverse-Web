@@ -105,7 +105,7 @@
             <header class="global-header contentNavGlobal">
                 <div class="content community-bg">
                     <div class="container">
-                        <g:render template="../templates/_navGlobalPublic"/>
+                        <g:render template="../templates/_navGlobalBaixarApp"/>
                     </div>
                 </div>
             </header>
@@ -118,11 +118,17 @@
 
     <div style="color: #00FF7F; justify-content: center; align-items: center; width: 100%; height: 100%;">
 
-            <button class="bBaixarApp" style="border-radius: 40px; position:fixed; left: 35%; bottom: 18%; text-align: right;" href="#" onclick="window.open('https://www.apple.com/br/ios/app-store/', '_blank'); ">
-                <img style="right: 24px; width: 24px; left:6px; top: 4px;  position: absolute;" src="/assets/apple_logo.png">App Store</button>
+        <button class="bBaixarApp"
+                style="border-radius: 40px; position:fixed; left: 35%; bottom: 18%; text-align: right;" href="#"
+                onclick="window.open('https://www.apple.com/br/ios/app-store/', '_blank'); ">
+            <img style="right: 24px; width: 24px; left:6px; top: 4px;  position: absolute;"
+                 src="/assets/apple_logo.png">App Store</button>
 
-            <button class="bBaixarApp" style="border-radius: 40px; position:fixed; right: 35%; bottom: 18%; text-align: right;" href="#" onclick="window.open('https://play.google.com/store/apps?hl=pt_BR', '_blank');">
-                <img style="right: 20px; width: 20px; left:6px; top: 8px; position: absolute;" src="/assets/playstore.svg">Play Store</button>
+        <button class="bBaixarApp"
+                style="border-radius: 40px; position:fixed; right: 35%; bottom: 18%; text-align: right;" href="#"
+                onclick="window.open('https://play.google.com/store/apps?hl=pt_BR', '_blank');">
+            <img style="right: 20px; width: 20px; left:6px; top: 8px; position: absolute;"
+                 src="/assets/playstore.svg">Play Store</button>
 
 
         <div id="main">
@@ -153,28 +159,5 @@
         </div>
     </div>
 </div>
-
-
-<g:render template="login"/>
-<g:render template="cadastro"/>
-
-<script>
-    function exibirTelaDeLogin() {
-        var tela = document.getElementById("telaDeLogin");
-        if (tela.style.display == "none") {
-            tela.style.display = "block";
-        } else {
-            tela.style.display = "none";
-        }
-    }
-
-    function exibirTelaDeCadastro() {
-        var cardLogin = document.getElementById("card-login");
-        var form = document.getElementById("frmLogar");
-        form.style.display = "none";
-        cardLogin.innerHTML = document.getElementById("card-cadastro").innerHTML;
-        document.getElementById("footer").innerHTML = "<div style='position: absolute; bottom: 0; left: 8px;'><a class='btn' style='color: whitesmoke; font-size: 11pt;  background-color: rgba(0,0,0,0);'>Duvidas sobre os termos de uso?</a></div>"
-    }
-</script>
 </body>
 </html>

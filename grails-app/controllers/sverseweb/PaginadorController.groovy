@@ -27,4 +27,8 @@ class PaginadorController {
     def ajuda() {
 
     }
+
+    def baixarApp() {
+
+    }
 }

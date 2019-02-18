@@ -88,7 +88,7 @@
 <div class="container">
     <div class="columns">
         <div class="column col-12">
-            <header class="global-header">
+            <header class="global-header contentNavGlobal">
                 <div class="content community-bg">
                     <div class="container">
                         <g:render template="../templates/_navGlobal"/>
