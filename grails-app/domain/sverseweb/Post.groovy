@@ -13,6 +13,7 @@ class Post {
 
     static constraints = {
         tipo(nullable: false, blank: false, unique: false, inList: [
+                "Container Secreto",
                 "Container Publico",
                 "Solicitacao de Amizade",
                 "Solitacao de Participacao",

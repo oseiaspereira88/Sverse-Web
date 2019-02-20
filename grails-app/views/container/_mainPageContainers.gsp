@@ -121,6 +121,10 @@
                             <g:select name="importancia" id="campo_importancia"
                                       from="${["Muito importante", "Importante", "Razoável", "Não muito importante"]}"
                                       noSelection="['': '-Escolha a importância-']"></g:select><br>
+                            <label>Privacidade:</label>
+                            <g:select name="privacidade" id="campo_privacidade"
+                                      from="${["Grupo Secreto", "Grupo Publico"]}"
+                                      noSelection="['': '-Escolha a privacidade-']"></g:select><br>
                             <g:textArea id="campo_descricao" placeholder="Escreva a descrição do seu contêiner..."
                                         cols="30"
                                         rows="5" name="descricao" form="frmCreateContainer"></g:textArea><br>

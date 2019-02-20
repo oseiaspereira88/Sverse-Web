@@ -59,9 +59,8 @@
                             <article class="post main-post user-profile-page" style="min-height: 70vh;">
                                 <g:if test="${posts != null && posts.size() > 0}">
                                     <g:each in="${posts}" var="post">
-                                        <div style="position:relative; height: 220px; box-shadow: gainsboro 1px 1px 8px; text-align: left; margin: 18px;">
-
-                                            <g:if test="${post.tipo == "Container Publico"}">
+                                        <div style="height: 220px; box-shadow: gainsboro 1px 1px 8px; text-align: left; margin: 18px; margin-bottom: 120px;">
+                                            <g:if test="${post.tipo == "Container Secreto" || post.tipo == "Container Publico"}">
                                                 <div style="height: 18%; padding: 12px; box-shadow: gainsboro 1px 1px 8px; border-radius: 4px 4px 0 0; position: relative; background-color: #747f88;"
                                                      class="postHeader">
 
@@ -76,7 +75,7 @@
                                                         <g:else>
                                                             ${idUserPost[post.usuarioId].nome}
                                                         </g:else>
-                                                        Criou um Novo Grupo de Estudo.
+                                                        criou um novo grupo de estudo.
                                                     </label>
                                                 </div>
 

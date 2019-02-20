@@ -27,6 +27,7 @@ class ContainerController {
         container.imgContainer = "default"
         container.dificuldade = params.dificuldade
         container.importancia = params.importancia
+        container.privacidade = params.privacidade
         container.nNotificacoes = 0
         container.imgBackground = "default"
         container.dataCriacao = new Date()
@@ -41,13 +42,18 @@ class ContainerController {
 
         //criando publicaçao de container publico e salvando
         Post post = new Post()
-        post.tipo = "Container Publico"
+        post.tipo = container.privacidade
         post.containerId = container.id
         post.usuarioId = user.id
-        post.publicoIds = Integer.parseInt(user.amigos.id)
-        post.dataDePublicacao = new Date()
-        post.save(flash:true)
 
+        if(post.tipo == "Grupo Publico" && user.amigos && !user.amigos.empty){
+            post.publicoIds = Integer.parseInt(user?.amigos?.id)
+        }
+        post.dataDePublicacao = new Date()
+        post.validate()
+        if(!post.errors || post.errors.errorCount == 0){
+            post.save(flash:true)
+        }
         redirect(action: "index")
     }
 
