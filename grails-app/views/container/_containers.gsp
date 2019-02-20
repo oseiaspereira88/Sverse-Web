@@ -4,7 +4,8 @@
     <div class="wrapper">
         <g:if test="${containers.size() > 0}">
             <g:each status="i" var="container" in="${containers}">
-                <div class="mcontainer" onclick="window.location.href = '/container/edit/${i+1}'">
+                <div class="mcontainer"
+                onclick="window.location.href = '/container/edit/${i+1}'">
                     <h6>${container.nome}</h6>
                 </div>
             </g:each>

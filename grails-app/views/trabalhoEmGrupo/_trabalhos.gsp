@@ -3,7 +3,9 @@
         <div class="wrapper">
             <g:each status="i" var="trabalho" in="${trabalhos}">
                 <div class="nota"
-                     style="background: url('https://encceja2018.net.br/wp-content/uploads/2018/04/capa-3.jpg'); background-size: contain"
+                     style="background:
+                     url('https://encceja2018.net.br/wp-content/uploads/2018/04/capa-3.jpg');
+                      background-size: contain"
                      onclick="window.location.href = '/trabalhoEmGrupo/area/${trabalho.id}'">
                     <h6 style="background-color: rgba(0, 0, 0, 0.4)">${trabalho.nome}</h6>
                 </div>

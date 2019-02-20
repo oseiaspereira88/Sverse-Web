@@ -89,7 +89,8 @@
                         <label>Nota:</label>
                         <g:textArea class="textarea" placeholder="Seu texto aqui..." cols="30" rows="5"
                                     name="texto" form="frmCreateNota"></g:textArea>
-                        <input type="submit" value="Criar" style="color: white; " class="btn float-right login_btn">
+                        <input type="submit" value="Criar" style="color: white; "
+                         class="btn float-right login_btn">
                     </fieldset>
                 </g:form>
             </div>

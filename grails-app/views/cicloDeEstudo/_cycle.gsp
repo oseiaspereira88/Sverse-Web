@@ -38,20 +38,28 @@
                         <legend>Preencha o Formulário</legend>
                         <label>Nome:</label>
                         <input type="text" id="campo_nome" name="nome"><br>
-                        <label>Tipo:</label>
-                        <g:select name="tipo" id="campo_tipo" from="${["Pessoal", "Grupo", "Turma", "Sala"]}"
+                        <label>Escolha o tipo do estudo:</label>
+                        <g:select name="tipo" id="campo_tipo" from="${["Container", "Grupo de Estudo", "Outro"]}"
                                   noSelection="['': '-Escolha o tipo-']"></g:select><br>
-                        <label>Dificuldade:</label>
-                        <g:select name="dificuldade" id="campo_dificuldade"
-                                  from="${["Muito Difícil", "Difícil", "Razoável", "Fácil"]}"
-                                  noSelection="['': '-Escolha a dificulade-']"></g:select><br>
-                        <label>Importância:</label>
-                        <g:select name="importancia" id="campo_importancia"
-                                  from="${["Muito importante", "Importante", "Razoável", "Não muito importante"]}"
-                                  noSelection="['': '-Escolha a importância-']"></g:select><br>
-                        <g:textArea id="campo_descricao" placeholder="Escreva a descrição do seu contêiner..."
-                                    cols="30"
-                                    rows="5" name="descricao" form="frmCreateContainer"></g:textArea><br>
+                        <g:>Dia do Estudo:</label>
+                        <g:select name="tipo" id="campo_tipo" from="${["Segunda", "Terça", "Quarta", "Quinta" "Sexta" "Sabado" "Domingo"]}"
+                                                          noSelection="['': '-Escolha o dia-']"></g:select><br>
+                        <g:>Hora do Estudo:</label>
+                        <g:select name="tipo" id="campo_tipo" from="${1..12}"
+                                                          noSelection="['': '-Escolha o hora-']"></g:select><br>
+                        <g:>Turno do estudo de Estudo:</label>
+                        <g:select name="tipo" id="campo_tipo" from="${"AM", "PM"}"
+                                                          noSelection="['': '-Escolha o turno-']"></g:select><br>
+                        <g:>Número de Pomodoros:</label>
+                        <g:select name="tipo" id="campo_tipo" from="${1..8}"
+                            noSelection="['': '-Escolha o número-']"></g:select><br>
+                        <g:>Minutos do estudo:</label>
+                        <g:select name="tipo" id="campo_tipo" from="${10..50}"
+                            noSelection="['': '-Escolha um valor-']"></g:select><br>
+                        <g:>Minutos de intervalo:</label>
+                        <g:select name="tipo" id="campo_tipo" from="${5..20}"
+                        noSelection="['': '-Escolha um valor-']"></g:select><br>
+
                         <input type="submit" id="submit" value="Criar" style="color: white; "
                                class="btn float-right login_btn">
                     </fieldset>
@@ -60,7 +68,7 @@
         </div>
 
 
-        <img class="bordaCycle" src="https://cdn.pixabay.com/photo/2012/04/01/18/41/button-23949_960_720.png">
+        <img class="bordaCycle" src="/assets/cycleBG1.png">
         <img class="imgCycle" src="/assets/logo_sverse.png">
         <ul id="cycle">
             <li class="itemCycle" style="visibility: hidden;"></li>
