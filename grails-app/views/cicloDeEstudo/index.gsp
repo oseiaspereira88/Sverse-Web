@@ -70,17 +70,32 @@
 </style>
 
 <script>
+    window.onload = function x() {
+        var bAdd = document.getElementById("bAdd");
+        var spanAdd = document.getElementById("spanAdd");
+        var bBack = document.getElementById("bBack");
+        var spanBack = document.getElementById("spanAdd");
+        var divFormCreate = document.getElementById("divFormCreate");
+        var divFormEdit = document.getElementById("divFormEdit");
+        divFormCreate.style.display = "none";
+
+        $(document).mouseup(function(e)
+        {
+            var container = $(".divFormEdit");
+
+            if (!container.is(e.target) && container.has(e.target).length === 0)
+            {
+                container.slideUp("slow/400/fast");
+            }
+        });
+    }
     function openFormCreate() {
-        var bAdd = document.getElementById("bAdd")
-        var spanAdd = document.getElementById("spanAdd")
-        var divForm = document.getElementById("divForm")
-        var divContainers = document.getElementById("divContainers")
-        if (divForm.style.display == "none") {
-            spanAdd.innerHTML = "<"
-            divForm.style.display = "block";
+        if (divFormCreate.style.display == "none") {
+            spanAdd.innerHTML = "<";
+            divFormCreate.style.display = "block";
         } else {
-            spanAdd.innerHTML = "+"
-            divForm.style.display = "none";
+            spanAdd.innerHTML = "+";
+            divFormCreate.style.display = "none";
         }
     }
 </script>

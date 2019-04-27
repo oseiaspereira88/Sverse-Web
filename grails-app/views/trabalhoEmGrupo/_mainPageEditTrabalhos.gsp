@@ -101,7 +101,7 @@
         var spanBack = document.getElementById("spanAdd");
         var divFormCreate = document.getElementById("divFormCreate");
         var divFormEdit = document.getElementById("divFormEdit");
-        divFormCreate.style.display = "none";
+        divFormCreate.style.display = "block";
 
         $(document).mouseup(function(e)
         {
@@ -129,22 +129,27 @@
     <article class="post main-post user-profile-page">
         <div class="conteudo" style="min-height: 74vh; overflow: auto;">
 
-            <div id="divFormCreate">
-                <g:form action='newTrabalho' method='POST' name='frmCreateTrabalho'>
+            <div id="divFormEdit" style="display: block;">
+                <g:form action='editTrabalho' method='POST' name='frmEditTrabalho'>
                     <fieldset>
                         <label>Nome:</label>
-                        <input type="text" name="nome"><br>
+                        <input type="text" value="${trabalhoEdit.nome}" name="nome"><br>
                         <label>Previsão:</label>:
                         <input type="date" name="dataTermino"><br>
                         <g:textArea placeholder="Escreva aqui a descrição do seu trabalho..." cols="30" rows="5"
-                                    name="descricao" form="frmCreateTrabalho"></g:textArea>
-                        <input type="submit" value="Criar" style="color: white; " class="btn float-right login_btn">
+                                    name="descricao" form="frmEditTrabalho">${trabalhoEdit.descricao}</g:textArea>
+                        <input name="index" type="number" value="${trabalhoEdit.id}" style="display: none;">
+                        <input type="submit" value="Atualizar" style="color: white; " class="btn float-right login_btn">
                     </fieldset>
+                </g:form>
+                <g:form action='excluirTrabalho' method='POST' name='frmEditTrabalho'>
+                    <input name="index" type="number" value="${trabalhoEdit.id}" style="display: none;">
+                    <input type="submit" value="Excluir" onclick="confirm('Tem certeza de que deseja excluir?');" style="margin-bottom:8px; margin-top: 8px; color: white; " class="btn float-right login_btn">
                 </g:form>
             </div>
 
-            <button id="bAdd" class="addButton rotate" onclick="openFormCreate()">
-                <span id="spanAdd" class="addIcon">+</span>
+            <button id="bAdd" class="addButton rotate" onclick="window.location = '/trabalhoEmGrupo/index'">
+                <span id="spanAdd" class="addIcon"><</span>
             </button>
 
             <div id="divTrabalhos">

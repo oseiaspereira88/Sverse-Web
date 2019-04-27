@@ -17,18 +17,16 @@
     </script>
 
     <style>
-    .rotate {
-        animation: rotation 3s infinite;
+    .imgPostNovoContainer {
+        transition: 400ms all;
+        border-radius: 50%;
+    }
+    .imgPostNovoContainer:hover {
+        border-style: double;
+        border-color: #41b88e;
+        border-width: 4px;
     }
 
-    @keyframes rotation {
-        from {
-            transform: rotate(0deg)
-        }
-        to {
-            transform: rotate(359deg)
-        }
-    }
     </style>
 </head>
 
@@ -83,19 +81,13 @@
                                                      class="postBody">
 
                                                     <!-- Img do container, nome e figura ilustrativa -->
-                                                    <img style="position: absolute; top: 34px; right: 34px; height: 60%; width: auto;"
+                                                    <img class="imgPostNovoContainer" style="position: absolute; top: 34px; right: 34px; height: 70%; width: auto;"
                                                          src="/assets/logo_sverse.png">
-                                                    <h5 style="font-weight: bold; margin-left: 28px; font-size: 14pt; color:#747f88; text-align: right;">
-                                                        ${("Nome do Container")}
+                                                    <h5 style="font-weight: bold; margin-left: 28px; font-size: 14pt; color:#747f88; text-align: right; margin-top: 0; padding-top: 0;">
+                                                        ${idContainerPost[post.containerId]?.nome}
                                                     </h5><br>
-                                                    <label class="tituloHeaderPost"
-                                                           style="margin-right: 28px; color:#747f88;">
-
-                                                        .......................................................................<br>
-                                                        Descrição ....................................................<br>
-                                                        .......................................................................<br>
-                                                        ....................................................Descrição<br>
-                                                        .......................................................................<br>
+                                                    <label class="tituloHeaderPost" style="margin-right: 28px; color:#747f88;">
+                                                        ${idContainerPost[post.containerId]?.descricao}
                                                     </label>
                                                 </div>
 

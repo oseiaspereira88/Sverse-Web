@@ -253,7 +253,7 @@
             <div class="user-profile">
                 <a class="user-link" data-refer-type="user_profile_page">
                     <img class="user-avatar img-cover" data-vce="image"
-                         src="//pm1.narvii.com/7096/a524bb5f105691a618ccc614ee09a34fc749c2acr1-96-96v2_128.jpg">
+                         src="https://randomuser.me/api/portraits/lego/${usuario.perfil.imgPerfil}.jpg">
                 </a>
 
                 <h1 class="user-name">
@@ -327,11 +327,6 @@
                  data-threshold="350">
                 <g:render template='configuracoes' model='usuario:usuario'></g:render>
             </div>
-
-            <g:if test="${usuariosEncontrados != null}">
-                <h1>Retornou!</h1>
-            </g:if>
-
         </section>
     </article>
 </section>

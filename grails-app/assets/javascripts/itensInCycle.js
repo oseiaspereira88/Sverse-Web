@@ -1,4 +1,5 @@
 window.onload = function (ev) {
+    var isNone = true;
     var type = 1, //circle type - 1 whole, 0.5 half, 0.25 quarter
         radius = '12em', //distance from center
         start = -90, //shift start from 0

@@ -5,7 +5,7 @@ import seguranca.Usuario
 import seguranca.UsuarioPermissao
 
 class BootStrap {
-
+    Random random = new Random()
     def init = { servletContext ->
 
         //procura pela permissão hole, se ela não existir, cria e salva;
@@ -28,7 +28,7 @@ class BootStrap {
                     enabled: true, accountExpired: false, accountLocked: false,
                     passwordExpired: false)
             Perfil perfil1 = new Perfil(
-                    imgPerfil: "qualquer1",
+                    imgPerfil: "${random.nextInt(7)}",
                     email: "jeff88@gmail.com",
                     trello: "jeffsz88",
                     github: "Jeff88",
@@ -47,7 +47,7 @@ class BootStrap {
                     enabled: true, accountExpired: false, accountLocked: false,
                     passwordExpired: false)
             Perfil perfil2 = new Perfil(
-                    imgPerfil: "qualquer2",
+                    imgPerfil: "${random.nextInt(7)}",
                     email: "oseiaspereira88@gmail.com",
                     trello: "oseiaspereira88",
                     github: "oseiaspereira88",
@@ -66,10 +66,10 @@ class BootStrap {
                     enabled: true, accountExpired: false, accountLocked: false,
                     passwordExpired: false)
             Perfil perfil3 = new Perfil(
-                    imgPerfil: "qualquer2",
-                    email: "oseiaspereira88@gmail.com",
-                    trello: "oseiaspereira88",
-                    github: "oseiaspereira88",
+                    imgPerfil: "${random.nextInt(7)}",
+                    email: "roberthlima0@gmail.com",
+                    trello: "roberth088",
+                    github: "roberthlima0",
                     contato: "(84)99442299",
                     biografia: "My name is Barry Alan and i am the flash man on live.",
                     curso: "Engenharia Elétrica",

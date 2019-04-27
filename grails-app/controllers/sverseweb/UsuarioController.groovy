@@ -24,26 +24,35 @@ class UsuarioController {
     def muralAcademico() {
         String username = springSecurityService.principal.username
         Usuario user = Usuario.findByUsername(username)
-        user.getDirtyPropertyNames()
         def posts = []
         def idUserPost = [:]
-        if (Post.findAllByUsuarioId(user.id) != null && !Post.findAllByUsuarioId(user.id).empty) {
+        def idContainerPost = [:]
+        if (Post.findAllByUsuarioId(user.id) != null && Post.findAllByUsuarioId(user.id).size() > 0) {
             posts = Post.findAllByUsuarioId(user.id)
         }
-        if (Post.all?.publicoIds.size()>0) {
+        if (Post.all?.publicoIds.size() > 0) {
             Post.all.each {
                 it.publicoIds.each { id ->
                     if (id == user.id) {
                         posts.add(it)
-                        if(it.usuarioId){
+                        if (it.usuarioId) {
                             idUserPost[it.usuarioId] = Usuario.findById(it.usuarioId)
                         }
                     }
                 }
             }
         }
+        posts.containerId.each {
+            if(it){
+                idContainerPost[it] = Container.findById(it)
+            }
+        }
 
-        render(view: "/usuario/muralAcademico", model: [usuario: user, posts: posts, idUserPost: idUserPost])
+        render(view: "/usuario/muralAcademico",
+                model: [usuario        : user,
+                        posts          : posts,
+                        idUserPost     : idUserPost,
+                        idContainerPost: idContainerPost])
     }
 
     def calendarioAcademico() {

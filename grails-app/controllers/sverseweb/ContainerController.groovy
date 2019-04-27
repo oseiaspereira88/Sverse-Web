@@ -12,9 +12,20 @@ class ContainerController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
+    def getCurrentUser(){
+        Usuario usuario = springSecurityService.getCurrentUser();
+        return usuario;
+    }
+
     def index(){
         def lista = containerService.list();
-        render(view: "/container/index", model: [containers:lista])
+        render(view: "/container/index", model: [usuario:getCurrentUser(), containers:lista])
+    }
+
+    def edit(int id){
+        def lista = containerService.list();
+        def container = Container.findById(id)
+        render(view: "/container/edit", model: [usuario:getCurrentUser(), containers:lista, container:container])
     }
 
     def newContainer(){
@@ -46,8 +57,8 @@ class ContainerController {
         post.containerId = container.id
         post.usuarioId = user.id
 
-        if(post.tipo == "Grupo Publico" && user.amigos && !user.amigos.empty){
-            post.publicoIds = Integer.parseInt(user?.amigos?.id)
+        if(post.tipo == "Container Publico" && user.amigos && !user.amigos.empty){
+            post.publicoIds = user?.amigos?.id
         }
         post.dataDePublicacao = new Date()
         post.validate()
@@ -57,86 +68,30 @@ class ContainerController {
         redirect(action: "index")
     }
 
-    def show(Long id) {
-        respond containerService.get(id)
+    def editContainer(){
+        //criando containers e associando ao usuario
+        Usuario user = Usuario.findById(springSecurityService.getCurrentUserId())
+        Container container = Container.findById(params.idEditContainer)
+        container.nome = params.nome
+        container.descricao = params.descricao
+        container.tipo = params.tipo
+        container.imgContainer = "default"
+        container.dificuldade = params.dificuldade
+        container.importancia = params.importancia
+        container.privacidade = params.privacidade
+        container.nNotificacoes = 0
+        container.imgBackground = "default"
+        container.dataAtualizacao = new Date()
+        containerService.save(container)
+        redirect(action: "index")
     }
 
-    def create() {
-        respond new Container(params)
+    def excluirContainer(){
+        containerService.delete(params.idEditContainer)
+        redirect(action: "index")
     }
 
-    def save(Container container) {
-        if (container == null) {
-            notFound()
-            return
-        }
+    def area(){
 
-        try {
-            containerService.save(container)
-        } catch (ValidationException e) {
-            respond container.errors, view:'create'
-            return
-        }
-
-        request.withFormat {
-            form multipartForm {
-                //flash.message = message(code: 'default.created.message', args: [message(code: 'container.label', default: 'Container'), container.id])
-                redirect container
-            }
-            '*' { respond container, [status: CREATED] }
-        }
-    }
-
-    def edit(Long id) {
-        respond containerService.get(id)
-    }
-
-    def update(Container container) {
-        if (container == null) {
-            notFound()
-            return
-        }
-
-        try {
-            containerService.save(container)
-        } catch (ValidationException e) {
-            respond container.errors, view:'edit'
-            return
-        }
-
-        request.withFormat {
-            form multipartForm {
-                //flash.message = message(code: 'default.updated.message', args: [message(code: 'container.label', default: 'Container'), container.id])
-                redirect container
-            }
-            '*'{ respond container, [status: OK] }
-        }
-    }
-
-    def delete(Long id) {
-        if (id == null) {
-            notFound()
-            return
-        }
-
-        containerService.delete(id)
-
-        request.withFormat {
-            form multipartForm {
-                //flash.message = message(code: 'default.deleted.message', args: [message(code: 'container.label', default: 'Container'), id])
-                redirect action:"index", method:"GET"
-            }
-            '*'{ render status: NO_CONTENT }
-        }
-    }
-
-    protected void notFound() {
-        request.withFormat {
-            form multipartForm {
-                //flash.message = message(code: 'default.not.found.message', args: [message(code: 'container.label', default: 'Container'), params.id])
-                redirect action: "index", method: "GET"
-            }
-            '*'{ render status: NOT_FOUND }
-        }
     }
 }

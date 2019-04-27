@@ -6,6 +6,7 @@ import seguranca.UsuarioPermissao
 
 class IsolamentoController {
     def springSecurityService;
+    Random random = new Random()
 
     def login() {
         render(view: "/isolamento/login")
@@ -33,7 +34,7 @@ class IsolamentoController {
         user.passwordExpired = false
 
         user.setPerfil(new Perfil(
-                imgPerfil: "aleatoria",
+                imgPerfil: "${random.nextInt(7)}",
                 email: "SeuEmail@gmail.com",
                 trello: "UserName",
                 github: "UserName",

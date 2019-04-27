@@ -12,23 +12,20 @@ class PaginadorController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def muralAcademico() {
+    def getCurrentUser(){
         Usuario usuario = springSecurityService.getCurrentUser();
-        render(view:"muralAcademico", model:[usuario:usuario])
+        return usuario;
     }
 
-    def perfil() {
-    }
-
-    def configs() {
-
+    def muralAcademico() {
+        render(view:"muralAcademico", model:[usuario:getCurrentUser()])
     }
 
     def ajuda() {
-
+        render(view:"ajuda", model:[usuario:getCurrentUser()])
     }
 
     def baixarApp() {
-
+        render(view:"baixarApp", model:[usuario:getCurrentUser()])
     }
 }

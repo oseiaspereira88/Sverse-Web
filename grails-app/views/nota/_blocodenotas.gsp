@@ -1,10 +1,14 @@
-<div class="container">
+<link rel="stylesheet" href="${resource(dir: 'css', file: 'itens-in-grid.css')}" type="text/css">
+
+<div class="container" style="height: auto;">
     <g:if test="${notas.size() > 0}">
         <div class="wrapper">
             <g:each status="i" var="nota" in="${notas}">
-                <div class="nota" style="padding-top: 10px;" onclick="window.location.href = '/nota/edit/${nota.id}'">
-                    <h6>${nota.texto}</h6>
-                </div>
+                <a onclick="window.location = '/nota/edit/${nota.id}'">
+                    <div class="nota">
+                        <p>${nota.texto}</p>
+                    </div>
+                </a>
             </g:each>
         </div>
     </g:if>

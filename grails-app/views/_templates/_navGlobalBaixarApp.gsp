@@ -77,18 +77,18 @@
 <nav class="global-nav">
     <ul class="home-section-nav content">
         <li class="nav-item">
-            <a class="amino-logo" href="/" data-refer-type="site_navbar_amino_logo">
+            <a class="amino-logo" href="/usuario/muralAcademico" data-refer-type="site_navbar_amino_logo">
                 <asset:image class="logo" style="height: 40px" src="logoweb.png"/>
             </a>
         </li>
         <li class="nav-item">
-            <a style="margin-top: 6px; margin-right: 270px;" class="home-nav-home community-color" href="/"
+            <a style="margin-top: 6px; margin-right: 270px;" class="home-nav-home community-color" href="/usuario/muralAcademico"
                data-refer-type="community_nav_home"><i class="amino-icon amino-icon-home"></i></a>
         </li>
         <li class="nav-item nav-user dropdown">
             <a class="nav-link block dropbtn">
                 <img class="user-icon"
-                     src="//pm1.narvii.com/7096/00a1604abd6c36e13e1913ab8a7b3e12779f6980r1-96-96v2_68.jpg"
+                     src="https://randomuser.me/api/portraits/lego/${usuario.perfil.imgPerfil}.jpg"
                      alt="Oseias Pereira">
             </a>
             <div class="dropdown-content">

@@ -8,7 +8,6 @@ class CicloDeEstudo {
     String cor
 
     static belongsTo = [usuario: Usuario]
-    static hasOne = [pomodoro : Pomodoro]
     static hasMany = [estudo:Estudo]
 
     static constraints = {

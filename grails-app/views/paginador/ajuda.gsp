@@ -137,7 +137,6 @@
 <body>
 <canvas></canvas>
 <script>
-    // http://www.cssplant.com/clip-path-generator
     p = [
         [389,246,0],
         [410,255,20],

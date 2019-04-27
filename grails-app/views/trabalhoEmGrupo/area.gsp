@@ -24,7 +24,7 @@
             <g:render template="../templates/_navHome"/>
             <div style="text-align: center;">
 
-                <g:render template="area"/>
+                <g:render template="area-de-trabalho-em-grupo"/>
 
             </div>
         </div>

@@ -72,7 +72,7 @@
     grid-template-columns: repeat(4, 1fr);
     grid-row-gap: 10px;
     grid-column-gap: 10px;
-    grid-auto-rows: 260px;
+    grid-auto-rows: 200px;
 }
 </style>
 
@@ -84,7 +84,7 @@
         var spanBack = document.getElementById("spanAdd");
         var divFormCreate = document.getElementById("divFormCreate");
         var divFormEdit = document.getElementById("divFormEdit");
-        divFormCreate.style.display = "none";
+        divFormCreate.style.display = "block";
 
         $(document).mouseup(function(e)
         {
@@ -111,38 +111,43 @@
 <section class="main-page content user-normal">
     <article class="post main-post user-profile-page">
         <div class="conteudo" style="min-height: 60vh;">
-            <button id="bAdd" class="addButton" onclick="openFormCreate()">
-                <span id="spanAdd" class="addIcon">+</span>
+            <button id="bAdd" class="addButton" onclick="window.location = '/container/index'">
+                <span id="spanAdd" class="addIcon"><</span>
             </button>
 
             <div id="divFormCreate">
                 <div id="area">
-                    <g:form class="mForm" action='newContainer' method='POST' name='frmCreateContainer'>
+                    <g:form class="mForm" action='editContainer' method='POST' name='frmEditContainer'>
                         <fieldset>
                             <legend>Preencha o Formulário</legend>
                             <label>Nome:</label>
-                            <input type="text" id="campo_nome" name="nome"><br>
+                            <input type="text" id="campo_nome" value="${container.nome}" name="nome"><br>
                             <label>Tipo:</label>
-                            <g:select name="tipo" id="campo_tipo" from="${["Pessoal", "Grupo", "Turma", "Sala"]}"
+                            <g:select name="tipo" id="campo_tipo" value="${container.tipo}" from="${["Pessoal", "Grupo", "Turma", "Sala"]}"
                                       noSelection="['': '-Escolha o tipo-']"></g:select><br>
                             <label>Dificuldade:</label>
-                            <g:select name="dificuldade" id="campo_dificuldade"
+                            <g:select name="dificuldade" value="${container.dificuldade}" id="campo_dificuldade"
                                       from="${["Muito Difícil", "Difícil", "Razoável", "Fácil"]}"
                                       noSelection="['': '-Escolha a dificulade-']"></g:select><br>
                             <label>Importância:</label>
-                            <g:select name="importancia" id="campo_importancia"
+                            <g:select name="importancia" value="${container.importancia}" id="campo_importancia"
                                       from="${["Muito importante", "Importante", "Razoável", "Não muito importante"]}"
                                       noSelection="['': '-Escolha a importância-']"></g:select><br>
                             <label>Privacidade:</label>
-                            <g:select name="privacidade" id="campo_privacidade"
+                            <g:select name="privacidade" value="${container.privacidade}" id="campo_privacidade"
                                       from="${["Container Secreto", "Container Publico"]}"
                                       noSelection="['': '-Escolha a privacidade-']"></g:select><br>
                             <g:textArea id="campo_descricao" placeholder="Escreva a descrição do seu contêiner..."
                                         cols="30"
-                                        rows="5" name="descricao" form="frmCreateContainer"></g:textArea><br>
-                            <input type="submit" id="submit" value="Criar" style="color: white; "
+                                        rows="5" name="descricao" form="frmEditContainer">${container.descricao}</g:textArea><br>
+                            <input name="idEditContainer" type="number" value="${container.id}" style="display: none;">
+                            <input type="submit" id="submit" value="Atualizar" style="color: white; "
                                    class="btn float-right login_btn">
                         </fieldset>
+                    </g:form>
+                    <g:form action='excluirContainer' method='POST' name='frmExcluirContainer'>
+                        <input name="idEditContainer" type="number" value="${container.id}" style="display: none;">
+                        <input type="submit" value="Excluir" onclick="confirm('Tem certeza de que deseja excluir?');" style="margin-bottom:8px; margin-top: 8px; color: white; " class="btn float-right login_btn">
                     </g:form>
                 </div>
             </div>

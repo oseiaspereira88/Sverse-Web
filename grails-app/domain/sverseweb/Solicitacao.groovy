@@ -12,8 +12,17 @@ class Solicitacao {
 
 
     static constraints = {
-        tipo(nullable: false, blank: false, unique:false, inList: ["Solicitação de Amizade","Solicitação de Participação"])
-        estado(nullable: false, blank: false, unique:false, inList: ["Solicitado", "Aceito", "Rejeitado"])
+        tipo(nullable: false,
+                blank: false,
+                unique:false,
+                inList: ["Solicitação de Amizade",
+                         "Solicitação de Participação"])
+        estado(nullable: false,
+                blank: false,
+                unique:false,
+                inList: ["Solicitado",
+                         "Aceito",
+                         "Rejeitado"])
         dataSolicitacao(nullable: false, blank: false, unique:false)
         containerId(nullable: true, blank: true, unique:false)
     }

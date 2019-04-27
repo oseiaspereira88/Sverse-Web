@@ -65,37 +65,37 @@
         });
     }
 
-    function openFormCreate() {
-        if (divFormCreate.style.display == "none") {
-            spanAdd.innerHTML = "<";
-            divFormCreate.style.display = "block";
-        } else {
-            spanAdd.innerHTML = "+";
-            divFormCreate.style.display = "none";
-        }
+    window.onload = function openFormEdit() {
+        divFormEdit.style.display = "block";
     }
 </script>
 
 <section class="main-page content user-normal">
-    <article class="post main-post user-profile-page" style="height: 74vh; overflow: auto">
-        <div class="conteudo">
-            <div id="divFormCreate">
-                <g:form action='newNota' method='POST' id='frmCreateNota' name='frmCreateNota'>
+    <article class="post main-post user-profile-page">
+        <div class="conteudo" style="min-height: 60vh;">
+            <div id="divFormEdit" class="divFormEdit">
+                <g:form action='editNota' method='POST' id='frmEditNota' name='frmEditNota'>
                     <fieldset>
                         <label>Nota:</label>
-                        <g:textArea class="textarea" placeholder="Seu texto aqui..." cols="30" rows="5"
-                                    name="texto" form="frmCreateNota"></g:textArea>
-                        <input type="submit" value="Criar" style="color: white; "
+                        <g:textArea id="textAreaEdit" class="textarea" placeholder="Digite sua nova nota..." cols="30"
+                                    rows="5"
+                                    name="texto" form="frmEditNota">${nota.texto}</g:textArea>
+                        <input type="number" style="display: none;" name="idNotaEdit" value="${nota.id}">
+                        <input type="submit" value="Atualizar" style="color: white; "
                                class="btn float-right login_btn">
                     </fieldset>
                 </g:form>
+                <g:form action='excluirNota' method='POST' name='frmExcluirNota'>
+                    <input type="number" style="display: none;" name="idNotaEdit" value="${nota.id}">
+                    <input type="submit" value="Excluir" onclick="confirm('Tem certeza de que deseja excluir?');" style="margin-bottom:8px; margin-top: 8px; color: white; " class="btn float-right login_btn">
+                </g:form>
             </div>
 
-            <button id="bAdd" href="" class="addButton" onclick="openFormCreate()">
-                <span id="spanAdd" class="addIcon">+</span>
+            <button id="bAdd" href="" class="addButton" onclick="window.location = '/nota/index'">
+                <span id="spanAdd" class="addIcon"><</span>
             </button>
 
-            <div id="divBlocoDeNotas" style="height: auto;">
+            <div id="divBlocoDeNotas">
                 <g:render template="blocodenotas" model="notas:notas"></g:render>
             </div>
         </div>

@@ -31,7 +31,7 @@ class Container {
         imgContainer(nullable: false, blank: false, unique:false)
         dificuldade(nullable: false, blank: false, inList: ["Muito Difícil", "Difícil", "Razoável", "Fácil"], unique:false)
         importancia(nullable: false, blank: false, inList: ["Muito importante", "Importante", "Razoável", "Não muito importante"], unique:false)
-        privacidade(nullable: false, blank: false, inList: ["Grupo Secreto", "Grupo Publico"], unique:false)
+        privacidade(nullable: false, blank: false, inList: ["Container Secreto", "Container Publico"], unique:false)
         nNotificacoes(nullable: false, blank: false, unique:false)
         imgBackground(nullable: false, blank: false, unique:false)
         dataCriacao(nullable: false, blank: false, unique:false)

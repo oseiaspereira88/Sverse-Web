@@ -4,6 +4,19 @@
     background: #00b961;
 }
 
+.rotate {
+    animation: rotation 3s infinite;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(359deg)
+    }
+}
+
 .btn-group button {
     background-color: #4CAF50; /* Green background */
     border: 1px solid green; /* Green border */
@@ -91,9 +104,11 @@
         </li>
         <li class="nav-item nav-user dropdown">
             <a class="nav-link block dropbtn">
-                <img class="user-icon"
-                     src="//pm1.narvii.com/7096/00a1604abd6c36e13e1913ab8a7b3e12779f6980r1-96-96v2_68.jpg"
-                     alt="Oseias Pereira">
+                <g:if test="${usuario != null}">
+                    <img class="user-icon"
+                         src="https://randomuser.me/api/portraits/lego/${usuario.perfil.imgPerfil}.jpg">
+                </g:if>
+
             </a>
             <div class="dropdown-content">
                 <a href="#" onclick="window.location.href = '/perfil'">Perfil</a>
