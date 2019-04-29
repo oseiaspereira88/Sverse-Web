@@ -9,21 +9,23 @@ class PerfilController {
 
     PerfilService perfilService
     UsuarioService usuarioService
+    ContainerService containerService
     def springSecurityService;
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
     def usuariosEncontrados = null;
 
     def index(Integer max) {
-        Usuario user = (Usuario) springSecurityService.getCurrentUser();
-        def containers = Container.all;
-        def usuarios = Usuario.all;
+        Usuario user = (Usuario) springSecurityService.getCurrentUser()
+        def containers = Container.all
+        def usuarios = Usuario.all
+
         render(view:"index", model:[usuario:user, containers:containers, usuarios:usuarios, usuariosEncontrados:usuariosEncontrados])
     }
 
     def atualizarPerfil(){
-        Usuario user = (Usuario) springSecurityService.getCurrentUser();
-        Perfil p = user.perfil;
+        Usuario user = (Usuario) springSecurityService.getCurrentUser()
+        Perfil p = user.perfil
         p.setEmail(params.email)
         p.setTrello(params.trello)
         p.setGithub(params.github)
@@ -49,13 +51,14 @@ class PerfilController {
         redirect(action: "index")
     }
 
-    def timeline(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond perfilService.list(params), model:[perfilCount: perfilService.count()]
+    def container(Integer id) {
+        def container = containerService.get(id)
+        render(view:"container", model:[container:container])
     }
 
-    def show(Long id) {
-        respond perfilService.get(id)
+    def usuario(Integer id) {
+        def user = usuarioService.get(id)
+        render(view:"usuario", model:[usuario:user])
     }
 
     def create() {

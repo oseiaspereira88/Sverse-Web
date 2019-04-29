@@ -1,14 +1,23 @@
 <div class="container">
     <g:if test="${containers.size() != null && containers.size()>0}">
-        <div class="wrapper">
+        <section class="friends-container">
             <g:each status="i" var="container" in="${containers}">
-                <div class="nota"
-                     style="background: url('https://encceja2018.net.br/wp-content/uploads/2018/04/capa-3.jpg'); background-size: contain"
-                     onclick="window.location.href = '/containerEmGrupo/area/${container.id}'">
-                    <h6 style="background-color: rgba(0, 0, 0, 0.4)">${container.nome}</h6>
-                </div>
+                <g:if test="${usuario.username != user?.username}">
+                    <article class="profile profile--padding">
+                        <div class="profile__img"><img src="/assets/groupIcon.jpg"/><span class="profile__img__online"></span>
+                        </div>
+                        <div class="profile__info profile__info--bordered">
+                            <h3 class="profile__info__name"><a>${container.nome}</a></h3>
+                            <p class="profile__info__contact">${container.tipo}</p>
+                        </div>
+                        <div class="profile__options"><a href="/perfil/${container.id}">Ver Perfil</a></div>
+                    </article>
+                    <g:if test="${i+1 < containers.size()}">
+                        <div class="item--divider"></div>
+                    </g:if>
+                </g:if>
             </g:each>
-        </div>
+        </section>
     </g:if>
     <g:else>
         <h6 style="text-align: center">Aparentemente não há nenhum grupo com esse nome.</h6>

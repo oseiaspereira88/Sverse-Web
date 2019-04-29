@@ -293,34 +293,6 @@
                     </g:form>
                 </div>
             </header>
-
-            <div id="listGrupos" class="bio-body" data-vce="toggle-content" data-threshold="350">
-                <g:render template="containers" model="containers:containers"></g:render>
-            </div>
-
-            <div style="display: none;" id="listPessoas" class="bio-body" data-vce="toggle-content"
-                 data-threshold="350">
-                <g:render template='usuarios' model='[usuarios:usuarios, user:usuario]'></g:render>
-            </div>
-
-            <div style="display: none;" id="listAmigos" class="bio-body" data-vce="toggle-content" data-threshold="350">
-                <g:render template='amigos' model='usuario:usuario'></g:render>
-            </div>
-
-            <div style="display: none;" id="listSolicitacoes" class="bio-body" data-vce="toggle-content"
-                       data-threshold="350">
-            <g:render template='solicitacoes' model='usuario:usuario'></g:render>
-            </div>
-
-            <div style="display: none;" id="calendario" class="bio-body" data-vce="toggle-content"
-                 data-threshold="350">
-                <g:render template='calendario' model='usuario:usuario'></g:render>
-            </div>
-
-            <div style="display: none;" id="configuracoes" class="bio-body" data-vce="toggle-content"
-                 data-threshold="350">
-                <g:render template='configuracoes' model='usuario:usuario'></g:render>
-            </div>
         </section>
     </article>
 </section>

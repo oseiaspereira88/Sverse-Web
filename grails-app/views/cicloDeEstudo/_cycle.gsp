@@ -69,7 +69,7 @@
                 <g:each in="${estudos}" var="estudo" status="i">
                     <li class="itemCycle" style="z-index: ${i}">
                         <div id="nomeItem${i}" class="nomeItem">${estudo.nome}<br>${estudo.dia} - ${estudo.hora}:${estudo.minuto}</div>
-                        <a href="#" onclick="window.location = '/cicloDeEstudo/edit/${estudo.id}'"><img class="imgItem" src="${estudo.imgItem}" onmouseover="exibirNomeItem(${i})" onmouseout="ocutarNomeItem(${i})" ></a>
+                        <a href="#" onclick="window.location = '/cicloDeEstudo/edit/${estudo.id}'"><img class="imgItem" src="/assets/estudo.png" onmouseover="exibirNomeItem(${i})" onmouseout="ocutarNomeItem(${i})" ></a>
                     </li>
                 </g:each>
             </g:if>

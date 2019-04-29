@@ -20,77 +20,6 @@
         background-repeat: no-repeat;
     }
     </style>
-    <style>
-    .profile {
-        position: relative;
-        align-items: center;
-        margin-right: 20px;
-        display: flex;
-    }
-    .profile--padding {
-        padding-bottom: 20px;
-        padding-top: 20px;
-    }
-    .profile__img {
-        position: relative;
-        margin-right: 20px;
-    }
-    .profile__img__online, .profile__img__offline {
-        position: absolute;
-        height: 17px;
-        width: 17px;
-        background: #81ff57;
-        border-radius: 100%;
-        bottom: 15px;
-        right: 0;
-    }
-    .profile__img__offline {
-        background: #F14C36;
-    }
-    .profile__img img {
-        border-radius: 100%;
-        box-shadow: 1px 1px 1px;
-        width: 90px;
-        heigth: 90px;
-        transition: all 400ms;
-    }
-    .profile__img img:hover{
-        width: 98px;
-        heigth: 98px;
-    }
-    .profile__options {
-        position: absolute;
-        right: 0;
-        top: 20px;
-    }
-    .profile__info {
-        padding-bottom: 5px;
-        margin-right: 70px;
-    }
-    .profile__info--bordered {
-        border-bottom: 1px solid #f9f9f9;
-    }
-    .profile__info__name {
-        color: #484848;
-        font-size: 14px;
-        margin: 0;
-        transition: all 400ms;
-    }
-    .profile__info__name:hover{
-        font-size: 18px;
-    }
-    .profile__info__contact {
-        color: #A4A4A4;
-        font-size: 12px;
-        margin-top: 7px;
-    }
-    .item--divider {
-        position: relative;
-        width: 100%;
-        height: 2px;
-        background-color: #00b961;
-    }
-    </style>
 </head>
 
 <body>
@@ -117,7 +46,7 @@
                     </a>
 
                     <section class="community-content">
-                        <g:render template="mainPagePerfil"/>
+                        <g:render template="mainPagePerfilPublico"/>
                     </section>
                     <aside class="community-sidebar"
                            data-vce="sidebar-community"

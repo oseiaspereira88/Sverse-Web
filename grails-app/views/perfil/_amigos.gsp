@@ -2,11 +2,15 @@
     <g:if test="${usuario.amigos.size() != null && usuario.amigos.size()>0}">
         <div class="wrapper">
             <g:each status="i" var="amigo" in="${usuario.amigos}">
-                <div class="nota"
-                     style="background: url('https://encceja2018.net.br/wp-content/uploads/2018/04/capa-3.jpg'); background-size: contain"
-                     onclick="window.location.href = '/usuarioEmGrupo/area/${amigo.id}'">
-                    <h6 style="background-color: rgba(0, 0, 0, 0.4)">${amigo.nome}</h6>
-                </div>
+                <article class="profile profile--padding">
+                    <div class="profile__img"><img src="https://randomuser.me/api/portraits/lego/${amigo.perfil.imgPerfil}.jpg"/><span class="profile__img__online"></span>
+                    </div>
+                    <div class="profile__info profile__info--bordered">
+                        <h3 class="profile__info__name"><a>${amigo.nome}</a></h3>
+                        <p class="profile__info__contact">Técnico em Informática</p>
+                    </div>
+                    <div class="profile__options"><a href="/perfil/usuario/${amigo.id}">Ver Perfil</a></div>
+                </article>
             </g:each>
         </div>
     </g:if>

@@ -25,6 +25,9 @@
             <span id="spanAdd" class="addIcon"><</span>
         </button>
 
+        <h3 style="margin-top: 14%; font-size: 22pt;">${estudoEdit.nome}</h3>
+        <h3>${estudoEdit.dia} - ${estudoEdit.hora}:${estudoEdit.minuto}</h3>
+
         <div id="divFormCreate" style="display: block;">
             <div id="area">
                 <g:form class="mForm" action='editItem' method='POST' name='frmCreateItem'>
@@ -67,7 +70,7 @@
 
 
         <img class="bordaCycle" style="left: 18%;" src="/assets/cycleBG1.png">
-        <img class="imgCycle" style="left: 18%;" src="${estudoEdit.imgItem}">
+        <img class="imgCycle" style="left: 18%;" src="/assets/estudo.png">
         <ul id="cycle" style="left: 18%;">
             <li class="itemCycle" style="visibility: hidden;"></li>
             <g:if test="${estudos != null}">
@@ -75,7 +78,7 @@
                     <g:if test="${estudoEdit.id != estudo.id}">
                         <li class="itemCycle" style="z-index: ${i}">
                             <div id="nomeItem${i}" class="nomeItem">${estudo.nome}<br>${estudo.dia} - ${estudo.hora}:${estudo.minuto}</div>
-                            <a href="#" onclick="window.location = '/cicloDeEstudo/edit/${estudo.id}'"><img class="imgItem" src="${estudo.imgItem}" onmouseover="exibirNomeItem(${i})" onmouseout="ocutarNomeItem(${i})" ></a>
+                            <a href="#" onclick="window.location = '/cicloDeEstudo/edit/${estudo.id}'"><img class="imgItem" src="/assets/estudo.png" onmouseover="exibirNomeItem(${i})" onmouseout="ocutarNomeItem(${i})" ></a>
                         </li>
                     </g:if>
                     <g:else>
